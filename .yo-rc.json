@@ -1,0 +1,38 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.org.skillzag"
+    },
+    "jhipsterVersion": "6.10.3",
+    "applicationType": "microservice",
+    "baseName": "skillzagcoursemanagement",
+    "packageName": "com.org.skillzag",
+    "packageFolder": "com/org/skillzag",
+    "serverPort": "8063",
+    "authenticationType": "oauth2",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "postgresql",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "Yzg0Y2U0NmQxYWEzOTllMGFiODM3NDUzZDE2NDZkMWRjOWQ3ODAyNWNjYWFiYWEzMThjYTJkMDQxZDg1YWI1OTcyZjg2MWJhMmIwOWFiMjgwNTRiZjNkOTUxY2JmMTE5M2VkZDc5ZTRhYWI1M2ZiMGU4ZTliZWZhYzQyMzZiMWU=",
+    "embeddableLaunchScript": false,
+    "creationTimestamp": 1629003334457,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false,
+    "clientPackageManager": "npm",
+    "blueprints": [],
+    "skipClient": true,
+    "skipUserManagement": true
+  }
+}

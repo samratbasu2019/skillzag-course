@@ -1,0 +1,97 @@
+enum CourseStatus{
+ACTIVE,
+INACTIVE
+}
+
+enum RecommendedStatus{
+ACTIVE,
+RECOMMENDED
+}
+
+entity CoursesManagement {
+    courseId Integer,
+	courseName String,
+	validFrom Instant,
+	validTo Instant,
+    imageLogo STring,
+	videoUrl String,
+	courseDescription String,
+	courseObjective String,
+	url1 String,
+	url2 String,
+	url3 String,
+	quizb4Course String,
+	quiza4Course String,
+    courseStatus CourseStatus,
+    recommendedStatus RecommendedStatus
+}
+
+enum SessionStatus{
+ACTIVE,
+INPROGRESS,
+COMPLETED
+}
+
+enum SubscriptionRequired{
+YES,
+NO
+}
+
+entity SessionManagement {
+   sessionNumber Integer,
+   sessionName String,
+   sessionDescription String,
+   sessionUrl String,
+   sessionVideoUrl String,
+   quiz String,
+   sessionLogo String,
+   sessionStatus SessionStatus,
+   subscriptionRequired SubscriptionRequired
+}
+
+enum BlockSubscription{
+YES,
+NO
+}
+
+
+entity SubscriptionManagement {
+   courseId Long, 
+   userId Long,
+   subscriptionType String,
+   subscriptionStatus String,
+   subscriptionStartdate Instant,
+   subscriptionEnddate Instant,
+   paymentStatus String,
+   subscriptionDate Instant,
+   blockSubscription BlockSubscription
+}
+
+entity Cart {
+   courseId Long, 
+   userId Long,
+   subcriptionId Long,
+   checkoutDate Instant,
+   checkOutStatus String,
+}
+
+entity Payment {
+   courseId Long, 
+   userId Long,
+   subcriptionId Long,
+   cartUsedDate Instant,
+   paymentStatus String,
+   amount Double,
+   paymentDate Instant
+}
+
+relationship OneToMany {
+CoursesManagement to SessionManagement
+}
+
+// Set pagination options
+paginate all with pagination
+// Use Data Transfert Objects (DTO)
+dto * with mapstruct
+
+service all with serviceImpl
