@@ -13,7 +13,7 @@ entity CoursesManagement {
 	courseName String,
 	validFrom Instant,
 	validTo Instant,
-    imageLogo STring,
+    imagePath String,
 	videoUrl String,
 	courseDescription String,
 	courseObjective String,
@@ -56,7 +56,7 @@ NO
 
 
 entity SubscriptionManagement {
-   courseId Long, 
+   courseId Long,
    userId Long,
    subscriptionType String,
    subscriptionStatus String,
@@ -68,7 +68,7 @@ entity SubscriptionManagement {
 }
 
 entity Cart {
-   courseId Long, 
+   courseId Long,
    userId Long,
    subcriptionId Long,
    checkoutDate Instant,
@@ -76,7 +76,7 @@ entity Cart {
 }
 
 entity Payment {
-   courseId Long, 
+   courseId Long,
    userId Long,
    subcriptionId Long,
    cartUsedDate Instant,

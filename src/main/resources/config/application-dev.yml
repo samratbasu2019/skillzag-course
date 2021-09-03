@@ -37,9 +37,9 @@ spring:
       indent-output: true
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:postgresql://localhost:5432/skillzagcoursemanagement
-    username: skillzagcoursemanagement
-    password:
+    url: jdbc:postgresql://localhost:5432/skillzagcourse
+    username: postgres
+    password: PostAdm@ssw0rd229
     hikari:
       poolName: Hikari
       auto-commit: false
