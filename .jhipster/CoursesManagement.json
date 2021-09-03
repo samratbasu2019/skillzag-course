@@ -1,0 +1,87 @@
+{
+  "name": "CoursesManagement",
+  "fields": [
+    {
+      "fieldName": "courseId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "courseName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "validFrom",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "validTo",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "imagePath",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "videoUrl",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "courseDescription",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "courseObjective",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "url1",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "url2",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "url3",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "quizb4Course",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "quiza4Course",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "courseStatus",
+      "fieldType": "CourseStatus",
+      "fieldValues": "ACTIVE,INACTIVE"
+    },
+    {
+      "fieldName": "recommendedStatus",
+      "fieldType": "RecommendedStatus",
+      "fieldValues": "ACTIVE,RECOMMENDED"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "sessionManagement",
+      "otherEntityRelationshipName": "coursesManagement",
+      "relationshipName": "sessionManagement"
+    }
+  ],
+  "changelogDate": "20210815045854",
+  "entityTableName": "courses_management",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "skillzagcoursemanagement",
+  "applications": "*",
+  "microserviceName": "skillzagcoursemanagement"
+}

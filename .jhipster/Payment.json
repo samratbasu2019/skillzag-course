@@ -1,0 +1,46 @@
+{
+  "name": "Payment",
+  "fields": [
+    {
+      "fieldName": "courseId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "userId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "subcriptionId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "cartUsedDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "paymentStatus",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "amount",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "paymentDate",
+      "fieldType": "Instant"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20210815050254",
+  "entityTableName": "payment",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "skillzagcoursemanagement",
+  "applications": "*",
+  "microserviceName": "skillzagcoursemanagement"
+}

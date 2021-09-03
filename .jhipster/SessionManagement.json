@@ -1,0 +1,64 @@
+{
+  "name": "SessionManagement",
+  "fields": [
+    {
+      "fieldName": "sessionNumber",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "sessionName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sessionDescription",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sessionUrl",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sessionVideoUrl",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "quiz",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sessionLogo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sessionStatus",
+      "fieldType": "SessionStatus",
+      "fieldValues": "ACTIVE,INPROGRESS,COMPLETED"
+    },
+    {
+      "fieldName": "subscriptionRequired",
+      "fieldType": "SubscriptionRequired",
+      "fieldValues": "YES,NO"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "coursesManagement",
+      "otherEntityRelationshipName": "sessionManagement",
+      "relationshipName": "coursesManagement",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20210815045954",
+  "entityTableName": "session_management",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "skillzagcoursemanagement",
+  "applications": "*",
+  "microserviceName": "skillzagcoursemanagement"
+}

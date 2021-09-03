@@ -1,0 +1,55 @@
+{
+  "name": "SubscriptionManagement",
+  "fields": [
+    {
+      "fieldName": "courseId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "userId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "subscriptionType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "subscriptionStatus",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "subscriptionStartdate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "subscriptionEnddate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "paymentStatus",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "subscriptionDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "blockSubscription",
+      "fieldType": "BlockSubscription",
+      "fieldValues": "YES,NO"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20210815050054",
+  "entityTableName": "subscription_management",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "skillzagcoursemanagement",
+  "applications": "*",
+  "microserviceName": "skillzagcoursemanagement"
+}
