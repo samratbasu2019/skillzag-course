@@ -6,7 +6,7 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd
                         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
-    
+
     <!--
         Added the entity Payment.
     -->
@@ -18,7 +18,7 @@
             <column name="course_id" type="bigint">
                 <constraints nullable="true" />
             </column>
-            <column name="user_id" type="bigint">
+            <column name="user_id" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
             <column name="subcription_id" type="bigint">
