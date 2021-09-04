@@ -26,7 +26,7 @@ public class CourseSessionResource {
     }
 
     /**
-     * {@code GET  /questions/:questionSetId} : get the "id" questions.
+     * {@code GET  /course-session/all} : get the "id" questions.
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the questionsDTO, or with status {@code 404 (Not Found)}.
      */
     @GetMapping("/course-session/all")
@@ -37,13 +37,13 @@ public class CourseSessionResource {
     }
 
     /**
-     * {@code GET  /questions/:type} : get the "id" questions.
+     * {@code GET  /course-session-bycourse-name/{courseName}} : get the "id" questions.
      *
      * @param courseName the id of the questionsDTO to retrieve.
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the questionsDTO, or with status {@code 404 (Not Found)}.
      */
-    @GetMapping("/question-answer-bytype/{courseName}")
-    public ResponseEntity<?> getQuestionAnswerType(@PathVariable String courseName) {
+    @GetMapping("/course-session-bycourse-name/{courseName}")
+    public ResponseEntity<?> getCourseSessionByCourseName(@PathVariable String courseName) {
         log.debug("REST request to get Course Session by CourseName : {}", courseName);
         List<Map<String, Object>>  questionsDTO = courseSessionService.findCourseSessionByCourseName(courseName);
         return ResponseEntity.ok().body(questionsDTO);
