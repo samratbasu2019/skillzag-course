@@ -137,7 +137,7 @@ spring:
       client:
         provider:
           oidc:
-            issuer-uri: http://103.241.145.14:8080/auth/realms/skillzag-realm
+            issuer-uri: http://localhost:8080/auth/realms/skillzag-realm
         registration:
           oidc:
             client-id: internal
