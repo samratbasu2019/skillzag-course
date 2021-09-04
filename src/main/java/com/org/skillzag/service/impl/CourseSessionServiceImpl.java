@@ -35,4 +35,10 @@ public class CourseSessionServiceImpl implements CourseSessionService {
         log.debug("REST request to findCourseSessionByCourseName : {}", name);
         return crudCourseSessionRepository.findCourseSessionByCourseName(name);
     }
+
+    @Override
+    public List<Map<String, Object>> findCourseSessionByCourseID(Long courseID) {
+        log.debug("REST request to findCourseSessionByCourseID : {}", courseID);
+        return crudCourseSessionRepository.findCourseSessionByCourseID(courseID);
+    }
 }

@@ -21,4 +21,12 @@ public interface CourseSessionService {
      * @return the entity.
      */
     List<Map<String, Object>>  findCourseSessionByCourseName(String name);
+
+    /**
+     * Get the "id" questions.
+     *
+     * @param courseID the id of the entity.
+     * @return the entity.
+     */
+    List<Map<String, Object>>  findCourseSessionByCourseID(Long courseID);
 }
