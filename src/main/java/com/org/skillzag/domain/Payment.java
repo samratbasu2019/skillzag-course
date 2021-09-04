@@ -24,7 +24,7 @@ public class Payment implements Serializable {
     private Long courseId;
 
     @Column(name = "user_id")
-    private Long userId;
+    private String userId;
 
     @Column(name = "subcription_id")
     private Long subcriptionId;
@@ -63,16 +63,16 @@ public class Payment implements Serializable {
         this.courseId = courseId;
     }
 
-    public Long getUserId() {
+    public String getUserId() {
         return userId;
     }
 
-    public Payment userId(Long userId) {
+    public Payment userId(String userId) {
         this.userId = userId;
         return this;
     }
 
-    public void setUserId(Long userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 

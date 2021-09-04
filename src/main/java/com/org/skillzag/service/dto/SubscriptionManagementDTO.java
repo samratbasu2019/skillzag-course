@@ -8,12 +8,12 @@ import com.org.skillzag.domain.enumeration.BlockSubscription;
  * A DTO for the {@link com.org.skillzag.domain.SubscriptionManagement} entity.
  */
 public class SubscriptionManagementDTO implements Serializable {
-    
+
     private Long id;
 
     private Long courseId;
 
-    private Long userId;
+    private String userId;
 
     private String subscriptionType;
 
@@ -29,7 +29,7 @@ public class SubscriptionManagementDTO implements Serializable {
 
     private BlockSubscription blockSubscription;
 
-    
+
     public Long getId() {
         return id;
     }
@@ -46,11 +46,11 @@ public class SubscriptionManagementDTO implements Serializable {
         this.courseId = courseId;
     }
 
-    public Long getUserId() {
+    public String getUserId() {
         return userId;
     }
 
-    public void setUserId(Long userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 

@@ -24,7 +24,7 @@ public class Cart implements Serializable {
     private Long courseId;
 
     @Column(name = "user_id")
-    private Long userId;
+    private String userId;
 
     @Column(name = "subcription_id")
     private Long subcriptionId;
@@ -57,16 +57,16 @@ public class Cart implements Serializable {
         this.courseId = courseId;
     }
 
-    public Long getUserId() {
+    public String getUserId() {
         return userId;
     }
 
-    public Cart userId(Long userId) {
+    public Cart userId(String userId) {
         this.userId = userId;
         return this;
     }
 
-    public void setUserId(Long userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 

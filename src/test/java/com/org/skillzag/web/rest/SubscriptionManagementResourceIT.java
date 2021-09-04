@@ -40,8 +40,8 @@ public class SubscriptionManagementResourceIT {
     private static final Long DEFAULT_COURSE_ID = 1L;
     private static final Long UPDATED_COURSE_ID = 2L;
 
-    private static final Long DEFAULT_USER_ID = 1L;
-    private static final Long UPDATED_USER_ID = 2L;
+    private static final String DEFAULT_USER_ID = "PPPPPPPPP";
+    private static final String UPDATED_USER_ID = "PPPPPPPPP";
 
     private static final String DEFAULT_SUBSCRIPTION_TYPE = "AAAAAAAAAA";
     private static final String UPDATED_SUBSCRIPTION_TYPE = "BBBBBBBBBB";
@@ -184,7 +184,7 @@ public class SubscriptionManagementResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(subscriptionManagement.getId().intValue())))
             .andExpect(jsonPath("$.[*].courseId").value(hasItem(DEFAULT_COURSE_ID.intValue())))
-            .andExpect(jsonPath("$.[*].userId").value(hasItem(DEFAULT_USER_ID.intValue())))
+            .andExpect(jsonPath("$.[*].userId").value(hasItem(DEFAULT_USER_ID.toString())))
             .andExpect(jsonPath("$.[*].subscriptionType").value(hasItem(DEFAULT_SUBSCRIPTION_TYPE)))
             .andExpect(jsonPath("$.[*].subscriptionStatus").value(hasItem(DEFAULT_SUBSCRIPTION_STATUS)))
             .andExpect(jsonPath("$.[*].subscriptionStartdate").value(hasItem(DEFAULT_SUBSCRIPTION_STARTDATE.toString())))
@@ -193,7 +193,7 @@ public class SubscriptionManagementResourceIT {
             .andExpect(jsonPath("$.[*].subscriptionDate").value(hasItem(DEFAULT_SUBSCRIPTION_DATE.toString())))
             .andExpect(jsonPath("$.[*].blockSubscription").value(hasItem(DEFAULT_BLOCK_SUBSCRIPTION.toString())));
     }
-    
+
     @Test
     @Transactional
     public void getSubscriptionManagement() throws Exception {
@@ -206,7 +206,7 @@ public class SubscriptionManagementResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(subscriptionManagement.getId().intValue()))
             .andExpect(jsonPath("$.courseId").value(DEFAULT_COURSE_ID.intValue()))
-            .andExpect(jsonPath("$.userId").value(DEFAULT_USER_ID.intValue()))
+            .andExpect(jsonPath("$.userId").value(DEFAULT_USER_ID.toString()))
             .andExpect(jsonPath("$.subscriptionType").value(DEFAULT_SUBSCRIPTION_TYPE))
             .andExpect(jsonPath("$.subscriptionStatus").value(DEFAULT_SUBSCRIPTION_STATUS))
             .andExpect(jsonPath("$.subscriptionStartdate").value(DEFAULT_SUBSCRIPTION_STARTDATE.toString()))

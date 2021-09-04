@@ -26,7 +26,7 @@ public class SubscriptionManagement implements Serializable {
     private Long courseId;
 
     @Column(name = "user_id")
-    private Long userId;
+    private String userId;
 
     @Column(name = "subscription_type")
     private String subscriptionType;
@@ -72,16 +72,16 @@ public class SubscriptionManagement implements Serializable {
         this.courseId = courseId;
     }
 
-    public Long getUserId() {
+    public String getUserId() {
         return userId;
     }
 
-    public SubscriptionManagement userId(Long userId) {
+    public SubscriptionManagement userId(String userId) {
         this.userId = userId;
         return this;
     }
 
-    public void setUserId(Long userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 

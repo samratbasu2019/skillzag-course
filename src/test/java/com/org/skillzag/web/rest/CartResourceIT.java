@@ -39,8 +39,8 @@ public class CartResourceIT {
     private static final Long DEFAULT_COURSE_ID = 1L;
     private static final Long UPDATED_COURSE_ID = 2L;
 
-    private static final Long DEFAULT_USER_ID = 1L;
-    private static final Long UPDATED_USER_ID = 2L;
+    private static final String DEFAULT_USER_ID = "UUUUUUUUUUU";
+    private static final String UPDATED_USER_ID = "UUUUUUUUUU";
 
     private static final Long DEFAULT_SUBCRIPTION_ID = 1L;
     private static final Long UPDATED_SUBCRIPTION_ID = 2L;
@@ -159,12 +159,12 @@ public class CartResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(cart.getId().intValue())))
             .andExpect(jsonPath("$.[*].courseId").value(hasItem(DEFAULT_COURSE_ID.intValue())))
-            .andExpect(jsonPath("$.[*].userId").value(hasItem(DEFAULT_USER_ID.intValue())))
+            .andExpect(jsonPath("$.[*].userId").value(hasItem(DEFAULT_USER_ID.toString())))
             .andExpect(jsonPath("$.[*].subcriptionId").value(hasItem(DEFAULT_SUBCRIPTION_ID.intValue())))
             .andExpect(jsonPath("$.[*].checkoutDate").value(hasItem(DEFAULT_CHECKOUT_DATE.toString())))
             .andExpect(jsonPath("$.[*].checkOutStatus").value(hasItem(DEFAULT_CHECK_OUT_STATUS)));
     }
-    
+
     @Test
     @Transactional
     public void getCart() throws Exception {
@@ -177,7 +177,7 @@ public class CartResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(cart.getId().intValue()))
             .andExpect(jsonPath("$.courseId").value(DEFAULT_COURSE_ID.intValue()))
-            .andExpect(jsonPath("$.userId").value(DEFAULT_USER_ID.intValue()))
+            .andExpect(jsonPath("$.userId").value(DEFAULT_USER_ID.toString()))
             .andExpect(jsonPath("$.subcriptionId").value(DEFAULT_SUBCRIPTION_ID.intValue()))
             .andExpect(jsonPath("$.checkoutDate").value(DEFAULT_CHECKOUT_DATE.toString()))
             .andExpect(jsonPath("$.checkOutStatus").value(DEFAULT_CHECK_OUT_STATUS));
