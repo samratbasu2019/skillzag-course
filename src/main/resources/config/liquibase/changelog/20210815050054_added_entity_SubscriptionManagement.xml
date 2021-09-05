@@ -42,6 +42,9 @@
             <column name="block_subscription" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
+            <column name="amount" type="double">
+                <constraints nullable="true" />
+            </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
         </createTable>
         <dropDefaultValue tableName="subscription_management" columnName="subscription_startdate" columnDataType="datetime"/>
@@ -77,6 +80,7 @@
             <column name="payment_status" type="string"/>
             <column name="subscription_date" type="datetime"/>
             <column name="block_subscription" type="string"/>
+            <column name="amount" type="numeric"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
         </loadData>
     </changeSet>

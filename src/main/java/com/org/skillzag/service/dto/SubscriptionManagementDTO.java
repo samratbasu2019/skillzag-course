@@ -29,6 +29,16 @@ public class SubscriptionManagementDTO implements Serializable {
 
     private BlockSubscription blockSubscription;
 
+    private Double amount;
+
+
+    public Double getAmount() {
+        return amount;
+    }
+
+    public void setAmount(Double amount) {
+        this.amount = amount;
+    }
 
     public Long getId() {
         return id;
@@ -141,6 +151,7 @@ public class SubscriptionManagementDTO implements Serializable {
             ", paymentStatus='" + getPaymentStatus() + "'" +
             ", subscriptionDate='" + getSubscriptionDate() + "'" +
             ", blockSubscription='" + getBlockSubscription() + "'" +
+            ", amount=" + getAmount() +
             "}";
     }
 }
