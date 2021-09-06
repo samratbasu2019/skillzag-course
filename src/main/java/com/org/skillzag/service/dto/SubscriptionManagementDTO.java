@@ -27,6 +27,8 @@ public class SubscriptionManagementDTO implements Serializable {
 
     private Instant subscriptionDate;
 
+    private Double amount;
+
     private String type;
 
     private BlockSubscription blockSubscription;
@@ -104,6 +106,14 @@ public class SubscriptionManagementDTO implements Serializable {
         this.subscriptionDate = subscriptionDate;
     }
 
+    public Double getAmount() {
+        return amount;
+    }
+
+    public void setAmount(Double amount) {
+        this.amount = amount;
+    }
+
     public String getType() {
         return type;
     }
@@ -150,6 +160,7 @@ public class SubscriptionManagementDTO implements Serializable {
             ", subscriptionEnddate='" + getSubscriptionEnddate() + "'" +
             ", paymentStatus='" + getPaymentStatus() + "'" +
             ", subscriptionDate='" + getSubscriptionDate() + "'" +
+            ", amount=" + getAmount() +
             ", type='" + getType() + "'" +
             ", blockSubscription='" + getBlockSubscription() + "'" +
             "}";

@@ -61,6 +61,9 @@ public class SubscriptionManagementResourceIT {
     private static final Instant DEFAULT_SUBSCRIPTION_DATE = Instant.ofEpochMilli(0L);
     private static final Instant UPDATED_SUBSCRIPTION_DATE = Instant.now().truncatedTo(ChronoUnit.MILLIS);
 
+    private static final Double DEFAULT_AMOUNT = 1D;
+    private static final Double UPDATED_AMOUNT = 2D;
+
     private static final String DEFAULT_TYPE = "AAAAAAAAAA";
     private static final String UPDATED_TYPE = "BBBBBBBBBB";
 
@@ -100,6 +103,7 @@ public class SubscriptionManagementResourceIT {
             .subscriptionEnddate(DEFAULT_SUBSCRIPTION_ENDDATE)
             .paymentStatus(DEFAULT_PAYMENT_STATUS)
             .subscriptionDate(DEFAULT_SUBSCRIPTION_DATE)
+            .amount(DEFAULT_AMOUNT)
             .type(DEFAULT_TYPE)
             .blockSubscription(DEFAULT_BLOCK_SUBSCRIPTION);
         return subscriptionManagement;
@@ -120,6 +124,7 @@ public class SubscriptionManagementResourceIT {
             .subscriptionEnddate(UPDATED_SUBSCRIPTION_ENDDATE)
             .paymentStatus(UPDATED_PAYMENT_STATUS)
             .subscriptionDate(UPDATED_SUBSCRIPTION_DATE)
+            .amount(UPDATED_AMOUNT)
             .type(UPDATED_TYPE)
             .blockSubscription(UPDATED_BLOCK_SUBSCRIPTION);
         return subscriptionManagement;
@@ -153,6 +158,7 @@ public class SubscriptionManagementResourceIT {
         assertThat(testSubscriptionManagement.getSubscriptionEnddate()).isEqualTo(DEFAULT_SUBSCRIPTION_ENDDATE);
         assertThat(testSubscriptionManagement.getPaymentStatus()).isEqualTo(DEFAULT_PAYMENT_STATUS);
         assertThat(testSubscriptionManagement.getSubscriptionDate()).isEqualTo(DEFAULT_SUBSCRIPTION_DATE);
+        assertThat(testSubscriptionManagement.getAmount()).isEqualTo(DEFAULT_AMOUNT);
         assertThat(testSubscriptionManagement.getType()).isEqualTo(DEFAULT_TYPE);
         assertThat(testSubscriptionManagement.getBlockSubscription()).isEqualTo(DEFAULT_BLOCK_SUBSCRIPTION);
     }
@@ -197,6 +203,7 @@ public class SubscriptionManagementResourceIT {
             .andExpect(jsonPath("$.[*].subscriptionEnddate").value(hasItem(DEFAULT_SUBSCRIPTION_ENDDATE.toString())))
             .andExpect(jsonPath("$.[*].paymentStatus").value(hasItem(DEFAULT_PAYMENT_STATUS)))
             .andExpect(jsonPath("$.[*].subscriptionDate").value(hasItem(DEFAULT_SUBSCRIPTION_DATE.toString())))
+            .andExpect(jsonPath("$.[*].amount").value(hasItem(DEFAULT_AMOUNT.doubleValue())))
             .andExpect(jsonPath("$.[*].type").value(hasItem(DEFAULT_TYPE)))
             .andExpect(jsonPath("$.[*].blockSubscription").value(hasItem(DEFAULT_BLOCK_SUBSCRIPTION.toString())));
     }
@@ -220,6 +227,7 @@ public class SubscriptionManagementResourceIT {
             .andExpect(jsonPath("$.subscriptionEnddate").value(DEFAULT_SUBSCRIPTION_ENDDATE.toString()))
             .andExpect(jsonPath("$.paymentStatus").value(DEFAULT_PAYMENT_STATUS))
             .andExpect(jsonPath("$.subscriptionDate").value(DEFAULT_SUBSCRIPTION_DATE.toString()))
+            .andExpect(jsonPath("$.amount").value(DEFAULT_AMOUNT.doubleValue()))
             .andExpect(jsonPath("$.type").value(DEFAULT_TYPE))
             .andExpect(jsonPath("$.blockSubscription").value(DEFAULT_BLOCK_SUBSCRIPTION.toString()));
     }
@@ -252,6 +260,7 @@ public class SubscriptionManagementResourceIT {
             .subscriptionEnddate(UPDATED_SUBSCRIPTION_ENDDATE)
             .paymentStatus(UPDATED_PAYMENT_STATUS)
             .subscriptionDate(UPDATED_SUBSCRIPTION_DATE)
+            .amount(UPDATED_AMOUNT)
             .type(UPDATED_TYPE)
             .blockSubscription(UPDATED_BLOCK_SUBSCRIPTION);
         SubscriptionManagementDTO subscriptionManagementDTO = subscriptionManagementMapper.toDto(updatedSubscriptionManagement);
@@ -273,6 +282,7 @@ public class SubscriptionManagementResourceIT {
         assertThat(testSubscriptionManagement.getSubscriptionEnddate()).isEqualTo(UPDATED_SUBSCRIPTION_ENDDATE);
         assertThat(testSubscriptionManagement.getPaymentStatus()).isEqualTo(UPDATED_PAYMENT_STATUS);
         assertThat(testSubscriptionManagement.getSubscriptionDate()).isEqualTo(UPDATED_SUBSCRIPTION_DATE);
+        assertThat(testSubscriptionManagement.getAmount()).isEqualTo(UPDATED_AMOUNT);
         assertThat(testSubscriptionManagement.getType()).isEqualTo(UPDATED_TYPE);
         assertThat(testSubscriptionManagement.getBlockSubscription()).isEqualTo(UPDATED_BLOCK_SUBSCRIPTION);
     }

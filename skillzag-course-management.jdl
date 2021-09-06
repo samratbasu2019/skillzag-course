@@ -64,6 +64,7 @@ entity SubscriptionManagement {
    subscriptionEnddate Instant,
    paymentStatus String,
    subscriptionDate Instant,
+   amount Double,
    type String,
    blockSubscription BlockSubscription
 }

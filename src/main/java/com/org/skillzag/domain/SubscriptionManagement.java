@@ -46,6 +46,9 @@ public class SubscriptionManagement implements Serializable {
     @Column(name = "subscription_date")
     private Instant subscriptionDate;
 
+    @Column(name = "amount")
+    private Double amount;
+
     @Column(name = "type")
     private String type;
 
@@ -166,6 +169,19 @@ public class SubscriptionManagement implements Serializable {
         this.subscriptionDate = subscriptionDate;
     }
 
+    public Double getAmount() {
+        return amount;
+    }
+
+    public SubscriptionManagement amount(Double amount) {
+        this.amount = amount;
+        return this;
+    }
+
+    public void setAmount(Double amount) {
+        this.amount = amount;
+    }
+
     public String getType() {
         return type;
     }
@@ -222,6 +238,7 @@ public class SubscriptionManagement implements Serializable {
             ", subscriptionEnddate='" + getSubscriptionEnddate() + "'" +
             ", paymentStatus='" + getPaymentStatus() + "'" +
             ", subscriptionDate='" + getSubscriptionDate() + "'" +
+            ", amount=" + getAmount() +
             ", type='" + getType() + "'" +
             ", blockSubscription='" + getBlockSubscription() + "'" +
             "}";
