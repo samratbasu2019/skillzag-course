@@ -1,4 +1,4 @@
-id;course_id;user_id;subcription_id;checkout_date;check_out_status
+id;course_id;user_id;subscription_id;checkout_date;check_out_status
 1;1740;multi-tasking Movies multi-byte;26855;2021-08-14T14:08:35;Buckinghamshire
 2;47083;Human Pizza back-end;68313;2021-08-14T14:24:02;Oklahoma
 3;51689;Credit Card Account quantifying;58699;2021-08-14T08:03:53;quantifying

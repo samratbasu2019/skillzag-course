@@ -42,8 +42,8 @@ public class CartResourceIT {
     private static final String DEFAULT_USER_ID = "AAAAAAAAAA";
     private static final String UPDATED_USER_ID = "BBBBBBBBBB";
 
-    private static final Long DEFAULT_SUBCRIPTION_ID = 1L;
-    private static final Long UPDATED_SUBCRIPTION_ID = 2L;
+    private static final Long DEFAULT_SUBSCRIPTION_ID = 1L;
+    private static final Long UPDATED_SUBSCRIPTION_ID = 2L;
 
     private static final Instant DEFAULT_CHECKOUT_DATE = Instant.ofEpochMilli(0L);
     private static final Instant UPDATED_CHECKOUT_DATE = Instant.now().truncatedTo(ChronoUnit.MILLIS);
@@ -78,7 +78,7 @@ public class CartResourceIT {
         Cart cart = new Cart()
             .courseId(DEFAULT_COURSE_ID)
             .userId(DEFAULT_USER_ID)
-            .subcriptionId(DEFAULT_SUBCRIPTION_ID)
+            .subscriptionId(DEFAULT_SUBSCRIPTION_ID)
             .checkoutDate(DEFAULT_CHECKOUT_DATE)
             .checkOutStatus(DEFAULT_CHECK_OUT_STATUS);
         return cart;
@@ -93,7 +93,7 @@ public class CartResourceIT {
         Cart cart = new Cart()
             .courseId(UPDATED_COURSE_ID)
             .userId(UPDATED_USER_ID)
-            .subcriptionId(UPDATED_SUBCRIPTION_ID)
+            .subscriptionId(UPDATED_SUBSCRIPTION_ID)
             .checkoutDate(UPDATED_CHECKOUT_DATE)
             .checkOutStatus(UPDATED_CHECK_OUT_STATUS);
         return cart;
@@ -121,7 +121,7 @@ public class CartResourceIT {
         Cart testCart = cartList.get(cartList.size() - 1);
         assertThat(testCart.getCourseId()).isEqualTo(DEFAULT_COURSE_ID);
         assertThat(testCart.getUserId()).isEqualTo(DEFAULT_USER_ID);
-        assertThat(testCart.getSubcriptionId()).isEqualTo(DEFAULT_SUBCRIPTION_ID);
+        assertThat(testCart.getSubscriptionId()).isEqualTo(DEFAULT_SUBSCRIPTION_ID);
         assertThat(testCart.getCheckoutDate()).isEqualTo(DEFAULT_CHECKOUT_DATE);
         assertThat(testCart.getCheckOutStatus()).isEqualTo(DEFAULT_CHECK_OUT_STATUS);
     }
@@ -160,7 +160,7 @@ public class CartResourceIT {
             .andExpect(jsonPath("$.[*].id").value(hasItem(cart.getId().intValue())))
             .andExpect(jsonPath("$.[*].courseId").value(hasItem(DEFAULT_COURSE_ID.intValue())))
             .andExpect(jsonPath("$.[*].userId").value(hasItem(DEFAULT_USER_ID)))
-            .andExpect(jsonPath("$.[*].subcriptionId").value(hasItem(DEFAULT_SUBCRIPTION_ID.intValue())))
+            .andExpect(jsonPath("$.[*].subscriptionId").value(hasItem(DEFAULT_SUBSCRIPTION_ID.intValue())))
             .andExpect(jsonPath("$.[*].checkoutDate").value(hasItem(DEFAULT_CHECKOUT_DATE.toString())))
             .andExpect(jsonPath("$.[*].checkOutStatus").value(hasItem(DEFAULT_CHECK_OUT_STATUS)));
     }
@@ -178,7 +178,7 @@ public class CartResourceIT {
             .andExpect(jsonPath("$.id").value(cart.getId().intValue()))
             .andExpect(jsonPath("$.courseId").value(DEFAULT_COURSE_ID.intValue()))
             .andExpect(jsonPath("$.userId").value(DEFAULT_USER_ID))
-            .andExpect(jsonPath("$.subcriptionId").value(DEFAULT_SUBCRIPTION_ID.intValue()))
+            .andExpect(jsonPath("$.subscriptionId").value(DEFAULT_SUBSCRIPTION_ID.intValue()))
             .andExpect(jsonPath("$.checkoutDate").value(DEFAULT_CHECKOUT_DATE.toString()))
             .andExpect(jsonPath("$.checkOutStatus").value(DEFAULT_CHECK_OUT_STATUS));
     }
@@ -205,7 +205,7 @@ public class CartResourceIT {
         updatedCart
             .courseId(UPDATED_COURSE_ID)
             .userId(UPDATED_USER_ID)
-            .subcriptionId(UPDATED_SUBCRIPTION_ID)
+            .subscriptionId(UPDATED_SUBSCRIPTION_ID)
             .checkoutDate(UPDATED_CHECKOUT_DATE)
             .checkOutStatus(UPDATED_CHECK_OUT_STATUS);
         CartDTO cartDTO = cartMapper.toDto(updatedCart);
@@ -221,7 +221,7 @@ public class CartResourceIT {
         Cart testCart = cartList.get(cartList.size() - 1);
         assertThat(testCart.getCourseId()).isEqualTo(UPDATED_COURSE_ID);
         assertThat(testCart.getUserId()).isEqualTo(UPDATED_USER_ID);
-        assertThat(testCart.getSubcriptionId()).isEqualTo(UPDATED_SUBCRIPTION_ID);
+        assertThat(testCart.getSubscriptionId()).isEqualTo(UPDATED_SUBSCRIPTION_ID);
         assertThat(testCart.getCheckoutDate()).isEqualTo(UPDATED_CHECKOUT_DATE);
         assertThat(testCart.getCheckOutStatus()).isEqualTo(UPDATED_CHECK_OUT_STATUS);
     }

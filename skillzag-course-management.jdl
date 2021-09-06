@@ -72,7 +72,7 @@ entity SubscriptionManagement {
 entity Cart {
    courseId Long,
    userId String,
-   subcriptionId Long,
+   subscriptionId Long,
    checkoutDate Instant,
    checkOutStatus String,
 }

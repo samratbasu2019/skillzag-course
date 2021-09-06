@@ -21,7 +21,7 @@
             <column name="user_id" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="subcription_id" type="bigint">
+            <column name="subscription_id" type="bigint">
                 <constraints nullable="true" />
             </column>
             <column name="checkout_date" type="datetime">
@@ -56,7 +56,7 @@
             <column name="id" type="numeric"/>
             <column name="course_id" type="numeric"/>
             <column name="user_id" type="string"/>
-            <column name="subcription_id" type="numeric"/>
+            <column name="subscription_id" type="numeric"/>
             <column name="checkout_date" type="datetime"/>
             <column name="check_out_status" type="string"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->

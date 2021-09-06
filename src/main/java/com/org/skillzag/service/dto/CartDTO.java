@@ -14,7 +14,7 @@ public class CartDTO implements Serializable {
 
     private String userId;
 
-    private Long subcriptionId;
+    private Long subscriptionId;
 
     private Instant checkoutDate;
 
@@ -45,12 +45,12 @@ public class CartDTO implements Serializable {
         this.userId = userId;
     }
 
-    public Long getSubcriptionId() {
-        return subcriptionId;
+    public Long getSubscriptionId() {
+        return subscriptionId;
     }
 
-    public void setSubcriptionId(Long subcriptionId) {
-        this.subcriptionId = subcriptionId;
+    public void setSubscriptionId(Long subscriptionId) {
+        this.subscriptionId = subscriptionId;
     }
 
     public Instant getCheckoutDate() {
@@ -93,7 +93,7 @@ public class CartDTO implements Serializable {
             "id=" + getId() +
             ", courseId=" + getCourseId() +
             ", userId='" + getUserId() + "'" +
-            ", subcriptionId=" + getSubcriptionId() +
+            ", subscriptionId=" + getSubscriptionId() +
             ", checkoutDate='" + getCheckoutDate() + "'" +
             ", checkOutStatus='" + getCheckOutStatus() + "'" +
             "}";

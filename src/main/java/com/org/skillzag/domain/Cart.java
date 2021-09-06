@@ -26,8 +26,8 @@ public class Cart implements Serializable {
     @Column(name = "user_id")
     private String userId;
 
-    @Column(name = "subcription_id")
-    private Long subcriptionId;
+    @Column(name = "subscription_id")
+    private Long subscriptionId;
 
     @Column(name = "checkout_date")
     private Instant checkoutDate;
@@ -70,17 +70,17 @@ public class Cart implements Serializable {
         this.userId = userId;
     }
 
-    public Long getSubcriptionId() {
-        return subcriptionId;
+    public Long getSubscriptionId() {
+        return subscriptionId;
     }
 
-    public Cart subcriptionId(Long subcriptionId) {
-        this.subcriptionId = subcriptionId;
+    public Cart subscriptionId(Long subscriptionId) {
+        this.subscriptionId = subscriptionId;
         return this;
     }
 
-    public void setSubcriptionId(Long subcriptionId) {
-        this.subcriptionId = subcriptionId;
+    public void setSubscriptionId(Long subscriptionId) {
+        this.subscriptionId = subscriptionId;
     }
 
     public Instant getCheckoutDate() {
@@ -133,7 +133,7 @@ public class Cart implements Serializable {
             "id=" + getId() +
             ", courseId=" + getCourseId() +
             ", userId='" + getUserId() + "'" +
-            ", subcriptionId=" + getSubcriptionId() +
+            ", subscriptionId=" + getSubscriptionId() +
             ", checkoutDate='" + getCheckoutDate() + "'" +
             ", checkOutStatus='" + getCheckOutStatus() + "'" +
             "}";
