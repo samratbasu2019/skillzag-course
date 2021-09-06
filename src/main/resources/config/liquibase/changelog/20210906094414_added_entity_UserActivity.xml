@@ -18,13 +18,13 @@
             <column name="course_id" type="bigint">
                 <constraints nullable="true" />
             </column>
-            <column name="enrollment" type="varchar(255)">
+            <column name="enrollment_status" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
             <column name="user_id" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="subcription_id" type="bigint">
+            <column name="subscription_id" type="bigint">
                 <constraints nullable="true" />
             </column>
             <column name="activity_date" type="datetime">
@@ -55,9 +55,9 @@
                   tableName="user_activity">
             <column name="id" type="numeric"/>
             <column name="course_id" type="numeric"/>
-            <column name="enrollment" type="string"/>
+            <column name="enrollment_status" type="string"/>
             <column name="user_id" type="string"/>
-            <column name="subcription_id" type="numeric"/>
+            <column name="subscription_id" type="numeric"/>
             <column name="activity_date" type="datetime"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
         </loadData>

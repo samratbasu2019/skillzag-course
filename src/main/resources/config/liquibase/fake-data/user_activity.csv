@@ -1,4 +1,4 @@
-id;course_id;enrollment;user_id;subcription_id;activity_date
+id;course_id;enrollment_status;user_id;subscription_id;activity_date
 1;97364;Licensed bypass Metrics;withdrawal COM;56746;2021-09-06T04:02:33
 2;22296;Center Secured;payment Refined;21892;2021-09-06T02:33:53
 3;94096;Licensed Cross-platform;Denar interfaces;73567;2021-09-05T23:11:36

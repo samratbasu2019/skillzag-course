@@ -39,14 +39,14 @@ public class UserActivityResourceIT {
     private static final Long DEFAULT_COURSE_ID = 1L;
     private static final Long UPDATED_COURSE_ID = 2L;
 
-    private static final String DEFAULT_ENROLLMENT = "AAAAAAAAAA";
-    private static final String UPDATED_ENROLLMENT = "BBBBBBBBBB";
+    private static final String DEFAULT_ENROLLMENT_STATUS = "AAAAAAAAAA";
+    private static final String UPDATED_ENROLLMENT_STATUS = "BBBBBBBBBB";
 
     private static final String DEFAULT_USER_ID = "AAAAAAAAAA";
     private static final String UPDATED_USER_ID = "BBBBBBBBBB";
 
-    private static final Long DEFAULT_SUBCRIPTION_ID = 1L;
-    private static final Long UPDATED_SUBCRIPTION_ID = 2L;
+    private static final Long DEFAULT_SUBSCRIPTION_ID = 1L;
+    private static final Long UPDATED_SUBSCRIPTION_ID = 2L;
 
     private static final Instant DEFAULT_ACTIVITY_DATE = Instant.ofEpochMilli(0L);
     private static final Instant UPDATED_ACTIVITY_DATE = Instant.now().truncatedTo(ChronoUnit.MILLIS);
@@ -77,9 +77,9 @@ public class UserActivityResourceIT {
     public static UserActivity createEntity(EntityManager em) {
         UserActivity userActivity = new UserActivity()
             .courseId(DEFAULT_COURSE_ID)
-            .enrollment(DEFAULT_ENROLLMENT)
+            .enrollmentStatus(DEFAULT_ENROLLMENT_STATUS)
             .userId(DEFAULT_USER_ID)
-            .subcriptionId(DEFAULT_SUBCRIPTION_ID)
+            .subscriptionId(DEFAULT_SUBSCRIPTION_ID)
             .activityDate(DEFAULT_ACTIVITY_DATE);
         return userActivity;
     }
@@ -92,9 +92,9 @@ public class UserActivityResourceIT {
     public static UserActivity createUpdatedEntity(EntityManager em) {
         UserActivity userActivity = new UserActivity()
             .courseId(UPDATED_COURSE_ID)
-            .enrollment(UPDATED_ENROLLMENT)
+            .enrollmentStatus(UPDATED_ENROLLMENT_STATUS)
             .userId(UPDATED_USER_ID)
-            .subcriptionId(UPDATED_SUBCRIPTION_ID)
+            .subscriptionId(UPDATED_SUBSCRIPTION_ID)
             .activityDate(UPDATED_ACTIVITY_DATE);
         return userActivity;
     }
@@ -120,9 +120,9 @@ public class UserActivityResourceIT {
         assertThat(userActivityList).hasSize(databaseSizeBeforeCreate + 1);
         UserActivity testUserActivity = userActivityList.get(userActivityList.size() - 1);
         assertThat(testUserActivity.getCourseId()).isEqualTo(DEFAULT_COURSE_ID);
-        assertThat(testUserActivity.getEnrollment()).isEqualTo(DEFAULT_ENROLLMENT);
+        assertThat(testUserActivity.getEnrollmentStatus()).isEqualTo(DEFAULT_ENROLLMENT_STATUS);
         assertThat(testUserActivity.getUserId()).isEqualTo(DEFAULT_USER_ID);
-        assertThat(testUserActivity.getSubcriptionId()).isEqualTo(DEFAULT_SUBCRIPTION_ID);
+        assertThat(testUserActivity.getSubscriptionId()).isEqualTo(DEFAULT_SUBSCRIPTION_ID);
         assertThat(testUserActivity.getActivityDate()).isEqualTo(DEFAULT_ACTIVITY_DATE);
     }
 
@@ -159,9 +159,9 @@ public class UserActivityResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(userActivity.getId().intValue())))
             .andExpect(jsonPath("$.[*].courseId").value(hasItem(DEFAULT_COURSE_ID.intValue())))
-            .andExpect(jsonPath("$.[*].enrollment").value(hasItem(DEFAULT_ENROLLMENT)))
+            .andExpect(jsonPath("$.[*].enrollmentStatus").value(hasItem(DEFAULT_ENROLLMENT_STATUS)))
             .andExpect(jsonPath("$.[*].userId").value(hasItem(DEFAULT_USER_ID)))
-            .andExpect(jsonPath("$.[*].subcriptionId").value(hasItem(DEFAULT_SUBCRIPTION_ID.intValue())))
+            .andExpect(jsonPath("$.[*].subscriptionId").value(hasItem(DEFAULT_SUBSCRIPTION_ID.intValue())))
             .andExpect(jsonPath("$.[*].activityDate").value(hasItem(DEFAULT_ACTIVITY_DATE.toString())));
     }
     
@@ -177,9 +177,9 @@ public class UserActivityResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(userActivity.getId().intValue()))
             .andExpect(jsonPath("$.courseId").value(DEFAULT_COURSE_ID.intValue()))
-            .andExpect(jsonPath("$.enrollment").value(DEFAULT_ENROLLMENT))
+            .andExpect(jsonPath("$.enrollmentStatus").value(DEFAULT_ENROLLMENT_STATUS))
             .andExpect(jsonPath("$.userId").value(DEFAULT_USER_ID))
-            .andExpect(jsonPath("$.subcriptionId").value(DEFAULT_SUBCRIPTION_ID.intValue()))
+            .andExpect(jsonPath("$.subscriptionId").value(DEFAULT_SUBSCRIPTION_ID.intValue()))
             .andExpect(jsonPath("$.activityDate").value(DEFAULT_ACTIVITY_DATE.toString()));
     }
     @Test
@@ -204,9 +204,9 @@ public class UserActivityResourceIT {
         em.detach(updatedUserActivity);
         updatedUserActivity
             .courseId(UPDATED_COURSE_ID)
-            .enrollment(UPDATED_ENROLLMENT)
+            .enrollmentStatus(UPDATED_ENROLLMENT_STATUS)
             .userId(UPDATED_USER_ID)
-            .subcriptionId(UPDATED_SUBCRIPTION_ID)
+            .subscriptionId(UPDATED_SUBSCRIPTION_ID)
             .activityDate(UPDATED_ACTIVITY_DATE);
         UserActivityDTO userActivityDTO = userActivityMapper.toDto(updatedUserActivity);
 
@@ -220,9 +220,9 @@ public class UserActivityResourceIT {
         assertThat(userActivityList).hasSize(databaseSizeBeforeUpdate);
         UserActivity testUserActivity = userActivityList.get(userActivityList.size() - 1);
         assertThat(testUserActivity.getCourseId()).isEqualTo(UPDATED_COURSE_ID);
-        assertThat(testUserActivity.getEnrollment()).isEqualTo(UPDATED_ENROLLMENT);
+        assertThat(testUserActivity.getEnrollmentStatus()).isEqualTo(UPDATED_ENROLLMENT_STATUS);
         assertThat(testUserActivity.getUserId()).isEqualTo(UPDATED_USER_ID);
-        assertThat(testUserActivity.getSubcriptionId()).isEqualTo(UPDATED_SUBCRIPTION_ID);
+        assertThat(testUserActivity.getSubscriptionId()).isEqualTo(UPDATED_SUBSCRIPTION_ID);
         assertThat(testUserActivity.getActivityDate()).isEqualTo(UPDATED_ACTIVITY_DATE);
     }
 

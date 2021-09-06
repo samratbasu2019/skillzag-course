@@ -23,14 +23,14 @@ public class UserActivity implements Serializable {
     @Column(name = "course_id")
     private Long courseId;
 
-    @Column(name = "enrollment")
-    private String enrollment;
+    @Column(name = "enrollment_status")
+    private String enrollmentStatus;
 
     @Column(name = "user_id")
     private String userId;
 
-    @Column(name = "subcription_id")
-    private Long subcriptionId;
+    @Column(name = "subscription_id")
+    private Long subscriptionId;
 
     @Column(name = "activity_date")
     private Instant activityDate;
@@ -57,17 +57,17 @@ public class UserActivity implements Serializable {
         this.courseId = courseId;
     }
 
-    public String getEnrollment() {
-        return enrollment;
+    public String getEnrollmentStatus() {
+        return enrollmentStatus;
     }
 
-    public UserActivity enrollment(String enrollment) {
-        this.enrollment = enrollment;
+    public UserActivity enrollmentStatus(String enrollmentStatus) {
+        this.enrollmentStatus = enrollmentStatus;
         return this;
     }
 
-    public void setEnrollment(String enrollment) {
-        this.enrollment = enrollment;
+    public void setEnrollmentStatus(String enrollmentStatus) {
+        this.enrollmentStatus = enrollmentStatus;
     }
 
     public String getUserId() {
@@ -83,17 +83,17 @@ public class UserActivity implements Serializable {
         this.userId = userId;
     }
 
-    public Long getSubcriptionId() {
-        return subcriptionId;
+    public Long getSubscriptionId() {
+        return subscriptionId;
     }
 
-    public UserActivity subcriptionId(Long subcriptionId) {
-        this.subcriptionId = subcriptionId;
+    public UserActivity subscriptionId(Long subscriptionId) {
+        this.subscriptionId = subscriptionId;
         return this;
     }
 
-    public void setSubcriptionId(Long subcriptionId) {
-        this.subcriptionId = subcriptionId;
+    public void setSubscriptionId(Long subscriptionId) {
+        this.subscriptionId = subscriptionId;
     }
 
     public Instant getActivityDate() {
@@ -132,9 +132,9 @@ public class UserActivity implements Serializable {
         return "UserActivity{" +
             "id=" + getId() +
             ", courseId=" + getCourseId() +
-            ", enrollment='" + getEnrollment() + "'" +
+            ", enrollmentStatus='" + getEnrollmentStatus() + "'" +
             ", userId='" + getUserId() + "'" +
-            ", subcriptionId=" + getSubcriptionId() +
+            ", subscriptionId=" + getSubscriptionId() +
             ", activityDate='" + getActivityDate() + "'" +
             "}";
     }

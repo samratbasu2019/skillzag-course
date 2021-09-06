@@ -80,7 +80,7 @@ entity Cart {
 entity Payment {
    courseId Long,
    userId String,
-   subcriptionId Long,
+   subscriptionId Long,
    cartUsedDate Instant,
    paymentStatus String,
    amount Double,
@@ -89,9 +89,9 @@ entity Payment {
 
 entity UserActivity {
    courseId Long,
-   enrollment String,
+   enrollmentStatus String,
    userId String,
-   subcriptionId Long,
+   subscriptionId Long,
    activityDate Instant
 }
 

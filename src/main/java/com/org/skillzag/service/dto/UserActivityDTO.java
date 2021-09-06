@@ -12,11 +12,11 @@ public class UserActivityDTO implements Serializable {
 
     private Long courseId;
 
-    private String enrollment;
+    private String enrollmentStatus;
 
     private String userId;
 
-    private Long subcriptionId;
+    private Long subscriptionId;
 
     private Instant activityDate;
 
@@ -37,12 +37,12 @@ public class UserActivityDTO implements Serializable {
         this.courseId = courseId;
     }
 
-    public String getEnrollment() {
-        return enrollment;
+    public String getEnrollmentStatus() {
+        return enrollmentStatus;
     }
 
-    public void setEnrollment(String enrollment) {
-        this.enrollment = enrollment;
+    public void setEnrollmentStatus(String enrollmentStatus) {
+        this.enrollmentStatus = enrollmentStatus;
     }
 
     public String getUserId() {
@@ -53,12 +53,12 @@ public class UserActivityDTO implements Serializable {
         this.userId = userId;
     }
 
-    public Long getSubcriptionId() {
-        return subcriptionId;
+    public Long getSubscriptionId() {
+        return subscriptionId;
     }
 
-    public void setSubcriptionId(Long subcriptionId) {
-        this.subcriptionId = subcriptionId;
+    public void setSubscriptionId(Long subscriptionId) {
+        this.subscriptionId = subscriptionId;
     }
 
     public Instant getActivityDate() {
@@ -92,9 +92,9 @@ public class UserActivityDTO implements Serializable {
         return "UserActivityDTO{" +
             "id=" + getId() +
             ", courseId=" + getCourseId() +
-            ", enrollment='" + getEnrollment() + "'" +
+            ", enrollmentStatus='" + getEnrollmentStatus() + "'" +
             ", userId='" + getUserId() + "'" +
-            ", subcriptionId=" + getSubcriptionId() +
+            ", subscriptionId=" + getSubscriptionId() +
             ", activityDate='" + getActivityDate() + "'" +
             "}";
     }

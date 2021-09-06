@@ -10,7 +10,7 @@
       "fieldType": "String"
     },
     {
-      "fieldName": "subcriptionId",
+      "fieldName": "subscriptionId",
       "fieldType": "Long"
     },
     {

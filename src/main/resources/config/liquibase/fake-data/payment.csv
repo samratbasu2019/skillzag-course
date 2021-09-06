@@ -1,4 +1,4 @@
-id;course_id;user_id;subcription_id;cart_used_date;payment_status;amount;payment_date
+id;course_id;user_id;subscription_id;cart_used_date;payment_status;amount;payment_date
 1;36635;Home Loan Account;35742;2021-08-14T19:01:02;Bacon Gabon Polarised;9004;2021-08-15T01:11:31
 2;1714;Practical;38801;2021-08-14T21:02:48;Optimization overriding back up;37612;2021-08-14T18:27:15
 3;32213;copy hack;16630;2021-08-14T11:47:04;Infrastructure Automotive PNG;20882;2021-08-14T16:59:15

@@ -6,7 +6,7 @@
       "fieldType": "Long"
     },
     {
-      "fieldName": "enrollment",
+      "fieldName": "enrollmentStatus",
       "fieldType": "String"
     },
     {
@@ -14,7 +14,7 @@
       "fieldType": "String"
     },
     {
-      "fieldName": "subcriptionId",
+      "fieldName": "subscriptionId",
       "fieldType": "Long"
     },
     {

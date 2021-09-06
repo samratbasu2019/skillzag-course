@@ -14,7 +14,7 @@ public class PaymentDTO implements Serializable {
 
     private String userId;
 
-    private Long subcriptionId;
+    private Long subscriptionId;
 
     private Instant cartUsedDate;
 
@@ -49,12 +49,12 @@ public class PaymentDTO implements Serializable {
         this.userId = userId;
     }
 
-    public Long getSubcriptionId() {
-        return subcriptionId;
+    public Long getSubscriptionId() {
+        return subscriptionId;
     }
 
-    public void setSubcriptionId(Long subcriptionId) {
-        this.subcriptionId = subcriptionId;
+    public void setSubscriptionId(Long subscriptionId) {
+        this.subscriptionId = subscriptionId;
     }
 
     public Instant getCartUsedDate() {
@@ -113,7 +113,7 @@ public class PaymentDTO implements Serializable {
             "id=" + getId() +
             ", courseId=" + getCourseId() +
             ", userId='" + getUserId() + "'" +
-            ", subcriptionId=" + getSubcriptionId() +
+            ", subscriptionId=" + getSubscriptionId() +
             ", cartUsedDate='" + getCartUsedDate() + "'" +
             ", paymentStatus='" + getPaymentStatus() + "'" +
             ", amount=" + getAmount() +
