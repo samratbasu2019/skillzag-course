@@ -73,6 +73,9 @@ public class CoursesManagement implements Serializable {
     @Column(name = "recommended_status")
     private RecommendedStatus recommendedStatus;
 
+    @Column(name = "subscription_id")
+    private Long subscriptionId;
+
     @OneToMany(mappedBy = "coursesManagement")
     private Set<SessionManagement> sessionManagements = new HashSet<>();
 
@@ -280,6 +283,19 @@ public class CoursesManagement implements Serializable {
         this.recommendedStatus = recommendedStatus;
     }
 
+    public Long getSubscriptionId() {
+        return subscriptionId;
+    }
+
+    public CoursesManagement subscriptionId(Long subscriptionId) {
+        this.subscriptionId = subscriptionId;
+        return this;
+    }
+
+    public void setSubscriptionId(Long subscriptionId) {
+        this.subscriptionId = subscriptionId;
+    }
+
     public Set<SessionManagement> getSessionManagements() {
         return sessionManagements;
     }
@@ -342,6 +358,7 @@ public class CoursesManagement implements Serializable {
             ", quiza4Course='" + getQuiza4Course() + "'" +
             ", courseStatus='" + getCourseStatus() + "'" +
             ", recommendedStatus='" + getRecommendedStatus() + "'" +
+            ", subscriptionId=" + getSubscriptionId() +
             "}";
     }
 }

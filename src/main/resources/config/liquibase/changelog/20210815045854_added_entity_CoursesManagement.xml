@@ -60,6 +60,9 @@
             <column name="recommended_status" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
+            <column name="subscription_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
         </createTable>
         <dropDefaultValue tableName="courses_management" columnName="valid_from" columnDataType="datetime"/>
@@ -100,6 +103,7 @@
             <column name="quiza_4_course" type="string"/>
             <column name="course_status" type="string"/>
             <column name="recommended_status" type="string"/>
+            <column name="subscription_id" type="numeric"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
         </loadData>
     </changeSet>

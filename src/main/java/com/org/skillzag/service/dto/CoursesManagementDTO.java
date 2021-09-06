@@ -42,6 +42,8 @@ public class CoursesManagementDTO implements Serializable {
 
     private RecommendedStatus recommendedStatus;
 
+    private Long subscriptionId;
+
     
     public Long getId() {
         return id;
@@ -171,6 +173,14 @@ public class CoursesManagementDTO implements Serializable {
         this.recommendedStatus = recommendedStatus;
     }
 
+    public Long getSubscriptionId() {
+        return subscriptionId;
+    }
+
+    public void setSubscriptionId(Long subscriptionId) {
+        this.subscriptionId = subscriptionId;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -208,6 +218,7 @@ public class CoursesManagementDTO implements Serializable {
             ", quiza4Course='" + getQuiza4Course() + "'" +
             ", courseStatus='" + getCourseStatus() + "'" +
             ", recommendedStatus='" + getRecommendedStatus() + "'" +
+            ", subscriptionId=" + getSubscriptionId() +
             "}";
     }
 }

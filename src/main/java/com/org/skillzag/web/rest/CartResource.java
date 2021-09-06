@@ -28,6 +28,7 @@ import java.util.Optional;
  */
 @RestController
 @RequestMapping("/api")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class CartResource {
 
     private final Logger log = LoggerFactory.getLogger(CartResource.class);

@@ -83,6 +83,9 @@ public class CoursesManagementResourceIT {
     private static final RecommendedStatus DEFAULT_RECOMMENDED_STATUS = RecommendedStatus.ACTIVE;
     private static final RecommendedStatus UPDATED_RECOMMENDED_STATUS = RecommendedStatus.RECOMMENDED;
 
+    private static final Long DEFAULT_SUBSCRIPTION_ID = 1L;
+    private static final Long UPDATED_SUBSCRIPTION_ID = 2L;
+
     @Autowired
     private CoursesManagementRepository coursesManagementRepository;
 
@@ -122,7 +125,8 @@ public class CoursesManagementResourceIT {
             .quizb4Course(DEFAULT_QUIZB_4_COURSE)
             .quiza4Course(DEFAULT_QUIZA_4_COURSE)
             .courseStatus(DEFAULT_COURSE_STATUS)
-            .recommendedStatus(DEFAULT_RECOMMENDED_STATUS);
+            .recommendedStatus(DEFAULT_RECOMMENDED_STATUS)
+            .subscriptionId(DEFAULT_SUBSCRIPTION_ID);
         return coursesManagement;
     }
     /**
@@ -147,7 +151,8 @@ public class CoursesManagementResourceIT {
             .quizb4Course(UPDATED_QUIZB_4_COURSE)
             .quiza4Course(UPDATED_QUIZA_4_COURSE)
             .courseStatus(UPDATED_COURSE_STATUS)
-            .recommendedStatus(UPDATED_RECOMMENDED_STATUS);
+            .recommendedStatus(UPDATED_RECOMMENDED_STATUS)
+            .subscriptionId(UPDATED_SUBSCRIPTION_ID);
         return coursesManagement;
     }
 
@@ -186,6 +191,7 @@ public class CoursesManagementResourceIT {
         assertThat(testCoursesManagement.getQuiza4Course()).isEqualTo(DEFAULT_QUIZA_4_COURSE);
         assertThat(testCoursesManagement.getCourseStatus()).isEqualTo(DEFAULT_COURSE_STATUS);
         assertThat(testCoursesManagement.getRecommendedStatus()).isEqualTo(DEFAULT_RECOMMENDED_STATUS);
+        assertThat(testCoursesManagement.getSubscriptionId()).isEqualTo(DEFAULT_SUBSCRIPTION_ID);
     }
 
     @Test
@@ -234,7 +240,8 @@ public class CoursesManagementResourceIT {
             .andExpect(jsonPath("$.[*].quizb4Course").value(hasItem(DEFAULT_QUIZB_4_COURSE)))
             .andExpect(jsonPath("$.[*].quiza4Course").value(hasItem(DEFAULT_QUIZA_4_COURSE)))
             .andExpect(jsonPath("$.[*].courseStatus").value(hasItem(DEFAULT_COURSE_STATUS.toString())))
-            .andExpect(jsonPath("$.[*].recommendedStatus").value(hasItem(DEFAULT_RECOMMENDED_STATUS.toString())));
+            .andExpect(jsonPath("$.[*].recommendedStatus").value(hasItem(DEFAULT_RECOMMENDED_STATUS.toString())))
+            .andExpect(jsonPath("$.[*].subscriptionId").value(hasItem(DEFAULT_SUBSCRIPTION_ID.intValue())));
     }
     
     @Test
@@ -262,7 +269,8 @@ public class CoursesManagementResourceIT {
             .andExpect(jsonPath("$.quizb4Course").value(DEFAULT_QUIZB_4_COURSE))
             .andExpect(jsonPath("$.quiza4Course").value(DEFAULT_QUIZA_4_COURSE))
             .andExpect(jsonPath("$.courseStatus").value(DEFAULT_COURSE_STATUS.toString()))
-            .andExpect(jsonPath("$.recommendedStatus").value(DEFAULT_RECOMMENDED_STATUS.toString()));
+            .andExpect(jsonPath("$.recommendedStatus").value(DEFAULT_RECOMMENDED_STATUS.toString()))
+            .andExpect(jsonPath("$.subscriptionId").value(DEFAULT_SUBSCRIPTION_ID.intValue()));
     }
     @Test
     @Transactional
@@ -299,7 +307,8 @@ public class CoursesManagementResourceIT {
             .quizb4Course(UPDATED_QUIZB_4_COURSE)
             .quiza4Course(UPDATED_QUIZA_4_COURSE)
             .courseStatus(UPDATED_COURSE_STATUS)
-            .recommendedStatus(UPDATED_RECOMMENDED_STATUS);
+            .recommendedStatus(UPDATED_RECOMMENDED_STATUS)
+            .subscriptionId(UPDATED_SUBSCRIPTION_ID);
         CoursesManagementDTO coursesManagementDTO = coursesManagementMapper.toDto(updatedCoursesManagement);
 
         restCoursesManagementMockMvc.perform(put("/api/courses-managements").with(csrf())
@@ -326,6 +335,7 @@ public class CoursesManagementResourceIT {
         assertThat(testCoursesManagement.getQuiza4Course()).isEqualTo(UPDATED_QUIZA_4_COURSE);
         assertThat(testCoursesManagement.getCourseStatus()).isEqualTo(UPDATED_COURSE_STATUS);
         assertThat(testCoursesManagement.getRecommendedStatus()).isEqualTo(UPDATED_RECOMMENDED_STATUS);
+        assertThat(testCoursesManagement.getSubscriptionId()).isEqualTo(UPDATED_SUBSCRIPTION_ID);
     }
 
     @Test

@@ -23,7 +23,8 @@ entity CoursesManagement {
 	quizb4Course String,
 	quiza4Course String,
     courseStatus CourseStatus,
-    recommendedStatus RecommendedStatus
+    recommendedStatus RecommendedStatus,
+    subscriptionId Long
 }
 
 enum SessionStatus{
@@ -56,15 +57,17 @@ NO
 
 
 entity SubscriptionManagement {
-   courseId Long,
    userId String,
    subscriptionType String,
+   subscriptionName String,
+   subscriptionDescription String,
    subscriptionStatus String,
    subscriptionStartdate Instant,
    subscriptionEnddate Instant,
    paymentStatus String,
    subscriptionDate Instant,
    amount Double,
+   discountPercentage Double,
    type String,
    blockSubscription BlockSubscription
 }

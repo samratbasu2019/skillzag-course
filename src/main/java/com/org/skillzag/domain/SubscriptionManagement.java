@@ -22,14 +22,17 @@ public class SubscriptionManagement implements Serializable {
     @SequenceGenerator(name = "sequenceGenerator")
     private Long id;
 
-    @Column(name = "course_id")
-    private Long courseId;
-
     @Column(name = "user_id")
     private String userId;
 
     @Column(name = "subscription_type")
     private String subscriptionType;
+
+    @Column(name = "subscription_name")
+    private String subscriptionName;
+
+    @Column(name = "subscription_description")
+    private String subscriptionDescription;
 
     @Column(name = "subscription_status")
     private String subscriptionStatus;
@@ -49,6 +52,9 @@ public class SubscriptionManagement implements Serializable {
     @Column(name = "amount")
     private Double amount;
 
+    @Column(name = "discount_percentage")
+    private Double discountPercentage;
+
     @Column(name = "type")
     private String type;
 
@@ -63,19 +69,6 @@ public class SubscriptionManagement implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Long getCourseId() {
-        return courseId;
-    }
-
-    public SubscriptionManagement courseId(Long courseId) {
-        this.courseId = courseId;
-        return this;
-    }
-
-    public void setCourseId(Long courseId) {
-        this.courseId = courseId;
     }
 
     public String getUserId() {
@@ -102,6 +95,32 @@ public class SubscriptionManagement implements Serializable {
 
     public void setSubscriptionType(String subscriptionType) {
         this.subscriptionType = subscriptionType;
+    }
+
+    public String getSubscriptionName() {
+        return subscriptionName;
+    }
+
+    public SubscriptionManagement subscriptionName(String subscriptionName) {
+        this.subscriptionName = subscriptionName;
+        return this;
+    }
+
+    public void setSubscriptionName(String subscriptionName) {
+        this.subscriptionName = subscriptionName;
+    }
+
+    public String getSubscriptionDescription() {
+        return subscriptionDescription;
+    }
+
+    public SubscriptionManagement subscriptionDescription(String subscriptionDescription) {
+        this.subscriptionDescription = subscriptionDescription;
+        return this;
+    }
+
+    public void setSubscriptionDescription(String subscriptionDescription) {
+        this.subscriptionDescription = subscriptionDescription;
     }
 
     public String getSubscriptionStatus() {
@@ -182,6 +201,19 @@ public class SubscriptionManagement implements Serializable {
         this.amount = amount;
     }
 
+    public Double getDiscountPercentage() {
+        return discountPercentage;
+    }
+
+    public SubscriptionManagement discountPercentage(Double discountPercentage) {
+        this.discountPercentage = discountPercentage;
+        return this;
+    }
+
+    public void setDiscountPercentage(Double discountPercentage) {
+        this.discountPercentage = discountPercentage;
+    }
+
     public String getType() {
         return type;
     }
@@ -230,15 +262,17 @@ public class SubscriptionManagement implements Serializable {
     public String toString() {
         return "SubscriptionManagement{" +
             "id=" + getId() +
-            ", courseId=" + getCourseId() +
             ", userId='" + getUserId() + "'" +
             ", subscriptionType='" + getSubscriptionType() + "'" +
+            ", subscriptionName='" + getSubscriptionName() + "'" +
+            ", subscriptionDescription='" + getSubscriptionDescription() + "'" +
             ", subscriptionStatus='" + getSubscriptionStatus() + "'" +
             ", subscriptionStartdate='" + getSubscriptionStartdate() + "'" +
             ", subscriptionEnddate='" + getSubscriptionEnddate() + "'" +
             ", paymentStatus='" + getPaymentStatus() + "'" +
             ", subscriptionDate='" + getSubscriptionDate() + "'" +
             ", amount=" + getAmount() +
+            ", discountPercentage=" + getDiscountPercentage() +
             ", type='" + getType() + "'" +
             ", blockSubscription='" + getBlockSubscription() + "'" +
             "}";

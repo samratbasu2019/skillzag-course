@@ -2,15 +2,19 @@
   "name": "SubscriptionManagement",
   "fields": [
     {
-      "fieldName": "courseId",
-      "fieldType": "Long"
-    },
-    {
       "fieldName": "userId",
       "fieldType": "String"
     },
     {
       "fieldName": "subscriptionType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "subscriptionName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "subscriptionDescription",
       "fieldType": "String"
     },
     {
@@ -35,6 +39,10 @@
     },
     {
       "fieldName": "amount",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "discountPercentage",
       "fieldType": "Double"
     },
     {

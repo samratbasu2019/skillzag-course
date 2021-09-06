@@ -11,11 +11,13 @@ public class SubscriptionManagementDTO implements Serializable {
     
     private Long id;
 
-    private Long courseId;
-
     private String userId;
 
     private String subscriptionType;
+
+    private String subscriptionName;
+
+    private String subscriptionDescription;
 
     private String subscriptionStatus;
 
@@ -29,6 +31,8 @@ public class SubscriptionManagementDTO implements Serializable {
 
     private Double amount;
 
+    private Double discountPercentage;
+
     private String type;
 
     private BlockSubscription blockSubscription;
@@ -40,14 +44,6 @@ public class SubscriptionManagementDTO implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Long getCourseId() {
-        return courseId;
-    }
-
-    public void setCourseId(Long courseId) {
-        this.courseId = courseId;
     }
 
     public String getUserId() {
@@ -64,6 +60,22 @@ public class SubscriptionManagementDTO implements Serializable {
 
     public void setSubscriptionType(String subscriptionType) {
         this.subscriptionType = subscriptionType;
+    }
+
+    public String getSubscriptionName() {
+        return subscriptionName;
+    }
+
+    public void setSubscriptionName(String subscriptionName) {
+        this.subscriptionName = subscriptionName;
+    }
+
+    public String getSubscriptionDescription() {
+        return subscriptionDescription;
+    }
+
+    public void setSubscriptionDescription(String subscriptionDescription) {
+        this.subscriptionDescription = subscriptionDescription;
     }
 
     public String getSubscriptionStatus() {
@@ -114,6 +126,14 @@ public class SubscriptionManagementDTO implements Serializable {
         this.amount = amount;
     }
 
+    public Double getDiscountPercentage() {
+        return discountPercentage;
+    }
+
+    public void setDiscountPercentage(Double discountPercentage) {
+        this.discountPercentage = discountPercentage;
+    }
+
     public String getType() {
         return type;
     }
@@ -152,15 +172,17 @@ public class SubscriptionManagementDTO implements Serializable {
     public String toString() {
         return "SubscriptionManagementDTO{" +
             "id=" + getId() +
-            ", courseId=" + getCourseId() +
             ", userId='" + getUserId() + "'" +
             ", subscriptionType='" + getSubscriptionType() + "'" +
+            ", subscriptionName='" + getSubscriptionName() + "'" +
+            ", subscriptionDescription='" + getSubscriptionDescription() + "'" +
             ", subscriptionStatus='" + getSubscriptionStatus() + "'" +
             ", subscriptionStartdate='" + getSubscriptionStartdate() + "'" +
             ", subscriptionEnddate='" + getSubscriptionEnddate() + "'" +
             ", paymentStatus='" + getPaymentStatus() + "'" +
             ", subscriptionDate='" + getSubscriptionDate() + "'" +
             ", amount=" + getAmount() +
+            ", discountPercentage=" + getDiscountPercentage() +
             ", type='" + getType() + "'" +
             ", blockSubscription='" + getBlockSubscription() + "'" +
             "}";

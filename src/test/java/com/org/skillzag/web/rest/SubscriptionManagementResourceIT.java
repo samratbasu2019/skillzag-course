@@ -37,14 +37,17 @@ import com.org.skillzag.domain.enumeration.BlockSubscription;
 @WithMockUser
 public class SubscriptionManagementResourceIT {
 
-    private static final Long DEFAULT_COURSE_ID = 1L;
-    private static final Long UPDATED_COURSE_ID = 2L;
-
     private static final String DEFAULT_USER_ID = "AAAAAAAAAA";
     private static final String UPDATED_USER_ID = "BBBBBBBBBB";
 
     private static final String DEFAULT_SUBSCRIPTION_TYPE = "AAAAAAAAAA";
     private static final String UPDATED_SUBSCRIPTION_TYPE = "BBBBBBBBBB";
+
+    private static final String DEFAULT_SUBSCRIPTION_NAME = "AAAAAAAAAA";
+    private static final String UPDATED_SUBSCRIPTION_NAME = "BBBBBBBBBB";
+
+    private static final String DEFAULT_SUBSCRIPTION_DESCRIPTION = "AAAAAAAAAA";
+    private static final String UPDATED_SUBSCRIPTION_DESCRIPTION = "BBBBBBBBBB";
 
     private static final String DEFAULT_SUBSCRIPTION_STATUS = "AAAAAAAAAA";
     private static final String UPDATED_SUBSCRIPTION_STATUS = "BBBBBBBBBB";
@@ -63,6 +66,9 @@ public class SubscriptionManagementResourceIT {
 
     private static final Double DEFAULT_AMOUNT = 1D;
     private static final Double UPDATED_AMOUNT = 2D;
+
+    private static final Double DEFAULT_DISCOUNT_PERCENTAGE = 1D;
+    private static final Double UPDATED_DISCOUNT_PERCENTAGE = 2D;
 
     private static final String DEFAULT_TYPE = "AAAAAAAAAA";
     private static final String UPDATED_TYPE = "BBBBBBBBBB";
@@ -95,15 +101,17 @@ public class SubscriptionManagementResourceIT {
      */
     public static SubscriptionManagement createEntity(EntityManager em) {
         SubscriptionManagement subscriptionManagement = new SubscriptionManagement()
-            .courseId(DEFAULT_COURSE_ID)
             .userId(DEFAULT_USER_ID)
             .subscriptionType(DEFAULT_SUBSCRIPTION_TYPE)
+            .subscriptionName(DEFAULT_SUBSCRIPTION_NAME)
+            .subscriptionDescription(DEFAULT_SUBSCRIPTION_DESCRIPTION)
             .subscriptionStatus(DEFAULT_SUBSCRIPTION_STATUS)
             .subscriptionStartdate(DEFAULT_SUBSCRIPTION_STARTDATE)
             .subscriptionEnddate(DEFAULT_SUBSCRIPTION_ENDDATE)
             .paymentStatus(DEFAULT_PAYMENT_STATUS)
             .subscriptionDate(DEFAULT_SUBSCRIPTION_DATE)
             .amount(DEFAULT_AMOUNT)
+            .discountPercentage(DEFAULT_DISCOUNT_PERCENTAGE)
             .type(DEFAULT_TYPE)
             .blockSubscription(DEFAULT_BLOCK_SUBSCRIPTION);
         return subscriptionManagement;
@@ -116,15 +124,17 @@ public class SubscriptionManagementResourceIT {
      */
     public static SubscriptionManagement createUpdatedEntity(EntityManager em) {
         SubscriptionManagement subscriptionManagement = new SubscriptionManagement()
-            .courseId(UPDATED_COURSE_ID)
             .userId(UPDATED_USER_ID)
             .subscriptionType(UPDATED_SUBSCRIPTION_TYPE)
+            .subscriptionName(UPDATED_SUBSCRIPTION_NAME)
+            .subscriptionDescription(UPDATED_SUBSCRIPTION_DESCRIPTION)
             .subscriptionStatus(UPDATED_SUBSCRIPTION_STATUS)
             .subscriptionStartdate(UPDATED_SUBSCRIPTION_STARTDATE)
             .subscriptionEnddate(UPDATED_SUBSCRIPTION_ENDDATE)
             .paymentStatus(UPDATED_PAYMENT_STATUS)
             .subscriptionDate(UPDATED_SUBSCRIPTION_DATE)
             .amount(UPDATED_AMOUNT)
+            .discountPercentage(UPDATED_DISCOUNT_PERCENTAGE)
             .type(UPDATED_TYPE)
             .blockSubscription(UPDATED_BLOCK_SUBSCRIPTION);
         return subscriptionManagement;
@@ -150,15 +160,17 @@ public class SubscriptionManagementResourceIT {
         List<SubscriptionManagement> subscriptionManagementList = subscriptionManagementRepository.findAll();
         assertThat(subscriptionManagementList).hasSize(databaseSizeBeforeCreate + 1);
         SubscriptionManagement testSubscriptionManagement = subscriptionManagementList.get(subscriptionManagementList.size() - 1);
-        assertThat(testSubscriptionManagement.getCourseId()).isEqualTo(DEFAULT_COURSE_ID);
         assertThat(testSubscriptionManagement.getUserId()).isEqualTo(DEFAULT_USER_ID);
         assertThat(testSubscriptionManagement.getSubscriptionType()).isEqualTo(DEFAULT_SUBSCRIPTION_TYPE);
+        assertThat(testSubscriptionManagement.getSubscriptionName()).isEqualTo(DEFAULT_SUBSCRIPTION_NAME);
+        assertThat(testSubscriptionManagement.getSubscriptionDescription()).isEqualTo(DEFAULT_SUBSCRIPTION_DESCRIPTION);
         assertThat(testSubscriptionManagement.getSubscriptionStatus()).isEqualTo(DEFAULT_SUBSCRIPTION_STATUS);
         assertThat(testSubscriptionManagement.getSubscriptionStartdate()).isEqualTo(DEFAULT_SUBSCRIPTION_STARTDATE);
         assertThat(testSubscriptionManagement.getSubscriptionEnddate()).isEqualTo(DEFAULT_SUBSCRIPTION_ENDDATE);
         assertThat(testSubscriptionManagement.getPaymentStatus()).isEqualTo(DEFAULT_PAYMENT_STATUS);
         assertThat(testSubscriptionManagement.getSubscriptionDate()).isEqualTo(DEFAULT_SUBSCRIPTION_DATE);
         assertThat(testSubscriptionManagement.getAmount()).isEqualTo(DEFAULT_AMOUNT);
+        assertThat(testSubscriptionManagement.getDiscountPercentage()).isEqualTo(DEFAULT_DISCOUNT_PERCENTAGE);
         assertThat(testSubscriptionManagement.getType()).isEqualTo(DEFAULT_TYPE);
         assertThat(testSubscriptionManagement.getBlockSubscription()).isEqualTo(DEFAULT_BLOCK_SUBSCRIPTION);
     }
@@ -195,15 +207,17 @@ public class SubscriptionManagementResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(subscriptionManagement.getId().intValue())))
-            .andExpect(jsonPath("$.[*].courseId").value(hasItem(DEFAULT_COURSE_ID.intValue())))
             .andExpect(jsonPath("$.[*].userId").value(hasItem(DEFAULT_USER_ID)))
             .andExpect(jsonPath("$.[*].subscriptionType").value(hasItem(DEFAULT_SUBSCRIPTION_TYPE)))
+            .andExpect(jsonPath("$.[*].subscriptionName").value(hasItem(DEFAULT_SUBSCRIPTION_NAME)))
+            .andExpect(jsonPath("$.[*].subscriptionDescription").value(hasItem(DEFAULT_SUBSCRIPTION_DESCRIPTION)))
             .andExpect(jsonPath("$.[*].subscriptionStatus").value(hasItem(DEFAULT_SUBSCRIPTION_STATUS)))
             .andExpect(jsonPath("$.[*].subscriptionStartdate").value(hasItem(DEFAULT_SUBSCRIPTION_STARTDATE.toString())))
             .andExpect(jsonPath("$.[*].subscriptionEnddate").value(hasItem(DEFAULT_SUBSCRIPTION_ENDDATE.toString())))
             .andExpect(jsonPath("$.[*].paymentStatus").value(hasItem(DEFAULT_PAYMENT_STATUS)))
             .andExpect(jsonPath("$.[*].subscriptionDate").value(hasItem(DEFAULT_SUBSCRIPTION_DATE.toString())))
             .andExpect(jsonPath("$.[*].amount").value(hasItem(DEFAULT_AMOUNT.doubleValue())))
+            .andExpect(jsonPath("$.[*].discountPercentage").value(hasItem(DEFAULT_DISCOUNT_PERCENTAGE.doubleValue())))
             .andExpect(jsonPath("$.[*].type").value(hasItem(DEFAULT_TYPE)))
             .andExpect(jsonPath("$.[*].blockSubscription").value(hasItem(DEFAULT_BLOCK_SUBSCRIPTION.toString())));
     }
@@ -219,15 +233,17 @@ public class SubscriptionManagementResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(subscriptionManagement.getId().intValue()))
-            .andExpect(jsonPath("$.courseId").value(DEFAULT_COURSE_ID.intValue()))
             .andExpect(jsonPath("$.userId").value(DEFAULT_USER_ID))
             .andExpect(jsonPath("$.subscriptionType").value(DEFAULT_SUBSCRIPTION_TYPE))
+            .andExpect(jsonPath("$.subscriptionName").value(DEFAULT_SUBSCRIPTION_NAME))
+            .andExpect(jsonPath("$.subscriptionDescription").value(DEFAULT_SUBSCRIPTION_DESCRIPTION))
             .andExpect(jsonPath("$.subscriptionStatus").value(DEFAULT_SUBSCRIPTION_STATUS))
             .andExpect(jsonPath("$.subscriptionStartdate").value(DEFAULT_SUBSCRIPTION_STARTDATE.toString()))
             .andExpect(jsonPath("$.subscriptionEnddate").value(DEFAULT_SUBSCRIPTION_ENDDATE.toString()))
             .andExpect(jsonPath("$.paymentStatus").value(DEFAULT_PAYMENT_STATUS))
             .andExpect(jsonPath("$.subscriptionDate").value(DEFAULT_SUBSCRIPTION_DATE.toString()))
             .andExpect(jsonPath("$.amount").value(DEFAULT_AMOUNT.doubleValue()))
+            .andExpect(jsonPath("$.discountPercentage").value(DEFAULT_DISCOUNT_PERCENTAGE.doubleValue()))
             .andExpect(jsonPath("$.type").value(DEFAULT_TYPE))
             .andExpect(jsonPath("$.blockSubscription").value(DEFAULT_BLOCK_SUBSCRIPTION.toString()));
     }
@@ -252,15 +268,17 @@ public class SubscriptionManagementResourceIT {
         // Disconnect from session so that the updates on updatedSubscriptionManagement are not directly saved in db
         em.detach(updatedSubscriptionManagement);
         updatedSubscriptionManagement
-            .courseId(UPDATED_COURSE_ID)
             .userId(UPDATED_USER_ID)
             .subscriptionType(UPDATED_SUBSCRIPTION_TYPE)
+            .subscriptionName(UPDATED_SUBSCRIPTION_NAME)
+            .subscriptionDescription(UPDATED_SUBSCRIPTION_DESCRIPTION)
             .subscriptionStatus(UPDATED_SUBSCRIPTION_STATUS)
             .subscriptionStartdate(UPDATED_SUBSCRIPTION_STARTDATE)
             .subscriptionEnddate(UPDATED_SUBSCRIPTION_ENDDATE)
             .paymentStatus(UPDATED_PAYMENT_STATUS)
             .subscriptionDate(UPDATED_SUBSCRIPTION_DATE)
             .amount(UPDATED_AMOUNT)
+            .discountPercentage(UPDATED_DISCOUNT_PERCENTAGE)
             .type(UPDATED_TYPE)
             .blockSubscription(UPDATED_BLOCK_SUBSCRIPTION);
         SubscriptionManagementDTO subscriptionManagementDTO = subscriptionManagementMapper.toDto(updatedSubscriptionManagement);
@@ -274,15 +292,17 @@ public class SubscriptionManagementResourceIT {
         List<SubscriptionManagement> subscriptionManagementList = subscriptionManagementRepository.findAll();
         assertThat(subscriptionManagementList).hasSize(databaseSizeBeforeUpdate);
         SubscriptionManagement testSubscriptionManagement = subscriptionManagementList.get(subscriptionManagementList.size() - 1);
-        assertThat(testSubscriptionManagement.getCourseId()).isEqualTo(UPDATED_COURSE_ID);
         assertThat(testSubscriptionManagement.getUserId()).isEqualTo(UPDATED_USER_ID);
         assertThat(testSubscriptionManagement.getSubscriptionType()).isEqualTo(UPDATED_SUBSCRIPTION_TYPE);
+        assertThat(testSubscriptionManagement.getSubscriptionName()).isEqualTo(UPDATED_SUBSCRIPTION_NAME);
+        assertThat(testSubscriptionManagement.getSubscriptionDescription()).isEqualTo(UPDATED_SUBSCRIPTION_DESCRIPTION);
         assertThat(testSubscriptionManagement.getSubscriptionStatus()).isEqualTo(UPDATED_SUBSCRIPTION_STATUS);
         assertThat(testSubscriptionManagement.getSubscriptionStartdate()).isEqualTo(UPDATED_SUBSCRIPTION_STARTDATE);
         assertThat(testSubscriptionManagement.getSubscriptionEnddate()).isEqualTo(UPDATED_SUBSCRIPTION_ENDDATE);
         assertThat(testSubscriptionManagement.getPaymentStatus()).isEqualTo(UPDATED_PAYMENT_STATUS);
         assertThat(testSubscriptionManagement.getSubscriptionDate()).isEqualTo(UPDATED_SUBSCRIPTION_DATE);
         assertThat(testSubscriptionManagement.getAmount()).isEqualTo(UPDATED_AMOUNT);
+        assertThat(testSubscriptionManagement.getDiscountPercentage()).isEqualTo(UPDATED_DISCOUNT_PERCENTAGE);
         assertThat(testSubscriptionManagement.getType()).isEqualTo(UPDATED_TYPE);
         assertThat(testSubscriptionManagement.getBlockSubscription()).isEqualTo(UPDATED_BLOCK_SUBSCRIPTION);
     }
