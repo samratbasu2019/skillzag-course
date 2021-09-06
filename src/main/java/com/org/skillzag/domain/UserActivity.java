@@ -7,11 +7,11 @@ import java.io.Serializable;
 import java.time.Instant;
 
 /**
- * A Payment.
+ * A UserActivity.
  */
 @Entity
-@Table(name = "payment")
-public class Payment implements Serializable {
+@Table(name = "user_activity")
+public class UserActivity implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -23,23 +23,17 @@ public class Payment implements Serializable {
     @Column(name = "course_id")
     private Long courseId;
 
+    @Column(name = "enrollment")
+    private String enrollment;
+
     @Column(name = "user_id")
     private String userId;
 
     @Column(name = "subcription_id")
     private Long subcriptionId;
 
-    @Column(name = "cart_used_date")
-    private Instant cartUsedDate;
-
-    @Column(name = "payment_status")
-    private String paymentStatus;
-
-    @Column(name = "amount")
-    private Double amount;
-
-    @Column(name = "payment_date")
-    private Instant paymentDate;
+    @Column(name = "activity_date")
+    private Instant activityDate;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -54,7 +48,7 @@ public class Payment implements Serializable {
         return courseId;
     }
 
-    public Payment courseId(Long courseId) {
+    public UserActivity courseId(Long courseId) {
         this.courseId = courseId;
         return this;
     }
@@ -63,11 +57,24 @@ public class Payment implements Serializable {
         this.courseId = courseId;
     }
 
+    public String getEnrollment() {
+        return enrollment;
+    }
+
+    public UserActivity enrollment(String enrollment) {
+        this.enrollment = enrollment;
+        return this;
+    }
+
+    public void setEnrollment(String enrollment) {
+        this.enrollment = enrollment;
+    }
+
     public String getUserId() {
         return userId;
     }
 
-    public Payment userId(String userId) {
+    public UserActivity userId(String userId) {
         this.userId = userId;
         return this;
     }
@@ -80,7 +87,7 @@ public class Payment implements Serializable {
         return subcriptionId;
     }
 
-    public Payment subcriptionId(Long subcriptionId) {
+    public UserActivity subcriptionId(Long subcriptionId) {
         this.subcriptionId = subcriptionId;
         return this;
     }
@@ -89,56 +96,17 @@ public class Payment implements Serializable {
         this.subcriptionId = subcriptionId;
     }
 
-    public Instant getCartUsedDate() {
-        return cartUsedDate;
+    public Instant getActivityDate() {
+        return activityDate;
     }
 
-    public Payment cartUsedDate(Instant cartUsedDate) {
-        this.cartUsedDate = cartUsedDate;
+    public UserActivity activityDate(Instant activityDate) {
+        this.activityDate = activityDate;
         return this;
     }
 
-    public void setCartUsedDate(Instant cartUsedDate) {
-        this.cartUsedDate = cartUsedDate;
-    }
-
-    public String getPaymentStatus() {
-        return paymentStatus;
-    }
-
-    public Payment paymentStatus(String paymentStatus) {
-        this.paymentStatus = paymentStatus;
-        return this;
-    }
-
-    public void setPaymentStatus(String paymentStatus) {
-        this.paymentStatus = paymentStatus;
-    }
-
-    public Double getAmount() {
-        return amount;
-    }
-
-    public Payment amount(Double amount) {
-        this.amount = amount;
-        return this;
-    }
-
-    public void setAmount(Double amount) {
-        this.amount = amount;
-    }
-
-    public Instant getPaymentDate() {
-        return paymentDate;
-    }
-
-    public Payment paymentDate(Instant paymentDate) {
-        this.paymentDate = paymentDate;
-        return this;
-    }
-
-    public void setPaymentDate(Instant paymentDate) {
-        this.paymentDate = paymentDate;
+    public void setActivityDate(Instant activityDate) {
+        this.activityDate = activityDate;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 
@@ -147,10 +115,10 @@ public class Payment implements Serializable {
         if (this == o) {
             return true;
         }
-        if (!(o instanceof Payment)) {
+        if (!(o instanceof UserActivity)) {
             return false;
         }
-        return id != null && id.equals(((Payment) o).id);
+        return id != null && id.equals(((UserActivity) o).id);
     }
 
     @Override
@@ -161,15 +129,13 @@ public class Payment implements Serializable {
     // prettier-ignore
     @Override
     public String toString() {
-        return "Payment{" +
+        return "UserActivity{" +
             "id=" + getId() +
             ", courseId=" + getCourseId() +
+            ", enrollment='" + getEnrollment() + "'" +
             ", userId='" + getUserId() + "'" +
             ", subcriptionId=" + getSubcriptionId() +
-            ", cartUsedDate='" + getCartUsedDate() + "'" +
-            ", paymentStatus='" + getPaymentStatus() + "'" +
-            ", amount=" + getAmount() +
-            ", paymentDate='" + getPaymentDate() + "'" +
+            ", activityDate='" + getActivityDate() + "'" +
             "}";
     }
 }

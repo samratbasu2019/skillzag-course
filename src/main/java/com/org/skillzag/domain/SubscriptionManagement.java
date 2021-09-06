@@ -46,12 +46,12 @@ public class SubscriptionManagement implements Serializable {
     @Column(name = "subscription_date")
     private Instant subscriptionDate;
 
+    @Column(name = "type")
+    private String type;
+
     @Enumerated(EnumType.STRING)
     @Column(name = "block_subscription")
     private BlockSubscription blockSubscription;
-
-    @Column(name = "amount")
-    private Double amount;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -166,6 +166,19 @@ public class SubscriptionManagement implements Serializable {
         this.subscriptionDate = subscriptionDate;
     }
 
+    public String getType() {
+        return type;
+    }
+
+    public SubscriptionManagement type(String type) {
+        this.type = type;
+        return this;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     public BlockSubscription getBlockSubscription() {
         return blockSubscription;
     }
@@ -191,19 +204,6 @@ public class SubscriptionManagement implements Serializable {
         return id != null && id.equals(((SubscriptionManagement) o).id);
     }
 
-    public Double getAmount() {
-        return amount;
-    }
-
-    public void setAmount(Double amount) {
-        this.amount = amount;
-    }
-
-    public SubscriptionManagement amount(Double amount) {
-        this.amount = amount;
-        return this;
-    }
-
     @Override
     public int hashCode() {
         return 31;
@@ -215,15 +215,15 @@ public class SubscriptionManagement implements Serializable {
         return "SubscriptionManagement{" +
             "id=" + getId() +
             ", courseId=" + getCourseId() +
-            ", userId=" + getUserId() +
+            ", userId='" + getUserId() + "'" +
             ", subscriptionType='" + getSubscriptionType() + "'" +
             ", subscriptionStatus='" + getSubscriptionStatus() + "'" +
             ", subscriptionStartdate='" + getSubscriptionStartdate() + "'" +
             ", subscriptionEnddate='" + getSubscriptionEnddate() + "'" +
             ", paymentStatus='" + getPaymentStatus() + "'" +
             ", subscriptionDate='" + getSubscriptionDate() + "'" +
+            ", type='" + getType() + "'" +
             ", blockSubscription='" + getBlockSubscription() + "'" +
-            ", amount=" + getAmount() +
             "}";
     }
 }

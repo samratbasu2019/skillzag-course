@@ -7,7 +7,7 @@
     },
     {
       "fieldName": "userId",
-      "fieldType": "Long"
+      "fieldType": "String"
     },
     {
       "fieldName": "subscriptionType",
@@ -32,6 +32,10 @@
     {
       "fieldName": "subscriptionDate",
       "fieldType": "Instant"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "String"
     },
     {
       "fieldName": "blockSubscription",

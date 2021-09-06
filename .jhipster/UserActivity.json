@@ -1,9 +1,13 @@
 {
-  "name": "Cart",
+  "name": "UserActivity",
   "fields": [
     {
       "fieldName": "courseId",
       "fieldType": "Long"
+    },
+    {
+      "fieldName": "enrollment",
+      "fieldType": "String"
     },
     {
       "fieldName": "userId",
@@ -14,17 +18,13 @@
       "fieldType": "Long"
     },
     {
-      "fieldName": "checkoutDate",
+      "fieldName": "activityDate",
       "fieldType": "Instant"
-    },
-    {
-      "fieldName": "checkOutStatus",
-      "fieldType": "String"
     }
   ],
   "relationships": [],
-  "changelogDate": "20210815050154",
-  "entityTableName": "cart",
+  "changelogDate": "20210906094414",
+  "entityTableName": "user_activity",
   "dto": "mapstruct",
   "pagination": "pagination",
   "service": "serviceImpl",

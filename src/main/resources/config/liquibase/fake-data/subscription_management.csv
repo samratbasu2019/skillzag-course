@@ -1,11 +1,11 @@
-id;course_id;user_id;subscription_type;subscription_status;subscription_startdate;subscription_enddate;payment_status;subscription_date;block_subscription;amount
-1;81366;66514;Costa Rica methodologies Crossroad;Money Market Account;2021-08-14T13:12:00;2021-08-14T23:41:16;Advanced;2021-08-14T22:07:52;NO;4356.8
-2;6016;10427;payment;e-markets Uruguay;2021-08-14T13:36:47;2021-08-14T14:04:11;Plaza portals;2021-08-14T15:59:17;YES;89234.88
-3;70782;41282;transmitter;multi-tasking Internal Ergonomic Cotton Chicken;2021-08-14T20:41:59;2021-08-14T20:28:40;Rubber;2021-08-14T08:34:49;YES;6349
-4;95132;38443;Idaho Re-engineered Tanzanian Shilling;Papua New Guinea Synergistic;2021-08-15T02:39:00;2021-08-14T10:03:27;Bedfordshire Awesome Frozen Hat;2021-08-14T18:18:54;YES;7899
-5;46711;23789;Haiti Home Loan Account payment;panel multi-byte Route;2021-08-15T04:41:21;2021-08-15T00:25:13;SQL;2021-08-14T10:12:54;YES;500
-6;16513;61741;ivory;SDR Falkland Islands (Malvinas);2021-08-14T23:07:38;2021-08-14T13:45:34;Handmade Connecticut;2021-08-14T20:48:37;YES;567.45
-7;86886;43381;Synergistic Chief;one-to-one magenta Cambridgeshire;2021-08-14T19:42:42;2021-08-14T12:35:19;Internal fuchsia;2021-08-14T10:20:57;YES;789
-8;65724;51350;Indiana;payment Regional connecting;2021-08-15T04:32:16;2021-08-14T08:48:44;partnerships;2021-08-14T07:18:42;YES;3056
-9;63419;42300;Kids;Producer withdrawal;2021-08-14T12:58:37;2021-08-15T03:29:54;Officer cross-platform Executive;2021-08-14T12:53:27;NO;9983.22
-10;61379;4346;calculating Incredible;user-centric;2021-08-14T07:34:09;2021-08-14T23:31:54;Avon Agent;2021-08-14T15:06:31;NO;45398
+id;course_id;user_id;subscription_type;subscription_status;subscription_startdate;subscription_enddate;payment_status;subscription_date;type;block_subscription
+1;81366;connecting maroon;Crossroad Generic reintermediate;Computers;2021-08-15T04:45:23;2021-08-14T22:07:52;backing up Soft mesh;2021-08-14T16:27:20;Incredible;NO
+2;95223;Investment Account Plaza;deliver mobile;Fantastic Soft Hat Green Road;2021-08-14T19:06:24;2021-08-14T22:47:41;1080p multi-tasking Internal;2021-08-15T03:27:59;whiteboard;NO
+3;38590;Cayman Islands Dollar content-based;scale Idaho Re-engineered;quantifying Papua New Guinea Synergistic;2021-08-15T02:39:00;2021-08-14T10:03:27;Bedfordshire Awesome Frozen Hat;2021-08-14T18:18:54;Plastic;NO
+4;52626;Home Loan Account payment;panel multi-byte Route;yellow;2021-08-14T08:19:10;2021-08-14T21:36:22;index Turkmenistan Borders;2021-08-14T05:07:42;Soap Digitized;NO
+5;58087;hard drive;visionary;Corporate;2021-08-14T20:06:28;2021-08-14T21:41:25;Licensed;2021-08-14T22:56:57;architectures Synergistic Chief;YES
+6;68441;Internal fuchsia;JSON optical Hills;multi-state Avon;2021-08-14T15:27:28;2021-08-14T22:39:45;payment Regional connecting;2021-08-15T04:32:16;Cotton Unbranded Bulgaria;YES
+7;26903;Investment Account;calculate Radial Refined Frozen Mouse;rich Metal deposit;2021-08-15T03:13:06;2021-08-14T20:21:04;New Mexico Generic Fresh Fish;2021-08-15T03:02:28;pink SCSI;YES
+8;99001;South Dakota compress Borders;programming Chicken;SDD Toys;2021-08-14T07:38:33;2021-08-14T11:03:54;dedicated bypassing;2021-08-14T17:04:50;structure indexing;YES
+9;13431;Arizona Uganda Shilling program;sky blue Awesome Plastic Salad;microchip payment;2021-08-14T11:11:13;2021-08-14T18:51:53;District;2021-08-14T09:23:11;array;YES
+10;57522;transmit;Intelligent Avon hacking;multi-byte Dynamic Maine;2021-08-15T03:38:23;2021-08-14T16:06:18;circuit RAM;2021-08-14T17:17:17;Harbors;NO

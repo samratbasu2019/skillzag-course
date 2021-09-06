@@ -6,7 +6,7 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd
                         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
-
+    
     <!--
         Added the entity SubscriptionManagement.
     -->
@@ -39,10 +39,10 @@
             <column name="subscription_date" type="datetime">
                 <constraints nullable="true" />
             </column>
-            <column name="block_subscription" type="varchar(255)">
+            <column name="type" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="amount" type="double">
+            <column name="block_subscription" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
@@ -72,15 +72,15 @@
                   tableName="subscription_management">
             <column name="id" type="numeric"/>
             <column name="course_id" type="numeric"/>
-            <column name="user_id" type="numeric"/>
+            <column name="user_id" type="string"/>
             <column name="subscription_type" type="string"/>
             <column name="subscription_status" type="string"/>
             <column name="subscription_startdate" type="datetime"/>
             <column name="subscription_enddate" type="datetime"/>
             <column name="payment_status" type="string"/>
             <column name="subscription_date" type="datetime"/>
+            <column name="type" type="string"/>
             <column name="block_subscription" type="string"/>
-            <column name="amount" type="numeric"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
         </loadData>
     </changeSet>

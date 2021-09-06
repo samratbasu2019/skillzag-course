@@ -7,7 +7,7 @@
     },
     {
       "fieldName": "userId",
-      "fieldType": "Long"
+      "fieldType": "String"
     },
     {
       "fieldName": "subcriptionId",

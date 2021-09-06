@@ -132,7 +132,7 @@ public class Cart implements Serializable {
         return "Cart{" +
             "id=" + getId() +
             ", courseId=" + getCourseId() +
-            ", userId=" + getUserId() +
+            ", userId='" + getUserId() + "'" +
             ", subcriptionId=" + getSubcriptionId() +
             ", checkoutDate='" + getCheckoutDate() + "'" +
             ", checkOutStatus='" + getCheckOutStatus() + "'" +

@@ -8,7 +8,7 @@ import com.org.skillzag.domain.enumeration.BlockSubscription;
  * A DTO for the {@link com.org.skillzag.domain.SubscriptionManagement} entity.
  */
 public class SubscriptionManagementDTO implements Serializable {
-
+    
     private Long id;
 
     private Long courseId;
@@ -27,19 +27,11 @@ public class SubscriptionManagementDTO implements Serializable {
 
     private Instant subscriptionDate;
 
+    private String type;
+
     private BlockSubscription blockSubscription;
 
-    private Double amount;
-
-
-    public Double getAmount() {
-        return amount;
-    }
-
-    public void setAmount(Double amount) {
-        this.amount = amount;
-    }
-
+    
     public Long getId() {
         return id;
     }
@@ -112,6 +104,14 @@ public class SubscriptionManagementDTO implements Serializable {
         this.subscriptionDate = subscriptionDate;
     }
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     public BlockSubscription getBlockSubscription() {
         return blockSubscription;
     }
@@ -143,15 +143,15 @@ public class SubscriptionManagementDTO implements Serializable {
         return "SubscriptionManagementDTO{" +
             "id=" + getId() +
             ", courseId=" + getCourseId() +
-            ", userId=" + getUserId() +
+            ", userId='" + getUserId() + "'" +
             ", subscriptionType='" + getSubscriptionType() + "'" +
             ", subscriptionStatus='" + getSubscriptionStatus() + "'" +
             ", subscriptionStartdate='" + getSubscriptionStartdate() + "'" +
             ", subscriptionEnddate='" + getSubscriptionEnddate() + "'" +
             ", paymentStatus='" + getPaymentStatus() + "'" +
             ", subscriptionDate='" + getSubscriptionDate() + "'" +
+            ", type='" + getType() + "'" +
             ", blockSubscription='" + getBlockSubscription() + "'" +
-            ", amount=" + getAmount() +
             "}";
     }
 }

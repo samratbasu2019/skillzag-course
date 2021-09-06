@@ -7,7 +7,7 @@ import java.io.Serializable;
  * A DTO for the {@link com.org.skillzag.domain.Payment} entity.
  */
 public class PaymentDTO implements Serializable {
-
+    
     private Long id;
 
     private Long courseId;
@@ -24,7 +24,7 @@ public class PaymentDTO implements Serializable {
 
     private Instant paymentDate;
 
-
+    
     public Long getId() {
         return id;
     }
@@ -112,7 +112,7 @@ public class PaymentDTO implements Serializable {
         return "PaymentDTO{" +
             "id=" + getId() +
             ", courseId=" + getCourseId() +
-            ", userId=" + getUserId() +
+            ", userId='" + getUserId() + "'" +
             ", subcriptionId=" + getSubcriptionId() +
             ", cartUsedDate='" + getCartUsedDate() + "'" +
             ", paymentStatus='" + getPaymentStatus() + "'" +

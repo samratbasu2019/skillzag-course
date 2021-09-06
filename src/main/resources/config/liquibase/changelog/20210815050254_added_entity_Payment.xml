@@ -6,7 +6,7 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd
                         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
-
+    
     <!--
         Added the entity Payment.
     -->
@@ -62,7 +62,7 @@
                   tableName="payment">
             <column name="id" type="numeric"/>
             <column name="course_id" type="numeric"/>
-            <column name="user_id" type="numeric"/>
+            <column name="user_id" type="string"/>
             <column name="subcription_id" type="numeric"/>
             <column name="cart_used_date" type="datetime"/>
             <column name="payment_status" type="string"/>

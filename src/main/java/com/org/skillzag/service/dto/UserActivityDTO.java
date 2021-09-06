@@ -4,21 +4,21 @@ import java.time.Instant;
 import java.io.Serializable;
 
 /**
- * A DTO for the {@link com.org.skillzag.domain.Cart} entity.
+ * A DTO for the {@link com.org.skillzag.domain.UserActivity} entity.
  */
-public class CartDTO implements Serializable {
+public class UserActivityDTO implements Serializable {
     
     private Long id;
 
     private Long courseId;
 
+    private String enrollment;
+
     private String userId;
 
     private Long subcriptionId;
 
-    private Instant checkoutDate;
-
-    private String checkOutStatus;
+    private Instant activityDate;
 
     
     public Long getId() {
@@ -37,6 +37,14 @@ public class CartDTO implements Serializable {
         this.courseId = courseId;
     }
 
+    public String getEnrollment() {
+        return enrollment;
+    }
+
+    public void setEnrollment(String enrollment) {
+        this.enrollment = enrollment;
+    }
+
     public String getUserId() {
         return userId;
     }
@@ -53,20 +61,12 @@ public class CartDTO implements Serializable {
         this.subcriptionId = subcriptionId;
     }
 
-    public Instant getCheckoutDate() {
-        return checkoutDate;
+    public Instant getActivityDate() {
+        return activityDate;
     }
 
-    public void setCheckoutDate(Instant checkoutDate) {
-        this.checkoutDate = checkoutDate;
-    }
-
-    public String getCheckOutStatus() {
-        return checkOutStatus;
-    }
-
-    public void setCheckOutStatus(String checkOutStatus) {
-        this.checkOutStatus = checkOutStatus;
+    public void setActivityDate(Instant activityDate) {
+        this.activityDate = activityDate;
     }
 
     @Override
@@ -74,11 +74,11 @@ public class CartDTO implements Serializable {
         if (this == o) {
             return true;
         }
-        if (!(o instanceof CartDTO)) {
+        if (!(o instanceof UserActivityDTO)) {
             return false;
         }
 
-        return id != null && id.equals(((CartDTO) o).id);
+        return id != null && id.equals(((UserActivityDTO) o).id);
     }
 
     @Override
@@ -89,13 +89,13 @@ public class CartDTO implements Serializable {
     // prettier-ignore
     @Override
     public String toString() {
-        return "CartDTO{" +
+        return "UserActivityDTO{" +
             "id=" + getId() +
             ", courseId=" + getCourseId() +
+            ", enrollment='" + getEnrollment() + "'" +
             ", userId='" + getUserId() + "'" +
             ", subcriptionId=" + getSubcriptionId() +
-            ", checkoutDate='" + getCheckoutDate() + "'" +
-            ", checkOutStatus='" + getCheckOutStatus() + "'" +
+            ", activityDate='" + getActivityDate() + "'" +
             "}";
     }
 }

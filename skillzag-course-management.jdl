@@ -57,19 +57,20 @@ NO
 
 entity SubscriptionManagement {
    courseId Long,
-   userId Long,
+   userId String,
    subscriptionType String,
    subscriptionStatus String,
    subscriptionStartdate Instant,
    subscriptionEnddate Instant,
    paymentStatus String,
    subscriptionDate Instant,
+   type String,
    blockSubscription BlockSubscription
 }
 
 entity Cart {
    courseId Long,
-   userId Long,
+   userId String,
    subcriptionId Long,
    checkoutDate Instant,
    checkOutStatus String,
@@ -77,12 +78,20 @@ entity Cart {
 
 entity Payment {
    courseId Long,
-   userId Long,
+   userId String,
    subcriptionId Long,
    cartUsedDate Instant,
    paymentStatus String,
    amount Double,
    paymentDate Instant
+}
+
+entity UserActivity {
+   courseId Long,
+   enrollment String,
+   userId String,
+   subcriptionId Long,
+   activityDate Instant
 }
 
 relationship OneToMany {
