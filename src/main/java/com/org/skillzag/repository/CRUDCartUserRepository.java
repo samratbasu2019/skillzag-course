@@ -15,7 +15,7 @@ import java.util.Map;
 @SuppressWarnings("unused")
 @Repository
 public interface CRUDCartUserRepository extends CrudRepository<SubscriptionManagement, Long> {
-    @Query(value = " select sm.subscription_name, sm.subscription_description, sm.subscription_startdate, sm.subscription_enddate,\n" +
+    @Query(value = "select sm.subscription_name, sm.subscription_description, sm.subscription_startdate, sm.subscription_enddate,\n" +
         "sm.amount, sm.discount_percentage from subscription_management sm , cart c  " +
         "where sm.id = c.subscription_id and c.user_id = :userId",
         nativeQuery = true)
