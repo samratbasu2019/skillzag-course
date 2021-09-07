@@ -1,11 +1,11 @@
-id;cart_id;promo_code;valid_from;valid_to;created_by;creation_date
-1;90106;Unbranded;2021-09-06T16:20:02;2021-09-06T23:57:00;Concrete Product;2021-09-06T07:56:04
-2;80567;client-server synergies;2021-09-06T17:11:51;2021-09-06T06:01:34;Tanzania;2021-09-06T19:14:42
-3;25463;Practical Granite Chair invoice;2021-09-06T13:04:36;2021-09-06T05:27:42;generate Frozen;2021-09-06T16:34:47
-4;91113;Money Market Account Ergonomic;2021-09-06T16:10:14;2021-09-06T20:44:32;Virginia Handmade Cotton Gloves;2021-09-06T09:20:05
-5;78907;Gloves;2021-09-06T20:39:33;2021-09-07T01:59:12;Intranet Avon;2021-09-06T12:26:04
-6;92450;Hat AI Markets;2021-09-06T04:48:20;2021-09-06T14:17:20;Buckinghamshire Legacy;2021-09-07T02:30:06
-7;3241;invoice;2021-09-06T15:08:50;2021-09-06T19:53:42;silver;2021-09-06T02:48:57
-8;70810;Garden Bike Ergonomic Rubber Bike;2021-09-06T21:09:49;2021-09-06T03:06:25;Books Vermont Analyst;2021-09-06T13:43:38
-9;6102;optical Baby;2021-09-06T15:04:23;2021-09-06T21:36:30;withdrawal;2021-09-06T15:01:21
-10;76540;Soap Self-enabling Ball;2021-09-06T19:06:32;2021-09-06T23:50:11;scale synthesizing back up;2021-09-06T09:21:26
+id;cart_id;promo_code;valid_from;valid_to;created_by;discount_percentage;creation_date
+1;90106;Unbranded;2021-09-06T16:20:02;2021-09-06T23:57:00;Concrete Product;78621;2021-09-06T07:28:02
+2;46361;violet;2021-09-07T02:42:14;2021-09-06T17:11:51;Sleek FTP Pre-emptive;4072;2021-09-06T15:44:02
+3;52736;invoice;2021-09-06T13:04:36;2021-09-06T05:27:42;generate Frozen;42598;2021-09-06T04:56:11
+4;58477;background Practical;2021-09-06T20:44:32;2021-09-06T18:18:09;Senior array;32592;2021-09-06T09:20:05
+5;78907;Gloves;2021-09-06T20:39:33;2021-09-07T01:59:12;Intranet Avon;59870;2021-09-06T04:36:55
+6;74020;Cambridgeshire;2021-09-06T17:30:05;2021-09-06T04:25:52;Global Berkshire;72003;2021-09-06T04:46:03
+7;76214;Home;2021-09-06T11:23:55;2021-09-06T03:06:50;bandwidth-monitored silver;99948;2021-09-06T09:48:32
+8;89666;challenge;2021-09-06T21:13:03;2021-09-07T01:23:49;Savings Account;23498;2021-09-06T03:06:25
+9;98846;Toys;2021-09-06T05:23:29;2021-09-06T02:59:39;Azerbaijan Auto Loan Account;83349;2021-09-07T02:24:44
+10;65928;purple withdrawal;2021-09-06T15:01:21;2021-09-06T08:26:01;Soap Self-enabling Ball;32060;2021-09-06T23:50:11

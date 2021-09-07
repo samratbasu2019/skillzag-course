@@ -18,10 +18,6 @@
       "fieldType": "Long"
     },
     {
-      "fieldName": "discountPercentage",
-      "fieldType": "Double"
-    },
-    {
       "fieldName": "checkoutDate",
       "fieldType": "Instant"
     },

@@ -9,7 +9,6 @@ RECOMMENDED
 }
 
 entity CoursesManagement {
-    courseId Integer,
 	courseName String,
 	validFrom Instant,
 	validTo Instant,
@@ -81,7 +80,6 @@ entity Cart {
    userId String,
    subscriptionId Long,
    promoId Long,
-   discountPercentage Double,
    checkoutDate Instant,
    checkOutStatus String,
    creationDate Instant
@@ -93,6 +91,7 @@ entity Promo {
     validFrom Instant,
     validTo Instant,
     createdBy String,
+    discountPercentage Double,
     creationDate Instant
 }
 

@@ -20,6 +20,8 @@ public class PromoDTO implements Serializable {
 
     private String createdBy;
 
+    private Double discountPercentage;
+
     private Instant creationDate;
 
     
@@ -71,6 +73,14 @@ public class PromoDTO implements Serializable {
         this.createdBy = createdBy;
     }
 
+    public Double getDiscountPercentage() {
+        return discountPercentage;
+    }
+
+    public void setDiscountPercentage(Double discountPercentage) {
+        this.discountPercentage = discountPercentage;
+    }
+
     public Instant getCreationDate() {
         return creationDate;
     }
@@ -106,6 +116,7 @@ public class PromoDTO implements Serializable {
             ", validFrom='" + getValidFrom() + "'" +
             ", validTo='" + getValidTo() + "'" +
             ", createdBy='" + getCreatedBy() + "'" +
+            ", discountPercentage=" + getDiscountPercentage() +
             ", creationDate='" + getCreationDate() + "'" +
             "}";
     }

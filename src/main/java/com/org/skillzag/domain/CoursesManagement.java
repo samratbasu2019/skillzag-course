@@ -26,9 +26,6 @@ public class CoursesManagement implements Serializable {
     @SequenceGenerator(name = "sequenceGenerator")
     private Long id;
 
-    @Column(name = "course_id")
-    private Integer courseId;
-
     @Column(name = "course_name")
     private String courseName;
 
@@ -92,19 +89,6 @@ public class CoursesManagement implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Integer getCourseId() {
-        return courseId;
-    }
-
-    public CoursesManagement courseId(Integer courseId) {
-        this.courseId = courseId;
-        return this;
-    }
-
-    public void setCourseId(Integer courseId) {
-        this.courseId = courseId;
     }
 
     public String getCourseName() {
@@ -375,7 +359,6 @@ public class CoursesManagement implements Serializable {
     public String toString() {
         return "CoursesManagement{" +
             "id=" + getId() +
-            ", courseId=" + getCourseId() +
             ", courseName='" + getCourseName() + "'" +
             ", validFrom='" + getValidFrom() + "'" +
             ", validTo='" + getValidTo() + "'" +

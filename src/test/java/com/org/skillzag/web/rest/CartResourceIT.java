@@ -48,9 +48,6 @@ public class CartResourceIT {
     private static final Long DEFAULT_PROMO_ID = 1L;
     private static final Long UPDATED_PROMO_ID = 2L;
 
-    private static final Double DEFAULT_DISCOUNT_PERCENTAGE = 1D;
-    private static final Double UPDATED_DISCOUNT_PERCENTAGE = 2D;
-
     private static final Instant DEFAULT_CHECKOUT_DATE = Instant.ofEpochMilli(0L);
     private static final Instant UPDATED_CHECKOUT_DATE = Instant.now().truncatedTo(ChronoUnit.MILLIS);
 
@@ -89,7 +86,6 @@ public class CartResourceIT {
             .userId(DEFAULT_USER_ID)
             .subscriptionId(DEFAULT_SUBSCRIPTION_ID)
             .promoId(DEFAULT_PROMO_ID)
-            .discountPercentage(DEFAULT_DISCOUNT_PERCENTAGE)
             .checkoutDate(DEFAULT_CHECKOUT_DATE)
             .checkOutStatus(DEFAULT_CHECK_OUT_STATUS)
             .creationDate(DEFAULT_CREATION_DATE);
@@ -107,7 +103,6 @@ public class CartResourceIT {
             .userId(UPDATED_USER_ID)
             .subscriptionId(UPDATED_SUBSCRIPTION_ID)
             .promoId(UPDATED_PROMO_ID)
-            .discountPercentage(UPDATED_DISCOUNT_PERCENTAGE)
             .checkoutDate(UPDATED_CHECKOUT_DATE)
             .checkOutStatus(UPDATED_CHECK_OUT_STATUS)
             .creationDate(UPDATED_CREATION_DATE);
@@ -138,7 +133,6 @@ public class CartResourceIT {
         assertThat(testCart.getUserId()).isEqualTo(DEFAULT_USER_ID);
         assertThat(testCart.getSubscriptionId()).isEqualTo(DEFAULT_SUBSCRIPTION_ID);
         assertThat(testCart.getPromoId()).isEqualTo(DEFAULT_PROMO_ID);
-        assertThat(testCart.getDiscountPercentage()).isEqualTo(DEFAULT_DISCOUNT_PERCENTAGE);
         assertThat(testCart.getCheckoutDate()).isEqualTo(DEFAULT_CHECKOUT_DATE);
         assertThat(testCart.getCheckOutStatus()).isEqualTo(DEFAULT_CHECK_OUT_STATUS);
         assertThat(testCart.getCreationDate()).isEqualTo(DEFAULT_CREATION_DATE);
@@ -180,7 +174,6 @@ public class CartResourceIT {
             .andExpect(jsonPath("$.[*].userId").value(hasItem(DEFAULT_USER_ID)))
             .andExpect(jsonPath("$.[*].subscriptionId").value(hasItem(DEFAULT_SUBSCRIPTION_ID.intValue())))
             .andExpect(jsonPath("$.[*].promoId").value(hasItem(DEFAULT_PROMO_ID.intValue())))
-            .andExpect(jsonPath("$.[*].discountPercentage").value(hasItem(DEFAULT_DISCOUNT_PERCENTAGE.doubleValue())))
             .andExpect(jsonPath("$.[*].checkoutDate").value(hasItem(DEFAULT_CHECKOUT_DATE.toString())))
             .andExpect(jsonPath("$.[*].checkOutStatus").value(hasItem(DEFAULT_CHECK_OUT_STATUS)))
             .andExpect(jsonPath("$.[*].creationDate").value(hasItem(DEFAULT_CREATION_DATE.toString())));
@@ -201,7 +194,6 @@ public class CartResourceIT {
             .andExpect(jsonPath("$.userId").value(DEFAULT_USER_ID))
             .andExpect(jsonPath("$.subscriptionId").value(DEFAULT_SUBSCRIPTION_ID.intValue()))
             .andExpect(jsonPath("$.promoId").value(DEFAULT_PROMO_ID.intValue()))
-            .andExpect(jsonPath("$.discountPercentage").value(DEFAULT_DISCOUNT_PERCENTAGE.doubleValue()))
             .andExpect(jsonPath("$.checkoutDate").value(DEFAULT_CHECKOUT_DATE.toString()))
             .andExpect(jsonPath("$.checkOutStatus").value(DEFAULT_CHECK_OUT_STATUS))
             .andExpect(jsonPath("$.creationDate").value(DEFAULT_CREATION_DATE.toString()));
@@ -231,7 +223,6 @@ public class CartResourceIT {
             .userId(UPDATED_USER_ID)
             .subscriptionId(UPDATED_SUBSCRIPTION_ID)
             .promoId(UPDATED_PROMO_ID)
-            .discountPercentage(UPDATED_DISCOUNT_PERCENTAGE)
             .checkoutDate(UPDATED_CHECKOUT_DATE)
             .checkOutStatus(UPDATED_CHECK_OUT_STATUS)
             .creationDate(UPDATED_CREATION_DATE);
@@ -250,7 +241,6 @@ public class CartResourceIT {
         assertThat(testCart.getUserId()).isEqualTo(UPDATED_USER_ID);
         assertThat(testCart.getSubscriptionId()).isEqualTo(UPDATED_SUBSCRIPTION_ID);
         assertThat(testCart.getPromoId()).isEqualTo(UPDATED_PROMO_ID);
-        assertThat(testCart.getDiscountPercentage()).isEqualTo(UPDATED_DISCOUNT_PERCENTAGE);
         assertThat(testCart.getCheckoutDate()).isEqualTo(UPDATED_CHECKOUT_DATE);
         assertThat(testCart.getCheckOutStatus()).isEqualTo(UPDATED_CHECK_OUT_STATUS);
         assertThat(testCart.getCreationDate()).isEqualTo(UPDATED_CREATION_DATE);

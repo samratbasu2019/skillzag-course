@@ -12,8 +12,6 @@ public class CoursesManagementDTO implements Serializable {
     
     private Long id;
 
-    private Integer courseId;
-
     private String courseName;
 
     private Instant validFrom;
@@ -55,14 +53,6 @@ public class CoursesManagementDTO implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Integer getCourseId() {
-        return courseId;
-    }
-
-    public void setCourseId(Integer courseId) {
-        this.courseId = courseId;
     }
 
     public String getCourseName() {
@@ -223,7 +213,6 @@ public class CoursesManagementDTO implements Serializable {
     public String toString() {
         return "CoursesManagementDTO{" +
             "id=" + getId() +
-            ", courseId=" + getCourseId() +
             ", courseName='" + getCourseName() + "'" +
             ", validFrom='" + getValidFrom() + "'" +
             ", validTo='" + getValidTo() + "'" +

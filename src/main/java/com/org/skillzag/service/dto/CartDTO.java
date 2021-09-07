@@ -18,8 +18,6 @@ public class CartDTO implements Serializable {
 
     private Long promoId;
 
-    private Double discountPercentage;
-
     private Instant checkoutDate;
 
     private String checkOutStatus;
@@ -65,14 +63,6 @@ public class CartDTO implements Serializable {
 
     public void setPromoId(Long promoId) {
         this.promoId = promoId;
-    }
-
-    public Double getDiscountPercentage() {
-        return discountPercentage;
-    }
-
-    public void setDiscountPercentage(Double discountPercentage) {
-        this.discountPercentage = discountPercentage;
     }
 
     public Instant getCheckoutDate() {
@@ -125,7 +115,6 @@ public class CartDTO implements Serializable {
             ", userId='" + getUserId() + "'" +
             ", subscriptionId=" + getSubscriptionId() +
             ", promoId=" + getPromoId() +
-            ", discountPercentage=" + getDiscountPercentage() +
             ", checkoutDate='" + getCheckoutDate() + "'" +
             ", checkOutStatus='" + getCheckOutStatus() + "'" +
             ", creationDate='" + getCreationDate() + "'" +

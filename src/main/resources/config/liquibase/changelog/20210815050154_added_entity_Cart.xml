@@ -27,9 +27,6 @@
             <column name="promo_id" type="bigint">
                 <constraints nullable="true" />
             </column>
-            <column name="discount_percentage" type="double">
-                <constraints nullable="true" />
-            </column>
             <column name="checkout_date" type="datetime">
                 <constraints nullable="true" />
             </column>
@@ -68,7 +65,6 @@
             <column name="user_id" type="string"/>
             <column name="subscription_id" type="numeric"/>
             <column name="promo_id" type="numeric"/>
-            <column name="discount_percentage" type="numeric"/>
             <column name="checkout_date" type="datetime"/>
             <column name="check_out_status" type="string"/>
             <column name="creation_date" type="datetime"/>

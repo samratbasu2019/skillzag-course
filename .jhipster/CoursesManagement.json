@@ -2,10 +2,6 @@
   "name": "CoursesManagement",
   "fields": [
     {
-      "fieldName": "courseId",
-      "fieldType": "Integer"
-    },
-    {
       "fieldName": "courseName",
       "fieldType": "String"
     },

@@ -38,9 +38,6 @@ import com.org.skillzag.domain.enumeration.RecommendedStatus;
 @WithMockUser
 public class CoursesManagementResourceIT {
 
-    private static final Integer DEFAULT_COURSE_ID = 1;
-    private static final Integer UPDATED_COURSE_ID = 2;
-
     private static final String DEFAULT_COURSE_NAME = "AAAAAAAAAA";
     private static final String UPDATED_COURSE_NAME = "BBBBBBBBBB";
 
@@ -117,7 +114,6 @@ public class CoursesManagementResourceIT {
      */
     public static CoursesManagement createEntity(EntityManager em) {
         CoursesManagement coursesManagement = new CoursesManagement()
-            .courseId(DEFAULT_COURSE_ID)
             .courseName(DEFAULT_COURSE_NAME)
             .validFrom(DEFAULT_VALID_FROM)
             .validTo(DEFAULT_VALID_TO)
@@ -145,7 +141,6 @@ public class CoursesManagementResourceIT {
      */
     public static CoursesManagement createUpdatedEntity(EntityManager em) {
         CoursesManagement coursesManagement = new CoursesManagement()
-            .courseId(UPDATED_COURSE_ID)
             .courseName(UPDATED_COURSE_NAME)
             .validFrom(UPDATED_VALID_FROM)
             .validTo(UPDATED_VALID_TO)
@@ -186,7 +181,6 @@ public class CoursesManagementResourceIT {
         List<CoursesManagement> coursesManagementList = coursesManagementRepository.findAll();
         assertThat(coursesManagementList).hasSize(databaseSizeBeforeCreate + 1);
         CoursesManagement testCoursesManagement = coursesManagementList.get(coursesManagementList.size() - 1);
-        assertThat(testCoursesManagement.getCourseId()).isEqualTo(DEFAULT_COURSE_ID);
         assertThat(testCoursesManagement.getCourseName()).isEqualTo(DEFAULT_COURSE_NAME);
         assertThat(testCoursesManagement.getValidFrom()).isEqualTo(DEFAULT_VALID_FROM);
         assertThat(testCoursesManagement.getValidTo()).isEqualTo(DEFAULT_VALID_TO);
@@ -238,7 +232,6 @@ public class CoursesManagementResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(coursesManagement.getId().intValue())))
-            .andExpect(jsonPath("$.[*].courseId").value(hasItem(DEFAULT_COURSE_ID)))
             .andExpect(jsonPath("$.[*].courseName").value(hasItem(DEFAULT_COURSE_NAME)))
             .andExpect(jsonPath("$.[*].validFrom").value(hasItem(DEFAULT_VALID_FROM.toString())))
             .andExpect(jsonPath("$.[*].validTo").value(hasItem(DEFAULT_VALID_TO.toString())))
@@ -269,7 +262,6 @@ public class CoursesManagementResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(coursesManagement.getId().intValue()))
-            .andExpect(jsonPath("$.courseId").value(DEFAULT_COURSE_ID))
             .andExpect(jsonPath("$.courseName").value(DEFAULT_COURSE_NAME))
             .andExpect(jsonPath("$.validFrom").value(DEFAULT_VALID_FROM.toString()))
             .andExpect(jsonPath("$.validTo").value(DEFAULT_VALID_TO.toString()))
@@ -309,7 +301,6 @@ public class CoursesManagementResourceIT {
         // Disconnect from session so that the updates on updatedCoursesManagement are not directly saved in db
         em.detach(updatedCoursesManagement);
         updatedCoursesManagement
-            .courseId(UPDATED_COURSE_ID)
             .courseName(UPDATED_COURSE_NAME)
             .validFrom(UPDATED_VALID_FROM)
             .validTo(UPDATED_VALID_TO)
@@ -338,7 +329,6 @@ public class CoursesManagementResourceIT {
         List<CoursesManagement> coursesManagementList = coursesManagementRepository.findAll();
         assertThat(coursesManagementList).hasSize(databaseSizeBeforeUpdate);
         CoursesManagement testCoursesManagement = coursesManagementList.get(coursesManagementList.size() - 1);
-        assertThat(testCoursesManagement.getCourseId()).isEqualTo(UPDATED_COURSE_ID);
         assertThat(testCoursesManagement.getCourseName()).isEqualTo(UPDATED_COURSE_NAME);
         assertThat(testCoursesManagement.getValidFrom()).isEqualTo(UPDATED_VALID_FROM);
         assertThat(testCoursesManagement.getValidTo()).isEqualTo(UPDATED_VALID_TO);

@@ -51,6 +51,9 @@ public class PromoResourceIT {
     private static final String DEFAULT_CREATED_BY = "AAAAAAAAAA";
     private static final String UPDATED_CREATED_BY = "BBBBBBBBBB";
 
+    private static final Double DEFAULT_DISCOUNT_PERCENTAGE = 1D;
+    private static final Double UPDATED_DISCOUNT_PERCENTAGE = 2D;
+
     private static final Instant DEFAULT_CREATION_DATE = Instant.ofEpochMilli(0L);
     private static final Instant UPDATED_CREATION_DATE = Instant.now().truncatedTo(ChronoUnit.MILLIS);
 
@@ -84,6 +87,7 @@ public class PromoResourceIT {
             .validFrom(DEFAULT_VALID_FROM)
             .validTo(DEFAULT_VALID_TO)
             .createdBy(DEFAULT_CREATED_BY)
+            .discountPercentage(DEFAULT_DISCOUNT_PERCENTAGE)
             .creationDate(DEFAULT_CREATION_DATE);
         return promo;
     }
@@ -100,6 +104,7 @@ public class PromoResourceIT {
             .validFrom(UPDATED_VALID_FROM)
             .validTo(UPDATED_VALID_TO)
             .createdBy(UPDATED_CREATED_BY)
+            .discountPercentage(UPDATED_DISCOUNT_PERCENTAGE)
             .creationDate(UPDATED_CREATION_DATE);
         return promo;
     }
@@ -129,6 +134,7 @@ public class PromoResourceIT {
         assertThat(testPromo.getValidFrom()).isEqualTo(DEFAULT_VALID_FROM);
         assertThat(testPromo.getValidTo()).isEqualTo(DEFAULT_VALID_TO);
         assertThat(testPromo.getCreatedBy()).isEqualTo(DEFAULT_CREATED_BY);
+        assertThat(testPromo.getDiscountPercentage()).isEqualTo(DEFAULT_DISCOUNT_PERCENTAGE);
         assertThat(testPromo.getCreationDate()).isEqualTo(DEFAULT_CREATION_DATE);
     }
 
@@ -169,6 +175,7 @@ public class PromoResourceIT {
             .andExpect(jsonPath("$.[*].validFrom").value(hasItem(DEFAULT_VALID_FROM.toString())))
             .andExpect(jsonPath("$.[*].validTo").value(hasItem(DEFAULT_VALID_TO.toString())))
             .andExpect(jsonPath("$.[*].createdBy").value(hasItem(DEFAULT_CREATED_BY)))
+            .andExpect(jsonPath("$.[*].discountPercentage").value(hasItem(DEFAULT_DISCOUNT_PERCENTAGE.doubleValue())))
             .andExpect(jsonPath("$.[*].creationDate").value(hasItem(DEFAULT_CREATION_DATE.toString())));
     }
     
@@ -188,6 +195,7 @@ public class PromoResourceIT {
             .andExpect(jsonPath("$.validFrom").value(DEFAULT_VALID_FROM.toString()))
             .andExpect(jsonPath("$.validTo").value(DEFAULT_VALID_TO.toString()))
             .andExpect(jsonPath("$.createdBy").value(DEFAULT_CREATED_BY))
+            .andExpect(jsonPath("$.discountPercentage").value(DEFAULT_DISCOUNT_PERCENTAGE.doubleValue()))
             .andExpect(jsonPath("$.creationDate").value(DEFAULT_CREATION_DATE.toString()));
     }
     @Test
@@ -216,6 +224,7 @@ public class PromoResourceIT {
             .validFrom(UPDATED_VALID_FROM)
             .validTo(UPDATED_VALID_TO)
             .createdBy(UPDATED_CREATED_BY)
+            .discountPercentage(UPDATED_DISCOUNT_PERCENTAGE)
             .creationDate(UPDATED_CREATION_DATE);
         PromoDTO promoDTO = promoMapper.toDto(updatedPromo);
 
@@ -233,6 +242,7 @@ public class PromoResourceIT {
         assertThat(testPromo.getValidFrom()).isEqualTo(UPDATED_VALID_FROM);
         assertThat(testPromo.getValidTo()).isEqualTo(UPDATED_VALID_TO);
         assertThat(testPromo.getCreatedBy()).isEqualTo(UPDATED_CREATED_BY);
+        assertThat(testPromo.getDiscountPercentage()).isEqualTo(UPDATED_DISCOUNT_PERCENTAGE);
         assertThat(testPromo.getCreationDate()).isEqualTo(UPDATED_CREATION_DATE);
     }
 

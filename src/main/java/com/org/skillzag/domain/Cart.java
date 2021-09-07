@@ -32,9 +32,6 @@ public class Cart implements Serializable {
     @Column(name = "promo_id")
     private Long promoId;
 
-    @Column(name = "discount_percentage")
-    private Double discountPercentage;
-
     @Column(name = "checkout_date")
     private Instant checkoutDate;
 
@@ -105,19 +102,6 @@ public class Cart implements Serializable {
         this.promoId = promoId;
     }
 
-    public Double getDiscountPercentage() {
-        return discountPercentage;
-    }
-
-    public Cart discountPercentage(Double discountPercentage) {
-        this.discountPercentage = discountPercentage;
-        return this;
-    }
-
-    public void setDiscountPercentage(Double discountPercentage) {
-        this.discountPercentage = discountPercentage;
-    }
-
     public Instant getCheckoutDate() {
         return checkoutDate;
     }
@@ -183,7 +167,6 @@ public class Cart implements Serializable {
             ", userId='" + getUserId() + "'" +
             ", subscriptionId=" + getSubscriptionId() +
             ", promoId=" + getPromoId() +
-            ", discountPercentage=" + getDiscountPercentage() +
             ", checkoutDate='" + getCheckoutDate() + "'" +
             ", checkOutStatus='" + getCheckOutStatus() + "'" +
             ", creationDate='" + getCreationDate() + "'" +

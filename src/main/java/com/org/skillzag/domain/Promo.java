@@ -35,6 +35,9 @@ public class Promo implements Serializable {
     @Column(name = "created_by")
     private String createdBy;
 
+    @Column(name = "discount_percentage")
+    private Double discountPercentage;
+
     @Column(name = "creation_date")
     private Instant creationDate;
 
@@ -112,6 +115,19 @@ public class Promo implements Serializable {
         this.createdBy = createdBy;
     }
 
+    public Double getDiscountPercentage() {
+        return discountPercentage;
+    }
+
+    public Promo discountPercentage(Double discountPercentage) {
+        this.discountPercentage = discountPercentage;
+        return this;
+    }
+
+    public void setDiscountPercentage(Double discountPercentage) {
+        this.discountPercentage = discountPercentage;
+    }
+
     public Instant getCreationDate() {
         return creationDate;
     }
@@ -152,6 +168,7 @@ public class Promo implements Serializable {
             ", validFrom='" + getValidFrom() + "'" +
             ", validTo='" + getValidTo() + "'" +
             ", createdBy='" + getCreatedBy() + "'" +
+            ", discountPercentage=" + getDiscountPercentage() +
             ", creationDate='" + getCreationDate() + "'" +
             "}";
     }
