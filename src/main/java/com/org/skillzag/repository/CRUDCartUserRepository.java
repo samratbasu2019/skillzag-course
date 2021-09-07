@@ -21,9 +21,14 @@ public interface CRUDCartUserRepository extends CrudRepository<SubscriptionManag
         nativeQuery = true)
     List<Map<String, Object>> findCartDetailsByUserID(@Param("userId") String userId);
 
-    @Query(value = " select p.amount, cm.course_name, cm.course_description, sm.subscription_name, sm.subscription_startdate, sm.subscription_enddate ,\n" +
-        "p.user_id from payment p , subscription_management sm ,courses_management cm \n" +
-        "where p.subscription_id = sm.id and cm.subscription_id = sm.id and p.user_id = :userId",
+    @Query(value = "select cm.id as course_id, cm.course_name, cm.valid_from, cm.valid_to, cm.image_path, cm.video_url, \n" +
+        "cm.course_description, cm.course_objective, cm.url_1, cm.url_2, cm.url_3, cm.quizb_4_course, cm.quiza_4_course, \n" +
+        "cm.course_status, cm.recommended_status,sm.session_number, sm.session_name, sm.session_description, sm.session_url, \n" +
+        "sm.session_video_url, sm.quiz, sm.session_logo, sm.session_status, sm.subscription_required, \n" +
+        "sm.courses_management_id, sm.id as session_id, sm2.subscription_name, sm2.subscription_startdate, sm2.subscription_enddate,\n" +
+        "ua.enrollment_status, ua.id  as user_activity_id from courses_management cm , session_management sm, \n" +
+        "user_activity ua, subscription_management sm2 where cm.id = sm.courses_management_id  and sm2.id = cm.subscription_id        \n" +
+        "and ua.subscription_id = sm2.id and ua.user_id = :userId",
         nativeQuery = true)
     List<Map<String, Object>> findSubscriptionDetailsByUserID(@Param("userId") String userId);
 
