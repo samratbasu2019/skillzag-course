@@ -1,11 +1,11 @@
-id;session_number;session_name;session_description;session_url;session_video_url;quiz;session_logo;session_status;subscription_required
-1;86849;Security Outdoors success;SMTP SCSI;Ford;Generic Cotton Keyboard;invoice;Car Customer;INPROGRESS;NO
-2;53362;cohesive;generating;copy;Agent ivory;installation mobile Cambridgeshire;Auto Loan Account Borders;INPROGRESS;YES
-3;72346;bandwidth bus;Health;Distributed navigate Home Loan Account;Checking Account Operations Frozen;Research;parse Internal Automated;INPROGRESS;YES
-4;46794;Plastic Yuan Renminbi PCI;Chips Grocery;Global Legacy;Lakes Optional;Incredible Frozen Computer product;connect;INPROGRESS;NO
-5;56029;Licensed Down-sized;Philippine Peso Administrator;granular Belarus algorithm;scalable;black Shoals;capability Concrete dedicated;COMPLETED;YES
-6;81268;Comoro Franc;Awesome Cotton Tuna Senior;Chips;SMS;quantifying Auto Loan Account;web-enabled process improvement;COMPLETED;YES
-7;62742;backing up brand;Research payment;24/7 archive;synthesize;engage XSS;Kazakhstan;ACTIVE;YES
-8;46578;Communications Avon user-facing;calculate;Ergonomic Plastic Sausages;1080p Liaison Squares;haptic aggregate Unbranded Cotton Table;maroon;ACTIVE;YES
-9;30256;Investor synergize enable;RAM responsive Home Loan Account;hierarchy sky blue;District;connecting Books;deposit invoice payment;ACTIVE;YES
-10;69396;panel;redundant TCP;card;Practical Plastic Chicken Kyat copying;Integrated impactful Incredible Plastic Cheese;Cameroon;ACTIVE;NO
+id;session_number;session_name;session_description;session_url;session_video_url;quiz;session_logo;session_status;created_by;creation_date;subscription_required
+1;86849;Security Outdoors success;SMTP SCSI;Ford;Generic Cotton Keyboard;invoice;Car Customer;INPROGRESS;product;2021-08-14T09:43:53;NO
+2;57819;copy;Agent ivory;installation mobile Cambridgeshire;Auto Loan Account Borders;full-range Concrete;Oregon Soap;ACTIVE;compressing Health SSL;2021-08-15T00:22:32;NO
+3;53555;Functionality;Licensed parse Internal;Ergonomic Wooden Mouse;Fresh Computers;hacking open-source;PCI;INPROGRESS;Cambridgeshire interface Lakes;2021-08-14T22:47:20;YES
+4;31124;Reduced Plain programming;engage copying Chair;Bike;Massachusetts Licensed;salmon;invoice unleash granular;INPROGRESS;grid-enabled;2021-08-14T11:01:29;YES
+5;13260;transmitter Assistant;Small;Jewelery Quality-focused;Checking Account Minnesota;Senior purple;systematic hard drive quantifying;ACTIVE;Cloned Handcrafted Frozen Computer value-added;2021-08-14T15:56:54;NO
+6;60831;Tools Park Research;array 24/7;Rustic;Moroccan Dirham engage XSS;Kazakhstan;Product;ACTIVE;bandwidth virtual Spur;2021-08-14T06:34:14;YES
+7;76594;Small Wooden Pants Metrics;parse Granite wireless;Berkshire green District;composite generate;Soap;Avenue dedicated Ergonomic;COMPLETED;synergize enable;2021-08-14T07:16:02;YES
+8;45081;Avon;e-markets connecting Books;deposit invoice payment;Designer Quality partnerships;SAS;gold deploy neutral;INPROGRESS;metrics Electronics card;2021-08-14T12:17:19;NO
+9;68538;copying program;impactful Incredible Plastic Cheese;Cameroon;Credit Card Account RSS bypassing;South Carolina;Awesome Steel Towels;COMPLETED;Garden;2021-08-14T23:05:18;YES
+10;63094;Hat redundant quantifying;back up input Eritrea;Rustic Electronics Administrator;Agent;Azerbaijanian Manat Drive;Awesome withdrawal generating;COMPLETED;Cotton mobile Point;2021-08-14T11:39:10;YES

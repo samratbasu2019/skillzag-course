@@ -44,6 +44,10 @@ public class CoursesManagementDTO implements Serializable {
 
     private Long subscriptionId;
 
+    private String createdBy;
+
+    private Instant creationDate;
+
     
     public Long getId() {
         return id;
@@ -181,6 +185,22 @@ public class CoursesManagementDTO implements Serializable {
         this.subscriptionId = subscriptionId;
     }
 
+    public String getCreatedBy() {
+        return createdBy;
+    }
+
+    public void setCreatedBy(String createdBy) {
+        this.createdBy = createdBy;
+    }
+
+    public Instant getCreationDate() {
+        return creationDate;
+    }
+
+    public void setCreationDate(Instant creationDate) {
+        this.creationDate = creationDate;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -219,6 +239,8 @@ public class CoursesManagementDTO implements Serializable {
             ", courseStatus='" + getCourseStatus() + "'" +
             ", recommendedStatus='" + getRecommendedStatus() + "'" +
             ", subscriptionId=" + getSubscriptionId() +
+            ", createdBy='" + getCreatedBy() + "'" +
+            ", creationDate='" + getCreationDate() + "'" +
             "}";
     }
 }

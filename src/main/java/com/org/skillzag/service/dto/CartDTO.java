@@ -16,9 +16,15 @@ public class CartDTO implements Serializable {
 
     private Long subscriptionId;
 
+    private Long promoId;
+
+    private Double discountPercentage;
+
     private Instant checkoutDate;
 
     private String checkOutStatus;
+
+    private Instant creationDate;
 
     
     public Long getId() {
@@ -53,6 +59,22 @@ public class CartDTO implements Serializable {
         this.subscriptionId = subscriptionId;
     }
 
+    public Long getPromoId() {
+        return promoId;
+    }
+
+    public void setPromoId(Long promoId) {
+        this.promoId = promoId;
+    }
+
+    public Double getDiscountPercentage() {
+        return discountPercentage;
+    }
+
+    public void setDiscountPercentage(Double discountPercentage) {
+        this.discountPercentage = discountPercentage;
+    }
+
     public Instant getCheckoutDate() {
         return checkoutDate;
     }
@@ -67,6 +89,14 @@ public class CartDTO implements Serializable {
 
     public void setCheckOutStatus(String checkOutStatus) {
         this.checkOutStatus = checkOutStatus;
+    }
+
+    public Instant getCreationDate() {
+        return creationDate;
+    }
+
+    public void setCreationDate(Instant creationDate) {
+        this.creationDate = creationDate;
     }
 
     @Override
@@ -94,8 +124,11 @@ public class CartDTO implements Serializable {
             ", courseId=" + getCourseId() +
             ", userId='" + getUserId() + "'" +
             ", subscriptionId=" + getSubscriptionId() +
+            ", promoId=" + getPromoId() +
+            ", discountPercentage=" + getDiscountPercentage() +
             ", checkoutDate='" + getCheckoutDate() + "'" +
             ", checkOutStatus='" + getCheckOutStatus() + "'" +
+            ", creationDate='" + getCreationDate() + "'" +
             "}";
     }
 }

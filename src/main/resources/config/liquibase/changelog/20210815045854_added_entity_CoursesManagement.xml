@@ -63,10 +63,17 @@
             <column name="subscription_id" type="bigint">
                 <constraints nullable="true" />
             </column>
+            <column name="created_by" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="creation_date" type="datetime">
+                <constraints nullable="true" />
+            </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
         </createTable>
         <dropDefaultValue tableName="courses_management" columnName="valid_from" columnDataType="datetime"/>
         <dropDefaultValue tableName="courses_management" columnName="valid_to" columnDataType="datetime"/>
+        <dropDefaultValue tableName="courses_management" columnName="creation_date" columnDataType="datetime"/>
     </changeSet>
 
     <changeSet id="20210815045854-1-relations" author="jhipster">
@@ -104,6 +111,8 @@
             <column name="course_status" type="string"/>
             <column name="recommended_status" type="string"/>
             <column name="subscription_id" type="numeric"/>
+            <column name="created_by" type="string"/>
+            <column name="creation_date" type="datetime"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
         </loadData>
     </changeSet>

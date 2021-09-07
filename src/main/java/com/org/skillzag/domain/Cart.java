@@ -29,11 +29,20 @@ public class Cart implements Serializable {
     @Column(name = "subscription_id")
     private Long subscriptionId;
 
+    @Column(name = "promo_id")
+    private Long promoId;
+
+    @Column(name = "discount_percentage")
+    private Double discountPercentage;
+
     @Column(name = "checkout_date")
     private Instant checkoutDate;
 
     @Column(name = "check_out_status")
     private String checkOutStatus;
+
+    @Column(name = "creation_date")
+    private Instant creationDate;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -83,6 +92,32 @@ public class Cart implements Serializable {
         this.subscriptionId = subscriptionId;
     }
 
+    public Long getPromoId() {
+        return promoId;
+    }
+
+    public Cart promoId(Long promoId) {
+        this.promoId = promoId;
+        return this;
+    }
+
+    public void setPromoId(Long promoId) {
+        this.promoId = promoId;
+    }
+
+    public Double getDiscountPercentage() {
+        return discountPercentage;
+    }
+
+    public Cart discountPercentage(Double discountPercentage) {
+        this.discountPercentage = discountPercentage;
+        return this;
+    }
+
+    public void setDiscountPercentage(Double discountPercentage) {
+        this.discountPercentage = discountPercentage;
+    }
+
     public Instant getCheckoutDate() {
         return checkoutDate;
     }
@@ -107,6 +142,19 @@ public class Cart implements Serializable {
 
     public void setCheckOutStatus(String checkOutStatus) {
         this.checkOutStatus = checkOutStatus;
+    }
+
+    public Instant getCreationDate() {
+        return creationDate;
+    }
+
+    public Cart creationDate(Instant creationDate) {
+        this.creationDate = creationDate;
+        return this;
+    }
+
+    public void setCreationDate(Instant creationDate) {
+        this.creationDate = creationDate;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 
@@ -134,8 +182,11 @@ public class Cart implements Serializable {
             ", courseId=" + getCourseId() +
             ", userId='" + getUserId() + "'" +
             ", subscriptionId=" + getSubscriptionId() +
+            ", promoId=" + getPromoId() +
+            ", discountPercentage=" + getDiscountPercentage() +
             ", checkoutDate='" + getCheckoutDate() + "'" +
             ", checkOutStatus='" + getCheckOutStatus() + "'" +
+            ", creationDate='" + getCreationDate() + "'" +
             "}";
     }
 }

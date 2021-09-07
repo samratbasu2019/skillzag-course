@@ -1,32 +1,24 @@
 {
-  "name": "Cart",
+  "name": "Promo",
   "fields": [
     {
-      "fieldName": "courseId",
+      "fieldName": "cartId",
       "fieldType": "Long"
     },
     {
-      "fieldName": "userId",
+      "fieldName": "promoCode",
       "fieldType": "String"
     },
     {
-      "fieldName": "subscriptionId",
-      "fieldType": "Long"
-    },
-    {
-      "fieldName": "promoId",
-      "fieldType": "Long"
-    },
-    {
-      "fieldName": "discountPercentage",
-      "fieldType": "Double"
-    },
-    {
-      "fieldName": "checkoutDate",
+      "fieldName": "validFrom",
       "fieldType": "Instant"
     },
     {
-      "fieldName": "checkOutStatus",
+      "fieldName": "validTo",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "createdBy",
       "fieldType": "String"
     },
     {
@@ -35,8 +27,8 @@
     }
   ],
   "relationships": [],
-  "changelogDate": "20210815050154",
-  "entityTableName": "cart",
+  "changelogDate": "20210907024813",
+  "entityTableName": "promo",
   "dto": "mapstruct",
   "pagination": "pagination",
   "service": "serviceImpl",

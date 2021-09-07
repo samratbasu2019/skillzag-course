@@ -76,6 +76,12 @@ public class CoursesManagement implements Serializable {
     @Column(name = "subscription_id")
     private Long subscriptionId;
 
+    @Column(name = "created_by")
+    private String createdBy;
+
+    @Column(name = "creation_date")
+    private Instant creationDate;
+
     @OneToMany(mappedBy = "coursesManagement")
     private Set<SessionManagement> sessionManagements = new HashSet<>();
 
@@ -296,6 +302,32 @@ public class CoursesManagement implements Serializable {
         this.subscriptionId = subscriptionId;
     }
 
+    public String getCreatedBy() {
+        return createdBy;
+    }
+
+    public CoursesManagement createdBy(String createdBy) {
+        this.createdBy = createdBy;
+        return this;
+    }
+
+    public void setCreatedBy(String createdBy) {
+        this.createdBy = createdBy;
+    }
+
+    public Instant getCreationDate() {
+        return creationDate;
+    }
+
+    public CoursesManagement creationDate(Instant creationDate) {
+        this.creationDate = creationDate;
+        return this;
+    }
+
+    public void setCreationDate(Instant creationDate) {
+        this.creationDate = creationDate;
+    }
+
     public Set<SessionManagement> getSessionManagements() {
         return sessionManagements;
     }
@@ -359,6 +391,8 @@ public class CoursesManagement implements Serializable {
             ", courseStatus='" + getCourseStatus() + "'" +
             ", recommendedStatus='" + getRecommendedStatus() + "'" +
             ", subscriptionId=" + getSubscriptionId() +
+            ", createdBy='" + getCreatedBy() + "'" +
+            ", creationDate='" + getCreationDate() + "'" +
             "}";
     }
 }

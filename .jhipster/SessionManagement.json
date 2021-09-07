@@ -35,6 +35,14 @@
       "fieldValues": "ACTIVE,INPROGRESS,COMPLETED"
     },
     {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "creationDate",
+      "fieldType": "Instant"
+    },
+    {
       "fieldName": "subscriptionRequired",
       "fieldType": "SubscriptionRequired",
       "fieldValues": "YES,NO"

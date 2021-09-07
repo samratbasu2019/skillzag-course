@@ -86,6 +86,12 @@ public class CoursesManagementResourceIT {
     private static final Long DEFAULT_SUBSCRIPTION_ID = 1L;
     private static final Long UPDATED_SUBSCRIPTION_ID = 2L;
 
+    private static final String DEFAULT_CREATED_BY = "AAAAAAAAAA";
+    private static final String UPDATED_CREATED_BY = "BBBBBBBBBB";
+
+    private static final Instant DEFAULT_CREATION_DATE = Instant.ofEpochMilli(0L);
+    private static final Instant UPDATED_CREATION_DATE = Instant.now().truncatedTo(ChronoUnit.MILLIS);
+
     @Autowired
     private CoursesManagementRepository coursesManagementRepository;
 
@@ -126,7 +132,9 @@ public class CoursesManagementResourceIT {
             .quiza4Course(DEFAULT_QUIZA_4_COURSE)
             .courseStatus(DEFAULT_COURSE_STATUS)
             .recommendedStatus(DEFAULT_RECOMMENDED_STATUS)
-            .subscriptionId(DEFAULT_SUBSCRIPTION_ID);
+            .subscriptionId(DEFAULT_SUBSCRIPTION_ID)
+            .createdBy(DEFAULT_CREATED_BY)
+            .creationDate(DEFAULT_CREATION_DATE);
         return coursesManagement;
     }
     /**
@@ -152,7 +160,9 @@ public class CoursesManagementResourceIT {
             .quiza4Course(UPDATED_QUIZA_4_COURSE)
             .courseStatus(UPDATED_COURSE_STATUS)
             .recommendedStatus(UPDATED_RECOMMENDED_STATUS)
-            .subscriptionId(UPDATED_SUBSCRIPTION_ID);
+            .subscriptionId(UPDATED_SUBSCRIPTION_ID)
+            .createdBy(UPDATED_CREATED_BY)
+            .creationDate(UPDATED_CREATION_DATE);
         return coursesManagement;
     }
 
@@ -192,6 +202,8 @@ public class CoursesManagementResourceIT {
         assertThat(testCoursesManagement.getCourseStatus()).isEqualTo(DEFAULT_COURSE_STATUS);
         assertThat(testCoursesManagement.getRecommendedStatus()).isEqualTo(DEFAULT_RECOMMENDED_STATUS);
         assertThat(testCoursesManagement.getSubscriptionId()).isEqualTo(DEFAULT_SUBSCRIPTION_ID);
+        assertThat(testCoursesManagement.getCreatedBy()).isEqualTo(DEFAULT_CREATED_BY);
+        assertThat(testCoursesManagement.getCreationDate()).isEqualTo(DEFAULT_CREATION_DATE);
     }
 
     @Test
@@ -241,7 +253,9 @@ public class CoursesManagementResourceIT {
             .andExpect(jsonPath("$.[*].quiza4Course").value(hasItem(DEFAULT_QUIZA_4_COURSE)))
             .andExpect(jsonPath("$.[*].courseStatus").value(hasItem(DEFAULT_COURSE_STATUS.toString())))
             .andExpect(jsonPath("$.[*].recommendedStatus").value(hasItem(DEFAULT_RECOMMENDED_STATUS.toString())))
-            .andExpect(jsonPath("$.[*].subscriptionId").value(hasItem(DEFAULT_SUBSCRIPTION_ID.intValue())));
+            .andExpect(jsonPath("$.[*].subscriptionId").value(hasItem(DEFAULT_SUBSCRIPTION_ID.intValue())))
+            .andExpect(jsonPath("$.[*].createdBy").value(hasItem(DEFAULT_CREATED_BY)))
+            .andExpect(jsonPath("$.[*].creationDate").value(hasItem(DEFAULT_CREATION_DATE.toString())));
     }
     
     @Test
@@ -270,7 +284,9 @@ public class CoursesManagementResourceIT {
             .andExpect(jsonPath("$.quiza4Course").value(DEFAULT_QUIZA_4_COURSE))
             .andExpect(jsonPath("$.courseStatus").value(DEFAULT_COURSE_STATUS.toString()))
             .andExpect(jsonPath("$.recommendedStatus").value(DEFAULT_RECOMMENDED_STATUS.toString()))
-            .andExpect(jsonPath("$.subscriptionId").value(DEFAULT_SUBSCRIPTION_ID.intValue()));
+            .andExpect(jsonPath("$.subscriptionId").value(DEFAULT_SUBSCRIPTION_ID.intValue()))
+            .andExpect(jsonPath("$.createdBy").value(DEFAULT_CREATED_BY))
+            .andExpect(jsonPath("$.creationDate").value(DEFAULT_CREATION_DATE.toString()));
     }
     @Test
     @Transactional
@@ -308,7 +324,9 @@ public class CoursesManagementResourceIT {
             .quiza4Course(UPDATED_QUIZA_4_COURSE)
             .courseStatus(UPDATED_COURSE_STATUS)
             .recommendedStatus(UPDATED_RECOMMENDED_STATUS)
-            .subscriptionId(UPDATED_SUBSCRIPTION_ID);
+            .subscriptionId(UPDATED_SUBSCRIPTION_ID)
+            .createdBy(UPDATED_CREATED_BY)
+            .creationDate(UPDATED_CREATION_DATE);
         CoursesManagementDTO coursesManagementDTO = coursesManagementMapper.toDto(updatedCoursesManagement);
 
         restCoursesManagementMockMvc.perform(put("/api/courses-managements").with(csrf())
@@ -336,6 +354,8 @@ public class CoursesManagementResourceIT {
         assertThat(testCoursesManagement.getCourseStatus()).isEqualTo(UPDATED_COURSE_STATUS);
         assertThat(testCoursesManagement.getRecommendedStatus()).isEqualTo(UPDATED_RECOMMENDED_STATUS);
         assertThat(testCoursesManagement.getSubscriptionId()).isEqualTo(UPDATED_SUBSCRIPTION_ID);
+        assertThat(testCoursesManagement.getCreatedBy()).isEqualTo(UPDATED_CREATED_BY);
+        assertThat(testCoursesManagement.getCreationDate()).isEqualTo(UPDATED_CREATION_DATE);
     }
 
     @Test

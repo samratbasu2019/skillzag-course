@@ -1,5 +1,6 @@
 package com.org.skillzag.service.dto;
 
+import java.time.Instant;
 import java.io.Serializable;
 import com.org.skillzag.domain.enumeration.SessionStatus;
 import com.org.skillzag.domain.enumeration.SubscriptionRequired;
@@ -26,6 +27,10 @@ public class SessionManagementDTO implements Serializable {
     private String sessionLogo;
 
     private SessionStatus sessionStatus;
+
+    private String createdBy;
+
+    private Instant creationDate;
 
     private SubscriptionRequired subscriptionRequired;
 
@@ -104,6 +109,22 @@ public class SessionManagementDTO implements Serializable {
         this.sessionStatus = sessionStatus;
     }
 
+    public String getCreatedBy() {
+        return createdBy;
+    }
+
+    public void setCreatedBy(String createdBy) {
+        this.createdBy = createdBy;
+    }
+
+    public Instant getCreationDate() {
+        return creationDate;
+    }
+
+    public void setCreationDate(Instant creationDate) {
+        this.creationDate = creationDate;
+    }
+
     public SubscriptionRequired getSubscriptionRequired() {
         return subscriptionRequired;
     }
@@ -150,6 +171,8 @@ public class SessionManagementDTO implements Serializable {
             ", quiz='" + getQuiz() + "'" +
             ", sessionLogo='" + getSessionLogo() + "'" +
             ", sessionStatus='" + getSessionStatus() + "'" +
+            ", createdBy='" + getCreatedBy() + "'" +
+            ", creationDate='" + getCreationDate() + "'" +
             ", subscriptionRequired='" + getSubscriptionRequired() + "'" +
             ", coursesManagementId=" + getCoursesManagementId() +
             "}";

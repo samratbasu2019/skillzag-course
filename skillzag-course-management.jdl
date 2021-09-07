@@ -24,7 +24,9 @@ entity CoursesManagement {
 	quiza4Course String,
     courseStatus CourseStatus,
     recommendedStatus RecommendedStatus,
-    subscriptionId Long
+    subscriptionId Long,
+    createdBy String,
+    creationDate Instant
 }
 
 enum SessionStatus{
@@ -47,6 +49,8 @@ entity SessionManagement {
    quiz String,
    sessionLogo String,
    sessionStatus SessionStatus,
+   createdBy String,
+   creationDate Instant
    subscriptionRequired SubscriptionRequired
 }
 
@@ -76,8 +80,20 @@ entity Cart {
    courseId Long,
    userId String,
    subscriptionId Long,
+   promoId Long,
+   discountPercentage Double,
    checkoutDate Instant,
    checkOutStatus String,
+   creationDate Instant
+}
+
+entity Promo {
+    cartId Long,
+    promoCode String,
+    validFrom Instant,
+    validTo Instant,
+    createdBy String,
+    creationDate Instant
 }
 
 entity Payment {

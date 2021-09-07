@@ -18,6 +18,8 @@ import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
 import javax.persistence.EntityManager;
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -60,6 +62,12 @@ public class SessionManagementResourceIT {
     private static final SessionStatus DEFAULT_SESSION_STATUS = SessionStatus.ACTIVE;
     private static final SessionStatus UPDATED_SESSION_STATUS = SessionStatus.INPROGRESS;
 
+    private static final String DEFAULT_CREATED_BY = "AAAAAAAAAA";
+    private static final String UPDATED_CREATED_BY = "BBBBBBBBBB";
+
+    private static final Instant DEFAULT_CREATION_DATE = Instant.ofEpochMilli(0L);
+    private static final Instant UPDATED_CREATION_DATE = Instant.now().truncatedTo(ChronoUnit.MILLIS);
+
     private static final SubscriptionRequired DEFAULT_SUBSCRIPTION_REQUIRED = SubscriptionRequired.YES;
     private static final SubscriptionRequired UPDATED_SUBSCRIPTION_REQUIRED = SubscriptionRequired.NO;
 
@@ -96,6 +104,8 @@ public class SessionManagementResourceIT {
             .quiz(DEFAULT_QUIZ)
             .sessionLogo(DEFAULT_SESSION_LOGO)
             .sessionStatus(DEFAULT_SESSION_STATUS)
+            .createdBy(DEFAULT_CREATED_BY)
+            .creationDate(DEFAULT_CREATION_DATE)
             .subscriptionRequired(DEFAULT_SUBSCRIPTION_REQUIRED);
         return sessionManagement;
     }
@@ -115,6 +125,8 @@ public class SessionManagementResourceIT {
             .quiz(UPDATED_QUIZ)
             .sessionLogo(UPDATED_SESSION_LOGO)
             .sessionStatus(UPDATED_SESSION_STATUS)
+            .createdBy(UPDATED_CREATED_BY)
+            .creationDate(UPDATED_CREATION_DATE)
             .subscriptionRequired(UPDATED_SUBSCRIPTION_REQUIRED);
         return sessionManagement;
     }
@@ -147,6 +159,8 @@ public class SessionManagementResourceIT {
         assertThat(testSessionManagement.getQuiz()).isEqualTo(DEFAULT_QUIZ);
         assertThat(testSessionManagement.getSessionLogo()).isEqualTo(DEFAULT_SESSION_LOGO);
         assertThat(testSessionManagement.getSessionStatus()).isEqualTo(DEFAULT_SESSION_STATUS);
+        assertThat(testSessionManagement.getCreatedBy()).isEqualTo(DEFAULT_CREATED_BY);
+        assertThat(testSessionManagement.getCreationDate()).isEqualTo(DEFAULT_CREATION_DATE);
         assertThat(testSessionManagement.getSubscriptionRequired()).isEqualTo(DEFAULT_SUBSCRIPTION_REQUIRED);
     }
 
@@ -190,6 +204,8 @@ public class SessionManagementResourceIT {
             .andExpect(jsonPath("$.[*].quiz").value(hasItem(DEFAULT_QUIZ)))
             .andExpect(jsonPath("$.[*].sessionLogo").value(hasItem(DEFAULT_SESSION_LOGO)))
             .andExpect(jsonPath("$.[*].sessionStatus").value(hasItem(DEFAULT_SESSION_STATUS.toString())))
+            .andExpect(jsonPath("$.[*].createdBy").value(hasItem(DEFAULT_CREATED_BY)))
+            .andExpect(jsonPath("$.[*].creationDate").value(hasItem(DEFAULT_CREATION_DATE.toString())))
             .andExpect(jsonPath("$.[*].subscriptionRequired").value(hasItem(DEFAULT_SUBSCRIPTION_REQUIRED.toString())));
     }
     
@@ -212,6 +228,8 @@ public class SessionManagementResourceIT {
             .andExpect(jsonPath("$.quiz").value(DEFAULT_QUIZ))
             .andExpect(jsonPath("$.sessionLogo").value(DEFAULT_SESSION_LOGO))
             .andExpect(jsonPath("$.sessionStatus").value(DEFAULT_SESSION_STATUS.toString()))
+            .andExpect(jsonPath("$.createdBy").value(DEFAULT_CREATED_BY))
+            .andExpect(jsonPath("$.creationDate").value(DEFAULT_CREATION_DATE.toString()))
             .andExpect(jsonPath("$.subscriptionRequired").value(DEFAULT_SUBSCRIPTION_REQUIRED.toString()));
     }
     @Test
@@ -243,6 +261,8 @@ public class SessionManagementResourceIT {
             .quiz(UPDATED_QUIZ)
             .sessionLogo(UPDATED_SESSION_LOGO)
             .sessionStatus(UPDATED_SESSION_STATUS)
+            .createdBy(UPDATED_CREATED_BY)
+            .creationDate(UPDATED_CREATION_DATE)
             .subscriptionRequired(UPDATED_SUBSCRIPTION_REQUIRED);
         SessionManagementDTO sessionManagementDTO = sessionManagementMapper.toDto(updatedSessionManagement);
 
@@ -263,6 +283,8 @@ public class SessionManagementResourceIT {
         assertThat(testSessionManagement.getQuiz()).isEqualTo(UPDATED_QUIZ);
         assertThat(testSessionManagement.getSessionLogo()).isEqualTo(UPDATED_SESSION_LOGO);
         assertThat(testSessionManagement.getSessionStatus()).isEqualTo(UPDATED_SESSION_STATUS);
+        assertThat(testSessionManagement.getCreatedBy()).isEqualTo(UPDATED_CREATED_BY);
+        assertThat(testSessionManagement.getCreationDate()).isEqualTo(UPDATED_CREATION_DATE);
         assertThat(testSessionManagement.getSubscriptionRequired()).isEqualTo(UPDATED_SUBSCRIPTION_REQUIRED);
     }
 

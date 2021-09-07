@@ -66,6 +66,14 @@
     {
       "fieldName": "subscriptionId",
       "fieldType": "Long"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "creationDate",
+      "fieldType": "Instant"
     }
   ],
   "relationships": [

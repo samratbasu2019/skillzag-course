@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.*;
 
 import java.io.Serializable;
+import java.time.Instant;
 
 import com.org.skillzag.domain.enumeration.SessionStatus;
 
@@ -48,6 +49,12 @@ public class SessionManagement implements Serializable {
     @Enumerated(EnumType.STRING)
     @Column(name = "session_status")
     private SessionStatus sessionStatus;
+
+    @Column(name = "created_by")
+    private String createdBy;
+
+    @Column(name = "creation_date")
+    private Instant creationDate;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "subscription_required")
@@ -170,6 +177,32 @@ public class SessionManagement implements Serializable {
         this.sessionStatus = sessionStatus;
     }
 
+    public String getCreatedBy() {
+        return createdBy;
+    }
+
+    public SessionManagement createdBy(String createdBy) {
+        this.createdBy = createdBy;
+        return this;
+    }
+
+    public void setCreatedBy(String createdBy) {
+        this.createdBy = createdBy;
+    }
+
+    public Instant getCreationDate() {
+        return creationDate;
+    }
+
+    public SessionManagement creationDate(Instant creationDate) {
+        this.creationDate = creationDate;
+        return this;
+    }
+
+    public void setCreationDate(Instant creationDate) {
+        this.creationDate = creationDate;
+    }
+
     public SubscriptionRequired getSubscriptionRequired() {
         return subscriptionRequired;
     }
@@ -226,6 +259,8 @@ public class SessionManagement implements Serializable {
             ", quiz='" + getQuiz() + "'" +
             ", sessionLogo='" + getSessionLogo() + "'" +
             ", sessionStatus='" + getSessionStatus() + "'" +
+            ", createdBy='" + getCreatedBy() + "'" +
+            ", creationDate='" + getCreationDate() + "'" +
             ", subscriptionRequired='" + getSubscriptionRequired() + "'" +
             "}";
     }
