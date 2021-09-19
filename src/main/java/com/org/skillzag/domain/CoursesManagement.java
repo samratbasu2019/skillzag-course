@@ -76,6 +76,9 @@ public class CoursesManagement implements Serializable {
     @Column(name = "created_by")
     private String createdBy;
 
+    @Column(name = "institute_id")
+    private Long instituteId;
+
     @Column(name = "creation_date")
     private Instant creationDate;
 
@@ -299,6 +302,19 @@ public class CoursesManagement implements Serializable {
         this.createdBy = createdBy;
     }
 
+    public Long getInstituteId() {
+        return instituteId;
+    }
+
+    public CoursesManagement instituteId(Long instituteId) {
+        this.instituteId = instituteId;
+        return this;
+    }
+
+    public void setInstituteId(Long instituteId) {
+        this.instituteId = instituteId;
+    }
+
     public Instant getCreationDate() {
         return creationDate;
     }
@@ -375,6 +391,7 @@ public class CoursesManagement implements Serializable {
             ", recommendedStatus='" + getRecommendedStatus() + "'" +
             ", subscriptionId=" + getSubscriptionId() +
             ", createdBy='" + getCreatedBy() + "'" +
+            ", instituteId=" + getInstituteId() +
             ", creationDate='" + getCreationDate() + "'" +
             "}";
     }

@@ -68,6 +68,10 @@
       "fieldType": "String"
     },
     {
+      "fieldName": "instituteId",
+      "fieldType": "Long"
+    },
+    {
       "fieldName": "creationDate",
       "fieldType": "Instant"
     }

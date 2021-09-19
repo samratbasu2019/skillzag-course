@@ -86,6 +86,9 @@ public class CoursesManagementResourceIT {
     private static final String DEFAULT_CREATED_BY = "AAAAAAAAAA";
     private static final String UPDATED_CREATED_BY = "BBBBBBBBBB";
 
+    private static final Long DEFAULT_INSTITUTE_ID = 1L;
+    private static final Long UPDATED_INSTITUTE_ID = 2L;
+
     private static final Instant DEFAULT_CREATION_DATE = Instant.ofEpochMilli(0L);
     private static final Instant UPDATED_CREATION_DATE = Instant.now().truncatedTo(ChronoUnit.MILLIS);
 
@@ -130,6 +133,7 @@ public class CoursesManagementResourceIT {
             .recommendedStatus(DEFAULT_RECOMMENDED_STATUS)
             .subscriptionId(DEFAULT_SUBSCRIPTION_ID)
             .createdBy(DEFAULT_CREATED_BY)
+            .instituteId(DEFAULT_INSTITUTE_ID)
             .creationDate(DEFAULT_CREATION_DATE);
         return coursesManagement;
     }
@@ -157,6 +161,7 @@ public class CoursesManagementResourceIT {
             .recommendedStatus(UPDATED_RECOMMENDED_STATUS)
             .subscriptionId(UPDATED_SUBSCRIPTION_ID)
             .createdBy(UPDATED_CREATED_BY)
+            .instituteId(UPDATED_INSTITUTE_ID)
             .creationDate(UPDATED_CREATION_DATE);
         return coursesManagement;
     }
@@ -197,6 +202,7 @@ public class CoursesManagementResourceIT {
         assertThat(testCoursesManagement.getRecommendedStatus()).isEqualTo(DEFAULT_RECOMMENDED_STATUS);
         assertThat(testCoursesManagement.getSubscriptionId()).isEqualTo(DEFAULT_SUBSCRIPTION_ID);
         assertThat(testCoursesManagement.getCreatedBy()).isEqualTo(DEFAULT_CREATED_BY);
+        assertThat(testCoursesManagement.getInstituteId()).isEqualTo(DEFAULT_INSTITUTE_ID);
         assertThat(testCoursesManagement.getCreationDate()).isEqualTo(DEFAULT_CREATION_DATE);
     }
 
@@ -248,6 +254,7 @@ public class CoursesManagementResourceIT {
             .andExpect(jsonPath("$.[*].recommendedStatus").value(hasItem(DEFAULT_RECOMMENDED_STATUS.toString())))
             .andExpect(jsonPath("$.[*].subscriptionId").value(hasItem(DEFAULT_SUBSCRIPTION_ID.intValue())))
             .andExpect(jsonPath("$.[*].createdBy").value(hasItem(DEFAULT_CREATED_BY)))
+            .andExpect(jsonPath("$.[*].instituteId").value(hasItem(DEFAULT_INSTITUTE_ID.intValue())))
             .andExpect(jsonPath("$.[*].creationDate").value(hasItem(DEFAULT_CREATION_DATE.toString())));
     }
     
@@ -278,6 +285,7 @@ public class CoursesManagementResourceIT {
             .andExpect(jsonPath("$.recommendedStatus").value(DEFAULT_RECOMMENDED_STATUS.toString()))
             .andExpect(jsonPath("$.subscriptionId").value(DEFAULT_SUBSCRIPTION_ID.intValue()))
             .andExpect(jsonPath("$.createdBy").value(DEFAULT_CREATED_BY))
+            .andExpect(jsonPath("$.instituteId").value(DEFAULT_INSTITUTE_ID.intValue()))
             .andExpect(jsonPath("$.creationDate").value(DEFAULT_CREATION_DATE.toString()));
     }
     @Test
@@ -317,6 +325,7 @@ public class CoursesManagementResourceIT {
             .recommendedStatus(UPDATED_RECOMMENDED_STATUS)
             .subscriptionId(UPDATED_SUBSCRIPTION_ID)
             .createdBy(UPDATED_CREATED_BY)
+            .instituteId(UPDATED_INSTITUTE_ID)
             .creationDate(UPDATED_CREATION_DATE);
         CoursesManagementDTO coursesManagementDTO = coursesManagementMapper.toDto(updatedCoursesManagement);
 
@@ -345,6 +354,7 @@ public class CoursesManagementResourceIT {
         assertThat(testCoursesManagement.getRecommendedStatus()).isEqualTo(UPDATED_RECOMMENDED_STATUS);
         assertThat(testCoursesManagement.getSubscriptionId()).isEqualTo(UPDATED_SUBSCRIPTION_ID);
         assertThat(testCoursesManagement.getCreatedBy()).isEqualTo(UPDATED_CREATED_BY);
+        assertThat(testCoursesManagement.getInstituteId()).isEqualTo(UPDATED_INSTITUTE_ID);
         assertThat(testCoursesManagement.getCreationDate()).isEqualTo(UPDATED_CREATION_DATE);
     }
 

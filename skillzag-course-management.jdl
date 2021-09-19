@@ -25,6 +25,7 @@ entity CoursesManagement {
     recommendedStatus RecommendedStatus,
     subscriptionId Long,
     createdBy String,
+    instituteId Long,
     creationDate Instant
 }
 
@@ -111,6 +112,23 @@ entity UserActivity {
    userId String,
    subscriptionId Long,
    activityDate Instant
+}
+
+entity Institution {
+  institutionAddress String,
+  institutionDescription String,
+  institutionEmail String,
+  institutionLogo String,
+  institutionMisc String,
+  institutionName String,
+  institutionNoOfStudents Integer,
+  institutionPhonenumber String,
+  institutionSecondaryemail String,
+  institutionUrl String,
+  institutionUrl1 String,
+  institutionUrl2 String,
+  institutionVideo String,
+  institutionWebsite String
 }
 
 relationship OneToMany {

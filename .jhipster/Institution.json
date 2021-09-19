@@ -1,0 +1,74 @@
+{
+  "name": "Institution",
+  "fields": [
+    {
+      "fieldName": "institutionAddress",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "institutionDescription",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "institutionEmail",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "institutionLogo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "institutionMisc",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "institutionName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "institutionNoOfStudents",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "institutionPhonenumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "institutionSecondaryemail",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "institutionUrl",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "institutionUrl1",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "institutionUrl2",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "institutionVideo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "institutionWebsite",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20210919140024",
+  "entityTableName": "institution",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "skillzagcoursemanagement",
+  "applications": "*",
+  "microserviceName": "skillzagcoursemanagement"
+}
