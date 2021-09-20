@@ -39,6 +39,9 @@ public class UserActivityResourceIT {
     private static final Long DEFAULT_COURSE_ID = 1L;
     private static final Long UPDATED_COURSE_ID = 2L;
 
+    private static final Long DEFAULT_INSTITUTE_ID = 1L;
+    private static final Long UPDATED_INSTITUTE_ID = 2L;
+
     private static final String DEFAULT_ENROLLMENT_STATUS = "AAAAAAAAAA";
     private static final String UPDATED_ENROLLMENT_STATUS = "BBBBBBBBBB";
 
@@ -77,6 +80,7 @@ public class UserActivityResourceIT {
     public static UserActivity createEntity(EntityManager em) {
         UserActivity userActivity = new UserActivity()
             .courseId(DEFAULT_COURSE_ID)
+            .instituteId(DEFAULT_INSTITUTE_ID)
             .enrollmentStatus(DEFAULT_ENROLLMENT_STATUS)
             .userId(DEFAULT_USER_ID)
             .subscriptionId(DEFAULT_SUBSCRIPTION_ID)
@@ -92,6 +96,7 @@ public class UserActivityResourceIT {
     public static UserActivity createUpdatedEntity(EntityManager em) {
         UserActivity userActivity = new UserActivity()
             .courseId(UPDATED_COURSE_ID)
+            .instituteId(UPDATED_INSTITUTE_ID)
             .enrollmentStatus(UPDATED_ENROLLMENT_STATUS)
             .userId(UPDATED_USER_ID)
             .subscriptionId(UPDATED_SUBSCRIPTION_ID)
@@ -120,6 +125,7 @@ public class UserActivityResourceIT {
         assertThat(userActivityList).hasSize(databaseSizeBeforeCreate + 1);
         UserActivity testUserActivity = userActivityList.get(userActivityList.size() - 1);
         assertThat(testUserActivity.getCourseId()).isEqualTo(DEFAULT_COURSE_ID);
+        assertThat(testUserActivity.getInstituteId()).isEqualTo(DEFAULT_INSTITUTE_ID);
         assertThat(testUserActivity.getEnrollmentStatus()).isEqualTo(DEFAULT_ENROLLMENT_STATUS);
         assertThat(testUserActivity.getUserId()).isEqualTo(DEFAULT_USER_ID);
         assertThat(testUserActivity.getSubscriptionId()).isEqualTo(DEFAULT_SUBSCRIPTION_ID);
@@ -159,6 +165,7 @@ public class UserActivityResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(userActivity.getId().intValue())))
             .andExpect(jsonPath("$.[*].courseId").value(hasItem(DEFAULT_COURSE_ID.intValue())))
+            .andExpect(jsonPath("$.[*].instituteId").value(hasItem(DEFAULT_INSTITUTE_ID.intValue())))
             .andExpect(jsonPath("$.[*].enrollmentStatus").value(hasItem(DEFAULT_ENROLLMENT_STATUS)))
             .andExpect(jsonPath("$.[*].userId").value(hasItem(DEFAULT_USER_ID)))
             .andExpect(jsonPath("$.[*].subscriptionId").value(hasItem(DEFAULT_SUBSCRIPTION_ID.intValue())))
@@ -177,6 +184,7 @@ public class UserActivityResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(userActivity.getId().intValue()))
             .andExpect(jsonPath("$.courseId").value(DEFAULT_COURSE_ID.intValue()))
+            .andExpect(jsonPath("$.instituteId").value(DEFAULT_INSTITUTE_ID.intValue()))
             .andExpect(jsonPath("$.enrollmentStatus").value(DEFAULT_ENROLLMENT_STATUS))
             .andExpect(jsonPath("$.userId").value(DEFAULT_USER_ID))
             .andExpect(jsonPath("$.subscriptionId").value(DEFAULT_SUBSCRIPTION_ID.intValue()))
@@ -204,6 +212,7 @@ public class UserActivityResourceIT {
         em.detach(updatedUserActivity);
         updatedUserActivity
             .courseId(UPDATED_COURSE_ID)
+            .instituteId(UPDATED_INSTITUTE_ID)
             .enrollmentStatus(UPDATED_ENROLLMENT_STATUS)
             .userId(UPDATED_USER_ID)
             .subscriptionId(UPDATED_SUBSCRIPTION_ID)
@@ -220,6 +229,7 @@ public class UserActivityResourceIT {
         assertThat(userActivityList).hasSize(databaseSizeBeforeUpdate);
         UserActivity testUserActivity = userActivityList.get(userActivityList.size() - 1);
         assertThat(testUserActivity.getCourseId()).isEqualTo(UPDATED_COURSE_ID);
+        assertThat(testUserActivity.getInstituteId()).isEqualTo(UPDATED_INSTITUTE_ID);
         assertThat(testUserActivity.getEnrollmentStatus()).isEqualTo(UPDATED_ENROLLMENT_STATUS);
         assertThat(testUserActivity.getUserId()).isEqualTo(UPDATED_USER_ID);
         assertThat(testUserActivity.getSubscriptionId()).isEqualTo(UPDATED_SUBSCRIPTION_ID);

@@ -108,6 +108,7 @@ entity Payment {
 
 entity UserActivity {
    courseId Long,
+   instituteId Long,
    enrollmentStatus String,
    userId String,
    subscriptionId Long,

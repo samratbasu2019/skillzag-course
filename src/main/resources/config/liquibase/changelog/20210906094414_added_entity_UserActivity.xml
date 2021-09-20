@@ -18,6 +18,9 @@
             <column name="course_id" type="bigint">
                 <constraints nullable="true" />
             </column>
+            <column name="institute_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
             <column name="enrollment_status" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
@@ -55,6 +58,7 @@
                   tableName="user_activity">
             <column name="id" type="numeric"/>
             <column name="course_id" type="numeric"/>
+            <column name="institute_id" type="numeric"/>
             <column name="enrollment_status" type="string"/>
             <column name="user_id" type="string"/>
             <column name="subscription_id" type="numeric"/>

@@ -23,6 +23,9 @@ public class UserActivity implements Serializable {
     @Column(name = "course_id")
     private Long courseId;
 
+    @Column(name = "institute_id")
+    private Long instituteId;
+
     @Column(name = "enrollment_status")
     private String enrollmentStatus;
 
@@ -55,6 +58,19 @@ public class UserActivity implements Serializable {
 
     public void setCourseId(Long courseId) {
         this.courseId = courseId;
+    }
+
+    public Long getInstituteId() {
+        return instituteId;
+    }
+
+    public UserActivity instituteId(Long instituteId) {
+        this.instituteId = instituteId;
+        return this;
+    }
+
+    public void setInstituteId(Long instituteId) {
+        this.instituteId = instituteId;
     }
 
     public String getEnrollmentStatus() {
@@ -132,6 +148,7 @@ public class UserActivity implements Serializable {
         return "UserActivity{" +
             "id=" + getId() +
             ", courseId=" + getCourseId() +
+            ", instituteId=" + getInstituteId() +
             ", enrollmentStatus='" + getEnrollmentStatus() + "'" +
             ", userId='" + getUserId() + "'" +
             ", subscriptionId=" + getSubscriptionId() +

@@ -6,6 +6,10 @@
       "fieldType": "Long"
     },
     {
+      "fieldName": "instituteId",
+      "fieldType": "Long"
+    },
+    {
       "fieldName": "enrollmentStatus",
       "fieldType": "String"
     },
