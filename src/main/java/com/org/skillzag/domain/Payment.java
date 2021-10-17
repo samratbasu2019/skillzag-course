@@ -38,6 +38,9 @@ public class Payment implements Serializable {
     @Column(name = "payment_status")
     private String paymentStatus;
 
+    @Column(name = "payment_response")
+    private String paymentResponse;
+
     @Column(name = "amount")
     private Double amount;
 
@@ -131,6 +134,19 @@ public class Payment implements Serializable {
         this.paymentStatus = paymentStatus;
     }
 
+    public String getPaymentResponse() {
+        return paymentResponse;
+    }
+
+    public Payment paymentResponse(String paymentResponse) {
+        this.paymentResponse = paymentResponse;
+        return this;
+    }
+
+    public void setPaymentResponse(String paymentResponse) {
+        this.paymentResponse = paymentResponse;
+    }
+
     public Double getAmount() {
         return amount;
     }
@@ -185,6 +201,7 @@ public class Payment implements Serializable {
             ", subscriptionId=" + getSubscriptionId() +
             ", cartUsedDate='" + getCartUsedDate() + "'" +
             ", paymentStatus='" + getPaymentStatus() + "'" +
+            ", paymentResponse='" + getPaymentResponse() + "'" +
             ", amount=" + getAmount() +
             ", paymentDate='" + getPaymentDate() + "'" +
             "}";

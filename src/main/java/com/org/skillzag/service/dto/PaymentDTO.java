@@ -22,6 +22,8 @@ public class PaymentDTO implements Serializable {
 
     private String paymentStatus;
 
+    private String paymentResponse;
+
     private Double amount;
 
     private Instant paymentDate;
@@ -83,6 +85,14 @@ public class PaymentDTO implements Serializable {
         this.paymentStatus = paymentStatus;
     }
 
+    public String getPaymentResponse() {
+        return paymentResponse;
+    }
+
+    public void setPaymentResponse(String paymentResponse) {
+        this.paymentResponse = paymentResponse;
+    }
+
     public Double getAmount() {
         return amount;
     }
@@ -127,6 +137,7 @@ public class PaymentDTO implements Serializable {
             ", subscriptionId=" + getSubscriptionId() +
             ", cartUsedDate='" + getCartUsedDate() + "'" +
             ", paymentStatus='" + getPaymentStatus() + "'" +
+            ", paymentResponse='" + getPaymentResponse() + "'" +
             ", amount=" + getAmount() +
             ", paymentDate='" + getPaymentDate() + "'" +
             "}";

@@ -6,7 +6,7 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd
                         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
-    
+
     <!--
         Added the entity Promo.
     -->
@@ -18,7 +18,7 @@
             <column name="cart_id" type="bigint">
                 <constraints nullable="true" />
             </column>
-            <column name="promo_code" type="varchar(255)">
+            <column name="promo_code" type="varchar(500)">
                 <constraints nullable="true" />
             </column>
             <column name="valid_from" type="datetime">

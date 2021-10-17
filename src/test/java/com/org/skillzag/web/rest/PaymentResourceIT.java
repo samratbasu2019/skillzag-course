@@ -54,6 +54,9 @@ public class PaymentResourceIT {
     private static final String DEFAULT_PAYMENT_STATUS = "AAAAAAAAAA";
     private static final String UPDATED_PAYMENT_STATUS = "BBBBBBBBBB";
 
+    private static final String DEFAULT_PAYMENT_RESPONSE = "AAAAAAAAAA";
+    private static final String UPDATED_PAYMENT_RESPONSE = "BBBBBBBBBB";
+
     private static final Double DEFAULT_AMOUNT = 1D;
     private static final Double UPDATED_AMOUNT = 2D;
 
@@ -91,6 +94,7 @@ public class PaymentResourceIT {
             .subscriptionId(DEFAULT_SUBSCRIPTION_ID)
             .cartUsedDate(DEFAULT_CART_USED_DATE)
             .paymentStatus(DEFAULT_PAYMENT_STATUS)
+            .paymentResponse(DEFAULT_PAYMENT_RESPONSE)
             .amount(DEFAULT_AMOUNT)
             .paymentDate(DEFAULT_PAYMENT_DATE);
         return payment;
@@ -109,6 +113,7 @@ public class PaymentResourceIT {
             .subscriptionId(UPDATED_SUBSCRIPTION_ID)
             .cartUsedDate(UPDATED_CART_USED_DATE)
             .paymentStatus(UPDATED_PAYMENT_STATUS)
+            .paymentResponse(UPDATED_PAYMENT_RESPONSE)
             .amount(UPDATED_AMOUNT)
             .paymentDate(UPDATED_PAYMENT_DATE);
         return payment;
@@ -140,6 +145,7 @@ public class PaymentResourceIT {
         assertThat(testPayment.getSubscriptionId()).isEqualTo(DEFAULT_SUBSCRIPTION_ID);
         assertThat(testPayment.getCartUsedDate()).isEqualTo(DEFAULT_CART_USED_DATE);
         assertThat(testPayment.getPaymentStatus()).isEqualTo(DEFAULT_PAYMENT_STATUS);
+        assertThat(testPayment.getPaymentResponse()).isEqualTo(DEFAULT_PAYMENT_RESPONSE);
         assertThat(testPayment.getAmount()).isEqualTo(DEFAULT_AMOUNT);
         assertThat(testPayment.getPaymentDate()).isEqualTo(DEFAULT_PAYMENT_DATE);
     }
@@ -182,6 +188,7 @@ public class PaymentResourceIT {
             .andExpect(jsonPath("$.[*].subscriptionId").value(hasItem(DEFAULT_SUBSCRIPTION_ID.intValue())))
             .andExpect(jsonPath("$.[*].cartUsedDate").value(hasItem(DEFAULT_CART_USED_DATE.toString())))
             .andExpect(jsonPath("$.[*].paymentStatus").value(hasItem(DEFAULT_PAYMENT_STATUS)))
+            .andExpect(jsonPath("$.[*].paymentResponse").value(hasItem(DEFAULT_PAYMENT_RESPONSE)))
             .andExpect(jsonPath("$.[*].amount").value(hasItem(DEFAULT_AMOUNT.doubleValue())))
             .andExpect(jsonPath("$.[*].paymentDate").value(hasItem(DEFAULT_PAYMENT_DATE.toString())));
     }
@@ -203,6 +210,7 @@ public class PaymentResourceIT {
             .andExpect(jsonPath("$.subscriptionId").value(DEFAULT_SUBSCRIPTION_ID.intValue()))
             .andExpect(jsonPath("$.cartUsedDate").value(DEFAULT_CART_USED_DATE.toString()))
             .andExpect(jsonPath("$.paymentStatus").value(DEFAULT_PAYMENT_STATUS))
+            .andExpect(jsonPath("$.paymentResponse").value(DEFAULT_PAYMENT_RESPONSE))
             .andExpect(jsonPath("$.amount").value(DEFAULT_AMOUNT.doubleValue()))
             .andExpect(jsonPath("$.paymentDate").value(DEFAULT_PAYMENT_DATE.toString()));
     }
@@ -233,6 +241,7 @@ public class PaymentResourceIT {
             .subscriptionId(UPDATED_SUBSCRIPTION_ID)
             .cartUsedDate(UPDATED_CART_USED_DATE)
             .paymentStatus(UPDATED_PAYMENT_STATUS)
+            .paymentResponse(UPDATED_PAYMENT_RESPONSE)
             .amount(UPDATED_AMOUNT)
             .paymentDate(UPDATED_PAYMENT_DATE);
         PaymentDTO paymentDTO = paymentMapper.toDto(updatedPayment);
@@ -252,6 +261,7 @@ public class PaymentResourceIT {
         assertThat(testPayment.getSubscriptionId()).isEqualTo(UPDATED_SUBSCRIPTION_ID);
         assertThat(testPayment.getCartUsedDate()).isEqualTo(UPDATED_CART_USED_DATE);
         assertThat(testPayment.getPaymentStatus()).isEqualTo(UPDATED_PAYMENT_STATUS);
+        assertThat(testPayment.getPaymentResponse()).isEqualTo(UPDATED_PAYMENT_RESPONSE);
         assertThat(testPayment.getAmount()).isEqualTo(UPDATED_AMOUNT);
         assertThat(testPayment.getPaymentDate()).isEqualTo(UPDATED_PAYMENT_DATE);
     }

@@ -103,6 +103,7 @@ entity Payment {
    subscriptionId Long,
    cartUsedDate Instant,
    paymentStatus String,
+   paymentResponse String,
    amount Double,
    paymentDate Instant
 }

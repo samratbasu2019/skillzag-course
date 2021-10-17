@@ -26,6 +26,10 @@
       "fieldType": "String"
     },
     {
+      "fieldName": "paymentResponse",
+      "fieldType": "String"
+    },
+    {
       "fieldName": "amount",
       "fieldType": "Double"
     },
