@@ -14,6 +14,8 @@ public class PaymentDTO implements Serializable {
 
     private String userId;
 
+    private String referenceNumber;
+
     private Long subscriptionId;
 
     private Instant cartUsedDate;
@@ -47,6 +49,14 @@ public class PaymentDTO implements Serializable {
 
     public void setUserId(String userId) {
         this.userId = userId;
+    }
+
+    public String getReferenceNumber() {
+        return referenceNumber;
+    }
+
+    public void setReferenceNumber(String referenceNumber) {
+        this.referenceNumber = referenceNumber;
     }
 
     public Long getSubscriptionId() {
@@ -113,6 +123,7 @@ public class PaymentDTO implements Serializable {
             "id=" + getId() +
             ", courseId=" + getCourseId() +
             ", userId='" + getUserId() + "'" +
+            ", referenceNumber='" + getReferenceNumber() + "'" +
             ", subscriptionId=" + getSubscriptionId() +
             ", cartUsedDate='" + getCartUsedDate() + "'" +
             ", paymentStatus='" + getPaymentStatus() + "'" +

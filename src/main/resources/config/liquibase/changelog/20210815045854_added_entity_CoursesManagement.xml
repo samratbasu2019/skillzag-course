@@ -6,7 +6,7 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd
                         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
-
+    
     <!--
         Added the entity CoursesManagement.
     -->
@@ -15,7 +15,7 @@
             <column name="id" type="bigint">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="course_name" type="varchar(500)">
+            <column name="course_name" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
             <column name="valid_from" type="datetime">
@@ -24,31 +24,31 @@
             <column name="valid_to" type="datetime">
                 <constraints nullable="true" />
             </column>
-            <column name="image_path" type="varchar(2000)">
+            <column name="image_path" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="video_url" type="varchar(2000)">
+            <column name="video_url" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="course_description" type="varchar(2000)">
+            <column name="course_description" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="course_objective" type="varchar(2000)">
+            <column name="course_objective" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="url_1" type="varchar(2000)">
+            <column name="url_1" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="url_2" type="varchar(2000)">
+            <column name="url_2" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="url_3" type="varchar(2000)">
+            <column name="url_3" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="quizb_4_course" type="varchar(2000)">
+            <column name="quizb_4_course" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="quiza_4_course" type="varchar(2000)">
+            <column name="quiza_4_course" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
             <column name="course_status" type="varchar(255)">

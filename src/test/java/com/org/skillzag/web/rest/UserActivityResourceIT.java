@@ -45,6 +45,9 @@ public class UserActivityResourceIT {
     private static final String DEFAULT_ENROLLMENT_STATUS = "AAAAAAAAAA";
     private static final String UPDATED_ENROLLMENT_STATUS = "BBBBBBBBBB";
 
+    private static final String DEFAULT_COURSE_COMPLETION_STATUS = "AAAAAAAAAA";
+    private static final String UPDATED_COURSE_COMPLETION_STATUS = "BBBBBBBBBB";
+
     private static final String DEFAULT_USER_ID = "AAAAAAAAAA";
     private static final String UPDATED_USER_ID = "BBBBBBBBBB";
 
@@ -82,6 +85,7 @@ public class UserActivityResourceIT {
             .courseId(DEFAULT_COURSE_ID)
             .instituteId(DEFAULT_INSTITUTE_ID)
             .enrollmentStatus(DEFAULT_ENROLLMENT_STATUS)
+            .courseCompletionStatus(DEFAULT_COURSE_COMPLETION_STATUS)
             .userId(DEFAULT_USER_ID)
             .subscriptionId(DEFAULT_SUBSCRIPTION_ID)
             .activityDate(DEFAULT_ACTIVITY_DATE);
@@ -98,6 +102,7 @@ public class UserActivityResourceIT {
             .courseId(UPDATED_COURSE_ID)
             .instituteId(UPDATED_INSTITUTE_ID)
             .enrollmentStatus(UPDATED_ENROLLMENT_STATUS)
+            .courseCompletionStatus(UPDATED_COURSE_COMPLETION_STATUS)
             .userId(UPDATED_USER_ID)
             .subscriptionId(UPDATED_SUBSCRIPTION_ID)
             .activityDate(UPDATED_ACTIVITY_DATE);
@@ -127,6 +132,7 @@ public class UserActivityResourceIT {
         assertThat(testUserActivity.getCourseId()).isEqualTo(DEFAULT_COURSE_ID);
         assertThat(testUserActivity.getInstituteId()).isEqualTo(DEFAULT_INSTITUTE_ID);
         assertThat(testUserActivity.getEnrollmentStatus()).isEqualTo(DEFAULT_ENROLLMENT_STATUS);
+        assertThat(testUserActivity.getCourseCompletionStatus()).isEqualTo(DEFAULT_COURSE_COMPLETION_STATUS);
         assertThat(testUserActivity.getUserId()).isEqualTo(DEFAULT_USER_ID);
         assertThat(testUserActivity.getSubscriptionId()).isEqualTo(DEFAULT_SUBSCRIPTION_ID);
         assertThat(testUserActivity.getActivityDate()).isEqualTo(DEFAULT_ACTIVITY_DATE);
@@ -167,6 +173,7 @@ public class UserActivityResourceIT {
             .andExpect(jsonPath("$.[*].courseId").value(hasItem(DEFAULT_COURSE_ID.intValue())))
             .andExpect(jsonPath("$.[*].instituteId").value(hasItem(DEFAULT_INSTITUTE_ID.intValue())))
             .andExpect(jsonPath("$.[*].enrollmentStatus").value(hasItem(DEFAULT_ENROLLMENT_STATUS)))
+            .andExpect(jsonPath("$.[*].courseCompletionStatus").value(hasItem(DEFAULT_COURSE_COMPLETION_STATUS)))
             .andExpect(jsonPath("$.[*].userId").value(hasItem(DEFAULT_USER_ID)))
             .andExpect(jsonPath("$.[*].subscriptionId").value(hasItem(DEFAULT_SUBSCRIPTION_ID.intValue())))
             .andExpect(jsonPath("$.[*].activityDate").value(hasItem(DEFAULT_ACTIVITY_DATE.toString())));
@@ -186,6 +193,7 @@ public class UserActivityResourceIT {
             .andExpect(jsonPath("$.courseId").value(DEFAULT_COURSE_ID.intValue()))
             .andExpect(jsonPath("$.instituteId").value(DEFAULT_INSTITUTE_ID.intValue()))
             .andExpect(jsonPath("$.enrollmentStatus").value(DEFAULT_ENROLLMENT_STATUS))
+            .andExpect(jsonPath("$.courseCompletionStatus").value(DEFAULT_COURSE_COMPLETION_STATUS))
             .andExpect(jsonPath("$.userId").value(DEFAULT_USER_ID))
             .andExpect(jsonPath("$.subscriptionId").value(DEFAULT_SUBSCRIPTION_ID.intValue()))
             .andExpect(jsonPath("$.activityDate").value(DEFAULT_ACTIVITY_DATE.toString()));
@@ -214,6 +222,7 @@ public class UserActivityResourceIT {
             .courseId(UPDATED_COURSE_ID)
             .instituteId(UPDATED_INSTITUTE_ID)
             .enrollmentStatus(UPDATED_ENROLLMENT_STATUS)
+            .courseCompletionStatus(UPDATED_COURSE_COMPLETION_STATUS)
             .userId(UPDATED_USER_ID)
             .subscriptionId(UPDATED_SUBSCRIPTION_ID)
             .activityDate(UPDATED_ACTIVITY_DATE);
@@ -231,6 +240,7 @@ public class UserActivityResourceIT {
         assertThat(testUserActivity.getCourseId()).isEqualTo(UPDATED_COURSE_ID);
         assertThat(testUserActivity.getInstituteId()).isEqualTo(UPDATED_INSTITUTE_ID);
         assertThat(testUserActivity.getEnrollmentStatus()).isEqualTo(UPDATED_ENROLLMENT_STATUS);
+        assertThat(testUserActivity.getCourseCompletionStatus()).isEqualTo(UPDATED_COURSE_COMPLETION_STATUS);
         assertThat(testUserActivity.getUserId()).isEqualTo(UPDATED_USER_ID);
         assertThat(testUserActivity.getSubscriptionId()).isEqualTo(UPDATED_SUBSCRIPTION_ID);
         assertThat(testUserActivity.getActivityDate()).isEqualTo(UPDATED_ACTIVITY_DATE);

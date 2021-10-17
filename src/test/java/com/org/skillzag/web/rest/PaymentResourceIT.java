@@ -42,6 +42,9 @@ public class PaymentResourceIT {
     private static final String DEFAULT_USER_ID = "AAAAAAAAAA";
     private static final String UPDATED_USER_ID = "BBBBBBBBBB";
 
+    private static final String DEFAULT_REFERENCE_NUMBER = "AAAAAAAAAA";
+    private static final String UPDATED_REFERENCE_NUMBER = "BBBBBBBBBB";
+
     private static final Long DEFAULT_SUBSCRIPTION_ID = 1L;
     private static final Long UPDATED_SUBSCRIPTION_ID = 2L;
 
@@ -84,6 +87,7 @@ public class PaymentResourceIT {
         Payment payment = new Payment()
             .courseId(DEFAULT_COURSE_ID)
             .userId(DEFAULT_USER_ID)
+            .referenceNumber(DEFAULT_REFERENCE_NUMBER)
             .subscriptionId(DEFAULT_SUBSCRIPTION_ID)
             .cartUsedDate(DEFAULT_CART_USED_DATE)
             .paymentStatus(DEFAULT_PAYMENT_STATUS)
@@ -101,6 +105,7 @@ public class PaymentResourceIT {
         Payment payment = new Payment()
             .courseId(UPDATED_COURSE_ID)
             .userId(UPDATED_USER_ID)
+            .referenceNumber(UPDATED_REFERENCE_NUMBER)
             .subscriptionId(UPDATED_SUBSCRIPTION_ID)
             .cartUsedDate(UPDATED_CART_USED_DATE)
             .paymentStatus(UPDATED_PAYMENT_STATUS)
@@ -131,6 +136,7 @@ public class PaymentResourceIT {
         Payment testPayment = paymentList.get(paymentList.size() - 1);
         assertThat(testPayment.getCourseId()).isEqualTo(DEFAULT_COURSE_ID);
         assertThat(testPayment.getUserId()).isEqualTo(DEFAULT_USER_ID);
+        assertThat(testPayment.getReferenceNumber()).isEqualTo(DEFAULT_REFERENCE_NUMBER);
         assertThat(testPayment.getSubscriptionId()).isEqualTo(DEFAULT_SUBSCRIPTION_ID);
         assertThat(testPayment.getCartUsedDate()).isEqualTo(DEFAULT_CART_USED_DATE);
         assertThat(testPayment.getPaymentStatus()).isEqualTo(DEFAULT_PAYMENT_STATUS);
@@ -172,6 +178,7 @@ public class PaymentResourceIT {
             .andExpect(jsonPath("$.[*].id").value(hasItem(payment.getId().intValue())))
             .andExpect(jsonPath("$.[*].courseId").value(hasItem(DEFAULT_COURSE_ID.intValue())))
             .andExpect(jsonPath("$.[*].userId").value(hasItem(DEFAULT_USER_ID)))
+            .andExpect(jsonPath("$.[*].referenceNumber").value(hasItem(DEFAULT_REFERENCE_NUMBER)))
             .andExpect(jsonPath("$.[*].subscriptionId").value(hasItem(DEFAULT_SUBSCRIPTION_ID.intValue())))
             .andExpect(jsonPath("$.[*].cartUsedDate").value(hasItem(DEFAULT_CART_USED_DATE.toString())))
             .andExpect(jsonPath("$.[*].paymentStatus").value(hasItem(DEFAULT_PAYMENT_STATUS)))
@@ -192,6 +199,7 @@ public class PaymentResourceIT {
             .andExpect(jsonPath("$.id").value(payment.getId().intValue()))
             .andExpect(jsonPath("$.courseId").value(DEFAULT_COURSE_ID.intValue()))
             .andExpect(jsonPath("$.userId").value(DEFAULT_USER_ID))
+            .andExpect(jsonPath("$.referenceNumber").value(DEFAULT_REFERENCE_NUMBER))
             .andExpect(jsonPath("$.subscriptionId").value(DEFAULT_SUBSCRIPTION_ID.intValue()))
             .andExpect(jsonPath("$.cartUsedDate").value(DEFAULT_CART_USED_DATE.toString()))
             .andExpect(jsonPath("$.paymentStatus").value(DEFAULT_PAYMENT_STATUS))
@@ -221,6 +229,7 @@ public class PaymentResourceIT {
         updatedPayment
             .courseId(UPDATED_COURSE_ID)
             .userId(UPDATED_USER_ID)
+            .referenceNumber(UPDATED_REFERENCE_NUMBER)
             .subscriptionId(UPDATED_SUBSCRIPTION_ID)
             .cartUsedDate(UPDATED_CART_USED_DATE)
             .paymentStatus(UPDATED_PAYMENT_STATUS)
@@ -239,6 +248,7 @@ public class PaymentResourceIT {
         Payment testPayment = paymentList.get(paymentList.size() - 1);
         assertThat(testPayment.getCourseId()).isEqualTo(UPDATED_COURSE_ID);
         assertThat(testPayment.getUserId()).isEqualTo(UPDATED_USER_ID);
+        assertThat(testPayment.getReferenceNumber()).isEqualTo(UPDATED_REFERENCE_NUMBER);
         assertThat(testPayment.getSubscriptionId()).isEqualTo(UPDATED_SUBSCRIPTION_ID);
         assertThat(testPayment.getCartUsedDate()).isEqualTo(UPDATED_CART_USED_DATE);
         assertThat(testPayment.getPaymentStatus()).isEqualTo(UPDATED_PAYMENT_STATUS);

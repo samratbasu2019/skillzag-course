@@ -26,6 +26,9 @@ public class Payment implements Serializable {
     @Column(name = "user_id")
     private String userId;
 
+    @Column(name = "reference_number")
+    private String referenceNumber;
+
     @Column(name = "subscription_id")
     private Long subscriptionId;
 
@@ -74,6 +77,19 @@ public class Payment implements Serializable {
 
     public void setUserId(String userId) {
         this.userId = userId;
+    }
+
+    public String getReferenceNumber() {
+        return referenceNumber;
+    }
+
+    public Payment referenceNumber(String referenceNumber) {
+        this.referenceNumber = referenceNumber;
+        return this;
+    }
+
+    public void setReferenceNumber(String referenceNumber) {
+        this.referenceNumber = referenceNumber;
     }
 
     public Long getSubscriptionId() {
@@ -165,6 +181,7 @@ public class Payment implements Serializable {
             "id=" + getId() +
             ", courseId=" + getCourseId() +
             ", userId='" + getUserId() + "'" +
+            ", referenceNumber='" + getReferenceNumber() + "'" +
             ", subscriptionId=" + getSubscriptionId() +
             ", cartUsedDate='" + getCartUsedDate() + "'" +
             ", paymentStatus='" + getPaymentStatus() + "'" +

@@ -16,6 +16,8 @@ public class UserActivityDTO implements Serializable {
 
     private String enrollmentStatus;
 
+    private String courseCompletionStatus;
+
     private String userId;
 
     private Long subscriptionId;
@@ -53,6 +55,14 @@ public class UserActivityDTO implements Serializable {
 
     public void setEnrollmentStatus(String enrollmentStatus) {
         this.enrollmentStatus = enrollmentStatus;
+    }
+
+    public String getCourseCompletionStatus() {
+        return courseCompletionStatus;
+    }
+
+    public void setCourseCompletionStatus(String courseCompletionStatus) {
+        this.courseCompletionStatus = courseCompletionStatus;
     }
 
     public String getUserId() {
@@ -104,6 +114,7 @@ public class UserActivityDTO implements Serializable {
             ", courseId=" + getCourseId() +
             ", instituteId=" + getInstituteId() +
             ", enrollmentStatus='" + getEnrollmentStatus() + "'" +
+            ", courseCompletionStatus='" + getCourseCompletionStatus() + "'" +
             ", userId='" + getUserId() + "'" +
             ", subscriptionId=" + getSubscriptionId() +
             ", activityDate='" + getActivityDate() + "'" +

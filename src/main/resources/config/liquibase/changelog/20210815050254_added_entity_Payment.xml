@@ -21,6 +21,9 @@
             <column name="user_id" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
+            <column name="reference_number" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
             <column name="subscription_id" type="bigint">
                 <constraints nullable="true" />
             </column>
@@ -63,6 +66,7 @@
             <column name="id" type="numeric"/>
             <column name="course_id" type="numeric"/>
             <column name="user_id" type="string"/>
+            <column name="reference_number" type="string"/>
             <column name="subscription_id" type="numeric"/>
             <column name="cart_used_date" type="datetime"/>
             <column name="payment_status" type="string"/>

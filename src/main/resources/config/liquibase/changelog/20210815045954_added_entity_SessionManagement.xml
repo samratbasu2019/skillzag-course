@@ -6,7 +6,7 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd
                         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
-
+    
     <!--
         Added the entity SessionManagement.
     -->
@@ -18,22 +18,22 @@
             <column name="session_number" type="integer">
                 <constraints nullable="true" />
             </column>
-            <column name="session_name" type="varchar(500)">
+            <column name="session_name" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="session_description" type="varchar(2000)">
+            <column name="session_description" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="session_url" type="varchar(2000)">
+            <column name="session_url" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="session_video_url" type="varchar(2000)">
+            <column name="session_video_url" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="quiz" type="varchar(2000)">
+            <column name="quiz" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="session_logo" type="varchar(2000)">
+            <column name="session_logo" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
             <column name="session_status" type="varchar(255)">

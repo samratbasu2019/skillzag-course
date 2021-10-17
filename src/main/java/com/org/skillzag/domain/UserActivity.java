@@ -29,6 +29,9 @@ public class UserActivity implements Serializable {
     @Column(name = "enrollment_status")
     private String enrollmentStatus;
 
+    @Column(name = "course_completion_status")
+    private String courseCompletionStatus;
+
     @Column(name = "user_id")
     private String userId;
 
@@ -84,6 +87,19 @@ public class UserActivity implements Serializable {
 
     public void setEnrollmentStatus(String enrollmentStatus) {
         this.enrollmentStatus = enrollmentStatus;
+    }
+
+    public String getCourseCompletionStatus() {
+        return courseCompletionStatus;
+    }
+
+    public UserActivity courseCompletionStatus(String courseCompletionStatus) {
+        this.courseCompletionStatus = courseCompletionStatus;
+        return this;
+    }
+
+    public void setCourseCompletionStatus(String courseCompletionStatus) {
+        this.courseCompletionStatus = courseCompletionStatus;
     }
 
     public String getUserId() {
@@ -150,6 +166,7 @@ public class UserActivity implements Serializable {
             ", courseId=" + getCourseId() +
             ", instituteId=" + getInstituteId() +
             ", enrollmentStatus='" + getEnrollmentStatus() + "'" +
+            ", courseCompletionStatus='" + getCourseCompletionStatus() + "'" +
             ", userId='" + getUserId() + "'" +
             ", subscriptionId=" + getSubscriptionId() +
             ", activityDate='" + getActivityDate() + "'" +
