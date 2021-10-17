@@ -99,6 +99,7 @@ entity Promo {
 entity Payment {
    courseId Long,
    userId String,
+   referenceNumber String,
    subscriptionId Long,
    cartUsedDate Instant,
    paymentStatus String,
@@ -110,6 +111,7 @@ entity UserActivity {
    courseId Long,
    instituteId Long,
    enrollmentStatus String,
+   courseCompletionStatus String,
    userId String,
    subscriptionId Long,
    activityDate Instant

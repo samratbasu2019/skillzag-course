@@ -26,7 +26,7 @@ public interface CRUDCartUserRepository extends CrudRepository<SubscriptionManag
         "cm.course_status, cm.recommended_status,sm.session_number, sm.session_name, sm.session_description, sm.session_url, \n" +
         "sm.session_video_url, sm.quiz, sm.session_logo, sm.session_status, sm.subscription_required, \n" +
         "sm.courses_management_id, sm.id as session_id, sm2.subscription_name, sm2.subscription_startdate, sm2.subscription_enddate,\n" +
-        "ua.enrollment_status, ua.id  as user_activity_id from courses_management cm , session_management sm, \n" +
+        "ua.enrollment_status, ua.id  as user_activity_id, ua.courseCompletionStatus from courses_management cm , session_management sm, \n" +
         "user_activity ua, subscription_management sm2 where cm.id = sm.courses_management_id  and sm2.id = cm.subscription_id        \n" +
         "and ua.subscription_id = sm2.id and ua.user_id = :userId",
         nativeQuery = true)
