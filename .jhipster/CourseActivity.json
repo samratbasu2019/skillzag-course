@@ -1,0 +1,42 @@
+{
+  "name": "CourseActivity",
+  "fields": [
+    {
+      "fieldName": "courseId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "instituteId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "userId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "subscriptionId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "activityDate",
+      "fieldType": "Instant"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20220104144907",
+  "entityTableName": "course_activity",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "skillzagcoursemanagement",
+  "applications": "*",
+  "microserviceName": "skillzagcoursemanagement"
+}

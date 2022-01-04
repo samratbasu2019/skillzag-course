@@ -118,6 +118,15 @@ entity UserActivity {
    activityDate Instant
 }
 
+entity CourseActivity {
+   courseId Long,
+   instituteId Long,
+   status String,
+   userId String,
+   subscriptionId Long,
+   activityDate Instant
+}
+
 entity Institution {
   institutionAddress String,
   institutionDescription String,
